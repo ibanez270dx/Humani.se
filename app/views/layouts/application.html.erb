@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>HumaniSe</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html class="<%= controller.controller_name %> <%= controller.action_name %>">
+  <head>
+    <title>Humani.se</title>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+      <div class="page-width">
+        <a href="#" class="logo">HUMANI.SE</a>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<%= yield %>
-
-</body>
+  
+    <section class="page-width">
+      <%= yield %>
+    </section>
+    
+    <footer>
+      <ul class="social-icons">
+        <li><%= link_to image_tag('social-icons/github-off.png'), 'http://github.com/ibanez270dx' %></li>
+        <li><%= link_to image_tag('social-icons/twitter-off.png'), 'http://twitter.com/ibanez270dx' %></li>
+        <li><%= link_to image_tag('social-icons/linkedin-off.png'), 'http://www.linkedin.com/in/ibanez270dx' %></li>
+        <li><%= link_to image_tag('social-icons/facebook-off.png'), 'http://www.facebook.com/ibanez270dx' %></li>
+      </ul>
+    </footer>
+  </body>
 </html>

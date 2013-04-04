@@ -17,3 +17,9 @@
 
 # Ignore seed data
 /db/seeds.rb
+
+# Ignore rvmrc
+/.rvmrc
+
+# Ignore OSX ds_stores
+.DS_Store
