@@ -3,17 +3,17 @@
   <head>
     <title>Humani.se</title>
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <nav>
       <div class="page-width">
-        <a href="#" class="logo">HUMANI.SE</a>
+        <%= link_to 'HUMANI.SE', about_path, class: 'logo' %>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Blog', blog_path %></li>
         </ul>
       </div>
     </nav>
@@ -25,10 +25,30 @@
     
     <footer>
       <ul class="social-icons">
-        <li><%= link_to image_tag('social-icons/github-off.png'), 'http://github.com/ibanez270dx' %></li>
-        <li><%= link_to image_tag('social-icons/twitter-off.png'), 'http://twitter.com/ibanez270dx' %></li>
-        <li><%= link_to image_tag('social-icons/linkedin-off.png'), 'http://www.linkedin.com/in/ibanez270dx' %></li>
-        <li><%= link_to image_tag('social-icons/facebook-off.png'), 'http://www.facebook.com/ibanez270dx' %></li>
+        <li>
+          <%= link_to 'http://github.com/ibanez270dx' do %>
+            <%= image_tag('social-icons/github-off.png') %>
+            <%= image_tag('social-icons/github-on.png') %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'http://twitter.com/ibanez270dx' do %>
+            <%= image_tag('social-icons/twitter-off.png') %>
+            <%= image_tag('social-icons/twitter-on.png') %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'http://www.linkedin.com/in/ibanez270dx' do %>
+            <%= image_tag('social-icons/linkedin-off.png') %>
+            <%= image_tag('social-icons/linkedin-on.png') %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'http://www.facebook.com/ibanez270dx' do %>
+            <%= image_tag('social-icons/facebook-off.png') %>
+            <%= image_tag('social-icons/facebook-on.png') %>
+          <% end %>
+        </li>
       </ul>
     </footer>
   </body>

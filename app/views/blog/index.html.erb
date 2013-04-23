@@ -1,0 +1,18 @@
+
+<article class="glass-box">
+  <% @posts.each do |post| %>
+    <div class="post" id="<%= post.id %>">
+      <div class="header">
+        <div class="calendar">
+          <span class="month"><%= post.published_at.strftime('%B') %></span>
+          <span class="day"><%= post.published_at.day %></span>
+          <span class="year"><%= post.published_at.year %></span>
+        </div>
+        <h2><%= post.title %></h2>
+      </div>
+      <div class="body">
+        <%= post.body %>
+      </div>
+    </div>
+  <% end %>
+</article>

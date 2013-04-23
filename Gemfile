@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.beta1'
-
-gem 'sqlite3'
+gem 'mysql2'
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+
   gem 'sass-rails',   '~> 4.0.0.beta1'
   gem 'coffee-rails', '~> 4.0.0.beta1'
 
@@ -16,24 +17,38 @@ group :assets do
   
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
+
 end
 
-gem 'jquery-rails'
+group :production do
+  # App server
+  gem 'unicorn'
+end
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+group :development do
+  # Use debugger
+  gem 'debugger'  
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.0.1'
+  # App Server
+  gem 'thin'
+end
+
+#################################################
+# Convenience
+#################################################
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# gem 'turbolinks'
+
+# Restore standard onReady events while still using Turbolinks
+# gem 'jquery-turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'jbuilder', '~> 1.0.1'
 
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
 
-# To use debugger
-# gem 'debugger'
