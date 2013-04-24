@@ -4,16 +4,35 @@
 #########################
 
 scaleSite = ->
-  width = undefined
   console.log "scaling site..."
   width = $(window).width()
-  $("body, nav").css "background-size", "" + width + "px"
+  
+  # Scale background and navbar 
+  $("body, nav").css 
+    backgroundSize: "#{width}px"
+    
+  # Scale glass boxes articles
   $("article.glass-box").each ->
-    offset = undefined
-    offset = $(this).offset().top
-    $(this).css "background-position-y", "-" + offset + "px"
-    $(this).css "background-size", "" + width + "px"
-    $(this).css "background-repeat", "no-repeat"
+    xOffset = 930-$(this).width()
+    yOffset = $(this).offset().top
+       
+    $(this).css
+      backgroundPositionX: "-#{xOffset}px"
+      backgroundPositionY: "-#{yOffset}px"
+      backgroundSize: "#{width}px"
+      backgroundRepeat: "no-repeat"
+
+  # Scale glass box sidebars
+  $("aside.glass-box").each ->
+    xOffset = 980
+    yOffset = $(this).offset().top
+       
+    $(this).css
+      backgroundPositionX: "-#{xOffset}px"
+      backgroundPositionY: "-#{yOffset}px"
+      backgroundSize: "#{width}px"
+      backgroundRepeat: "no-repeat"
+    
 
 #########################
 # Event Listeners
