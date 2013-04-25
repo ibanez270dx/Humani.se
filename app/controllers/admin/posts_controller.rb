@@ -1,4 +1,5 @@
-class Post::PostsController < ApplicationController
+class Admin::PostsController < ApplicationController
+  layout 'admin'
   
   def index
     @posts = Post.all
@@ -9,9 +10,9 @@ class Post::PostsController < ApplicationController
   end
   
   def create
-    @post = Post.create params[:post]
+    @post = Post.create post_params
     if @post.save
-      flash[:notice] = "Post created successfully."
+      flash[:success] = "Post created successfully."
       redirect_to admin_posts_path
     else
       render action: 'new'
@@ -24,8 +25,8 @@ class Post::PostsController < ApplicationController
   
   def update
     @post = Post.find params[:id]
-    if @post.update_attributes(params[:post])
-      flash[:notice] = "Post updated successfully."
+    if @post.update_attributes(post_params)
+      flash[:success] = "Post updated successfully."
       redirect_to admin_posts_path
     else
       render action: 'edit'
@@ -34,9 +35,13 @@ class Post::PostsController < ApplicationController
   
   def destroy
     @post = Post.find(params[:id]).destroy
-    flash[:notice] = "Post destroyed successfully."
+    flash[:success] = "Post destroyed successfully."
     redirect_to admin_posts_path
   end
   
+  private
   
+    def post_params
+      params.require(:post).permit(:author_id, :title, :url_title, :body, :abstract, :meta_description, :meta_keywords, :enabled)
+    end
 end

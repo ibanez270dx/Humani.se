@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="<%= controller.controller_name %> <%= controller.action_name %>">
+<html class="application <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
   <head>
-    <title>Humani.se</title>
+    <title><%= @title || "Humani.se" %></title>
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>

@@ -4,7 +4,7 @@ class SiteController < ApplicationController
   end
   
   def blog
-    @posts = Post.all.order('published_at desc')
+    @posts = Post.enabled.order('published_at desc')
   end
   
 end

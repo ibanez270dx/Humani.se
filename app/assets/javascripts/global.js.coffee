@@ -13,7 +13,7 @@ scaleSite = ->
     
   # Scale glass boxes articles
   $("article.glass-box").each ->
-    xOffset = 930-$(this).width()
+    xOffset = 925-$(this).width()
     yOffset = $(this).offset().top
        
     $(this).css
@@ -33,7 +33,6 @@ scaleSite = ->
       backgroundSize: "#{width}px"
       backgroundRepeat: "no-repeat"
     
-
 #########################
 # Event Listeners
 #########################
@@ -62,3 +61,4 @@ $(document).on 'mouseleave', 'ul.social-icons li', ->
 
 $(document).ready ->
   scaleSite()
+  

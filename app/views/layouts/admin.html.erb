@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="admin <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
+  <head>
+    <title><%= @title || "Humani.se Admin" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HUMANI.SE</span>
+      <% if current_admin %>
+        <%= link_to 'Admins', admin_admins_path %>
+        <%= link_to 'Posts', admin_posts_path %>
+      <% end %>
+    </nav>
+    
+    <%= render 'layouts/flash_messages' %>
+    
+    <section>
+      <%= yield %>
+    </section>
+  </body>
+</html>

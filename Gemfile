@@ -31,6 +31,9 @@ group :development do
 
   # App Server
   gem 'thin'
+  
+  # Quiet Assets
+  gem 'quiet_assets'
 end
 
 #################################################

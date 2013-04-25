@@ -1,0 +1,23 @@
+<%= render partial: 'layouts/errors', formats: [:html], locals: { klass: @admin } %>
+
+<div class="control-group">
+  <%= f.label :name, class: 'control-label' %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="control-group">
+  <%= f.label :login, class: 'control-label' %>
+  <%= f.text_field :login %>
+</div>
+
+<div class="control-group">
+  <%= f.label :password, class: 'control-label' %>
+  <%= f.password_field :password %>
+</div>
+
+<div class="control-group">
+  <%= f.label :password_confirmation, "Password\nConfirmation", class: 'control-label' %>
+  <%= f.password_field :password_confirmation %>
+</div>
+
+<%= f.submit 'Create Admin', class: 'btn' %>

@@ -8,7 +8,8 @@ HumaniSe::Application.routes.draw do
     resources :admins
     resources :posts
     
-    post 'login'  => 'admin#login',  as: :login
-    get  'logout' => 'admin#logout', as: :logout
+    get  '/' => 'admins#login'
+    post '/' => 'admins#login'
+    get  'logout' => 'admins#logout', as: :logout
   end
 end

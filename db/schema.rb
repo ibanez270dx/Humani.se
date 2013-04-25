@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130414234944) do
+ActiveRecord::Schema.define(version: 20130425062918) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20130414234944) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "abstract"
+    t.boolean  "enabled",          default: false
+    t.string   "url_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.string   "filepicker_url"
   end
 
 end
