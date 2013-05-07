@@ -2,7 +2,8 @@ HumaniSe::Application.routes.draw do
   
   root to: 'site#index', as: :about
   
-  get 'blog' => 'site#blog',  as: :blog
+  get 'blog' => 'blog#index',  as: :blog
+  get 'blog/:url_title' => 'blog#show', as: :blog_post
   
   namespace :admin do
     resources :admins

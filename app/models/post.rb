@@ -8,8 +8,10 @@ class Post < ActiveRecord::Base
   validates :abstract, presence: true
 
   before_save :update_url_title
-  
-  scope :enabled, where(enabled: true)
+
+  # Hopefully these ugly definitions get cleaned up when Rails4 is released
+  default_scope { order('published_at desc') }
+  scope :enabled, -> { where(enabled: true) }
   
   # Publish post when it's enabled
   def enabled=(check)

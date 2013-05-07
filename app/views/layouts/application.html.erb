@@ -2,13 +2,14 @@
 <html class="application <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
   <head>
     <title><%= @title || "Humani.se" %></title>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|PT+Sans+Caption|Cabin|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700|Noto+Sans|Quicksand' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", media: "all" %>    
     <%= javascript_include_tag "application" %>
+    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <div class="page-width">
         <%= link_to 'HUMANI.SE', about_path, class: 'logo' %>
         <ul>
@@ -16,40 +17,42 @@
           <li><%= link_to 'Blog', blog_path %></li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
 
-  
-    <section class="page-width">
+    <!-- Navbar
+        ================================================== -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">HUMANI.SE</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <%= link_to 'About', about_path %>
+              </li>
+              <li class="">
+                <%= link_to 'Blog', blog_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container content-section">
       <%= yield %>
-    </section>
+    </div>
     
-    <footer>
-      <ul class="social-icons">
-        <li>
-          <%= link_to 'http://github.com/ibanez270dx' do %>
-            <%= image_tag('social-icons/github-off.png') %>
-            <%= image_tag('social-icons/github-on.png') %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to 'http://twitter.com/ibanez270dx' do %>
-            <%= image_tag('social-icons/twitter-off.png') %>
-            <%= image_tag('social-icons/twitter-on.png') %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to 'http://www.linkedin.com/in/ibanez270dx' do %>
-            <%= image_tag('social-icons/linkedin-off.png') %>
-            <%= image_tag('social-icons/linkedin-on.png') %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to 'http://www.facebook.com/ibanez270dx' do %>
-            <%= image_tag('social-icons/facebook-off.png') %>
-            <%= image_tag('social-icons/facebook-on.png') %>
-          <% end %>
-        </li>
-      </ul>
-    </footer>
+    <div class="container">
+      <footer>
+        <%= yield :footer %>
+      </footer>
+    </div>
   </body>
 </html>

@@ -1,6 +1,14 @@
+<aside class="glass-box">
+  <h3>Posts</h3>
+  <ul>
+    <li>Blah and blah</li>
+    <li>Rails Stuff</li>
+    <li>Ipsum Lorum</li>
+  </ul>
+</aside>
 
-<article class="glass-box">
-  <% @posts.each do |post| %>
+<% @posts.each do |post| %>
+  <article class="glass-box">
     <div class="post" id="<%= post.id %>">
       <div class="header">
         <div class="calendar">
@@ -11,17 +19,9 @@
         <h2><%= post.title %></h2>
       </div>
       <div class="body">
-        <%= post.body %>
-      </div>
+        <%= post.abstract.html_safe %>
+      </div>      
+      <div class="slidey-image" style="background-image:url(<%= "#{post.filepicker_url}/convert?w=680" %>);"></div>
     </div>
-  <% end %>
-</article>
-
-<aside class="glass-box">
-  <h3>Posts</h3>
-  <ul>
-    <li>Blah and blah</li>
-    <li>Rails Stuff</li>
-    <li>Ipsum Lorum</li>
-  </ul>
-</aside>
+  </article>
+<% end %>

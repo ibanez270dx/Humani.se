@@ -42,6 +42,6 @@ class Admin::PostsController < ApplicationController
   private
   
     def post_params
-      params.require(:post).permit(:author_id, :title, :url_title, :body, :abstract, :meta_description, :meta_keywords, :enabled)
+      params.require(:post).permit(:author_id, :title, :url_title, :body, :abstract, :meta_description, :meta_keywords, :enabled, :filepicker_url)
     end
 end

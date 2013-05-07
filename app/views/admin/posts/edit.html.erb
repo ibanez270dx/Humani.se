@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 <%= link_to 'Back', admin_posts_path, class: 'btn' %>
 
-<%= form_for [:admin, @post], html: { class: 'form-horizontal' } do |f| %>
+<%= form_for [:admin, @post], html: { class: 'form-horizontal long-fields' } do |f| %>
 	<%= render partial: "form", formats: [:html], locals: { f: f } %>
 <% end %>

@@ -46,12 +46,17 @@ html.admin {
     .form-horizontal {
       label { padding-right:10px; width:100px; }
       input[type=submit] { margin-left: 110px; }
+      
+      .post-image {
+        img { margin-left:110px; margin-bottom:20px; }
+      }
     }
     
     // make the fields a bit wider for the posts page
-    input[type=text] { width:600px; }
-    textarea { width:600px; height:150px; }
-    
+    .long-fields {
+      input[type=text] { width:600px; }
+      textarea { width:600px; height:150px; }
+    }
   }
   
 }

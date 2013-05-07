@@ -7,6 +7,16 @@
 </div>
 
 <div class="control-group">
+  <%= f.label :filepicker_url, "Image", class: 'control-label' %>
+  <%= link_to 'Pick File', '#', id: 'filepicker_url', class: 'btn btn-primary' %>
+  <%= f.hidden_field :filepicker_url %>
+</div>
+
+<div class="post-image">
+  <%= image_tag("#{@post.filepicker_url}/convert?w=160&h=160&fit=clip", class: 'img-polaroid') if @post.filepicker_url %>
+</div>
+
+<div class="control-group">
   <%= f.label :title, class: 'control-label' %>
   <%= f.text_field :title %>
 </div>
@@ -41,4 +51,4 @@
   <%= f.check_box :enabled, value: @post.enabled? %>
 </div>
 
-<%= f.submit 'Create Post', class: 'btn' %>
+<%= f.submit 'Save Post', class: 'btn' %>
