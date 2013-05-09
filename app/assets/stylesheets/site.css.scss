@@ -22,6 +22,8 @@ html.application {
       position:static;
     }
     
+    .no-margins { margin:0px; }
+    
     ////////////////////////////////////////////////
     // Navigation bar
     ////////////////////////////////////////////////
@@ -43,8 +45,6 @@ html.application {
       background-image:url('shutterstock-blurred.jpg');
       box-shadow: 0px 3px 8px #031017;
     
-
-        
       ul {
         width:996px; height:50px; margin-left:auto; margin-right:auto; display:inline;  
         li { display:inline-block;
