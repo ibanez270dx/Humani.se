@@ -8,15 +8,19 @@
       <article class="glass-box">
         <div class="post" id="<%= post.id %>">  
           <div class="photo-holder">
+            
+            <!-- Calendar + Cropped Article Photo -->
             <div class="calendar">
               <span class="month"><%= post.published_at.strftime('%B') %></span> 
               <span class="day"><%= post.published_at.day %></span>
               <span class="year"><%= post.published_at.year %></span>
             </div>
-            <div class="calendar-glass"></div>
             <div class="post-photo">
-              <%= filepicker_image_tag post.filepicker_url,  w: 250, h: 150, fit: 'crop' %>
+              <%= filepicker_image_tag post.filepicker_url, w: 250, h: 150, fit: 'crop' %>
             </div>
+            
+            <!-- Effect Layers -->
+            <div class="calendar-glass"></div>
             <div class="post-photo-shadowed"></div>
           </div>
 
