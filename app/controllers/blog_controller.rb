@@ -5,7 +5,7 @@ class BlogController < ApplicationController
   end
   
   def show
-    @post = Post.find params[:id]
+    @post = Post.find_by_url_title params[:url_title]
   end
     
 end

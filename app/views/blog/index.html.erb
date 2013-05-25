@@ -3,50 +3,55 @@
 <div class="row-fluid">
   <div class="span9">
     <!-- Posts Index -->
-    
+
     <% @posts.each do |post| %>
       <article class="glass-box">
-        <div class="post" id="<%= post.id %>">  
+        <div class="post" id="<%= post.id %>">
           <div class="photo-holder">
-            
+
             <!-- Calendar + Cropped Article Photo -->
             <div class="calendar">
-              <span class="month"><%= post.published_at.strftime('%B') %></span> 
+              <span class="month"><%= post.published_at.strftime('%B') %></span>
               <span class="day"><%= post.published_at.day %></span>
               <span class="year"><%= post.published_at.year %></span>
             </div>
             <div class="post-photo">
               <%= filepicker_image_tag post.filepicker_url, w: 250, h: 150, fit: 'crop' %>
             </div>
-            
+
             <!-- Effect Layers -->
             <div class="calendar-glass"></div>
             <div class="post-photo-shadowed"></div>
+
+            <!-- Details -->
+            <div class="post-details">
+              <div class="fb-like" data-href="<%= blog_post_path(post.url_title) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana" data-action="recommend"></div>
+            </div>
           </div>
 
           <h2><%= link_to post.title, blog_post_path(post.url_title) %></h2>
-        
+
           <div class="body">
             <%= post.abstract.html_safe %>
-          </div>      
+          </div>
         </div>
       </article>
       <br />
-    <% end %>  
-    
+    <% end %>
+
   </div>
   <div class="span3">
     <!-- Sidebar -->
-    
+
     <aside class="glass-box">
-      Something  
+      Something
       <ul>
         <li>Popular</li>
         <li>Blah de Blah</li>
         <li>Stuff</li>
       </ul>
     </aside>
-    
+
   </div>
 </div>
 

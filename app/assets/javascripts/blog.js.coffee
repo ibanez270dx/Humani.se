@@ -1,16 +1,14 @@
 
 if $('html').hasClass('blog')
   
-  $(document).on 'mouseenter', '.slidey-image', (event) ->
+  $(document).on 'mouseenter', '.slider-photo', (event) ->
     console.log "mouseEnter"
     $(this).animate
-      height:330
-      opacity:1
+      height:450
     , 250
   
-  $(document).on 'mouseleave', '.slidey-image', (event) ->
+  $(document).on 'mouseleave', '.slider-photo', (event) ->
     console.log "mouseLeave"
     $(this).animate
-      height:100
-      opacity:0.6
+      height:200
     , 250

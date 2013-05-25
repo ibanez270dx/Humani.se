@@ -8,9 +8,9 @@ if $('html').hasClass('application')
   scaleSite = ->
     console.log "scaling site..."
     
+    # Grab site width
     width = $('.navbar').width()
-    console.log "width: ", width
-  
+    
     # Scale background and navbar 
     $("body, .navbar-inner").css 
       backgroundSize: "#{width}px"
@@ -21,7 +21,15 @@ if $('html').hasClass('application')
         backgroundPositionX: "-#{$(this).offset().left}px"
         backgroundPositionY: "-#{$(this).offset().top}px"
         backgroundSize: "#{width}px"
-      
+    
+    # Scale the shadow on the photo for the main article page
+    scaleShadow()
+    
+  scaleShadow = ->
+    $('.photo-shadow').css
+      width:  "#{$('img.article-photo').width()}px"
+      height: "#{$('img.article-photo').height()+1}px"
+    
   #########################
   # Event Listeners
   #########################
@@ -50,4 +58,8 @@ if $('html').hasClass('application')
 
   $(document).ready ->
     scaleSite()
-                                    
+                 
+    $('img.article-photo').load ->
+      console.log "hit load"
+      scaleShadow()
+    

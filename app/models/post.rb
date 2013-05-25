@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :abstract, presence: true
 
   before_save :update_url_title
-
+  
   # Hopefully these ugly definitions get cleaned up when Rails4 is released
   default_scope { order('published_at desc') }
   scope :enabled, -> { where(enabled: true) }
@@ -23,5 +23,12 @@ class Post < ActiveRecord::Base
   def update_url_title
     self.url_title = (url_title.blank? ? title : url_title).gsub('\'','').parameterize
   end
+  
+  private
+  
+    # Autogenerate and/or parameterize url title
+    def update_url_title
+      self.url_title = (url_title.blank? ? title : url_title).gsub('\'','').parameterize
+    end
   
 end

@@ -1,24 +1,35 @@
-<aside class="glass-box">
-  <h3>Posts</h3>
-  <ul>
-    <li>Blah and blah</li>
-    <li>Rails Stuff</li>
-    <li>Ipsum Lorum</li>
-  </ul>
-</aside>
 
-<article class="glass-box">
-  <div class="post" id="<%= @post.id %>">
-    <div class="header">
-      <div class="calendar">
-        <span class="month"><%= @post.published_at.strftime('%B') %></span>
-        <span class="day">  <%= @post.published_at.day %></span>
-        <span class="year"> <%= @post.published_at.year %></span>
+<div class="row-fluid">
+  <div class="span9">
+
+    <!-- Post -->
+    <article class="glass-box">
+      <div class="post" id="<%= @post.id %>">
+        <div class="article-photo">
+          <%= filepicker_image_tag(@post.filepicker_url, { w: 850, fit: 'crop' }, class: 'article-photo' ) %>
+        </div>
+        <div class="photo-shadow"></div>
+        <h5>Posted on <%= human_date @post.published_at %></h5>
+        <h2><%= link_to @post.title, blog_post_path(@post.url_title) %></h2>
+
+        <div class="body"><%= markdown @post.body %></div>
       </div>
-      <h2><%= post.title %></h2>
-    </div>
-    <div class="body">
-      <%= @post.body.html_safe %>
-    </div>
+    </article>
+    <br />
+
   </div>
-</article>
+  <div class="span3">
+    <!-- Sidebar -->
+
+    <aside class="glass-box">
+      Something
+      <ul>
+        <li>Popular</li>
+        <li>Blah de Blah</li>
+        <li>Stuff</li>
+      </ul>
+    </aside>
+
+  </div>
+</div>
+
