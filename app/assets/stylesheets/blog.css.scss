@@ -5,12 +5,15 @@
 html.blog {
   article.glass-box { min-height:190px; padding-top:5px !important; }
 
-  // Fix Facebook Like Comment Box
+  // Fix Facebook Recommend Box
   .fb-like { z-index: 9999; }
   .fbpdl { ;z-index: 9999 !important; overflow: visible; }
   .pam { z-index: 9999 !important; overflow: visible; }
   .execphpwidget { z-index: 9999 !important; overflow: visible; }
   .fb-like span { z-index: 9999 !important; overflow: visible; }
+
+  // Fix Facebook Comments
+  .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe { width: 100% !important; }
 
   // Article
   .post {
