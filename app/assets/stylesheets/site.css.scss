@@ -109,13 +109,21 @@ html.application {
       text-align:center;
       .blurb { font-size:13px; position:relative; top:-15px; }
 
-      // Social Buttons
+      // Social Icons
       ul { margin:0px;
         li { width:50px; height:50px; display:inline-block; position:relative; margin:0px 3px 0px 3px;
           img { width:50px; position:relative; opacity:0.5; display:block;
             &:last-child { opacity:0.8; left:0px; top:0px; position:absolute; display:none; }
           }
         }
+      }
+    }
+
+    // Social Buttons
+    div.social-buttons {
+      margin-top:20px;
+      ul { margin:0px; list-style-type:none;
+        li { display:block; margin-bottom:5px; }
       }
     }
 

@@ -1,14 +1,16 @@
 
 if $('html').hasClass('blog')
-  
-  $(document).on 'mouseenter', '.slider-photo', (event) ->
-    console.log "mouseEnter"
-    $(this).animate
-      height:450
-    , 250
-  
-  $(document).on 'mouseleave', '.slider-photo', (event) ->
-    console.log "mouseLeave"
-    $(this).animate
-      height:200
-    , 250
+
+  # Float Social Buttons
+  $(document).on 'scroll', ->
+    doc_top = $(window).scrollTop()
+    soc_top = $('.social-buttons').offset().top
+
+    if doc_top > 485
+      $('.social-buttons').css
+        position: 'fixed',
+        top: '10px'
+    else
+      $('.social-buttons').css
+        position: 'relative',
+        top: 'auto'
