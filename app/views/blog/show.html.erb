@@ -1,11 +1,17 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<%= content_for :head do %>
+  <meta property="fb:admins" content="ibanez270dx"/>
+<% end %>
+
+<%= content_for :root do %>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<% end %>
 
 <div class="row-fluid">
   <div class="span9">
@@ -28,22 +34,21 @@
 
     <article class="glass-box solid">
       <h2>Comments</h2><br />
-      <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
+      <!-- <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div> -->
+      <div class="fb-comments" data-href="http://www.example.com" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
     </article>
 
   </div>
   <div class="span3">
-    <!-- Sidebar -->
-
-    <aside class="glass-box">
-      Something
+    <%= render partial: 'sidebar' %>
+    <div class="social-buttons">
       <ul>
-        <li>Popular</li>
-        <li>Blah de Blah</li>
-        <li>Stuff</li>
-      </ul>
-    </aside>
-
+        <li><div class="fb-like" data-href="http://localhost:3000/blog" data-send="true" data-layout="button_count" data-width="100" data-show-faces="false" data-font="segoe ui"></div></li>
+        <li>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="ibanez270dx">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+    </div>
   </div>
 </div>
 

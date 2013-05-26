@@ -7,19 +7,10 @@
     <%= javascript_include_tag "application" %>
     <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     <%= csrf_meta_tags %>
+    <%= yield :head %>
   </head>
   <body>
-
-    <!-- Facebook -->
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- /Facebook -->
+    <%= yield :root %>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -29,13 +20,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">HUMANI.SE</a>
+          <%= link_to 'HUMANI.SE', about_path, class: 'brand' %>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active">
+              <li class="<%= 'active' if request.url==about_url %>">
                 <%= link_to 'About', about_path %>
               </li>
-              <li class="">
+              <li class="<%= 'active' if request.url==blog_url %>">
                 <%= link_to 'Blog', blog_path %>
               </li>
             </ul>

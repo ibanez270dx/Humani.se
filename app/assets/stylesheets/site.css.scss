@@ -19,8 +19,12 @@ html.application {
       color:#ffffff;
     }
 
-    h2 {
-      font-family:'Gloria Hallelujah', cursive; color:#ffffff;
+    h2 { font-family:'Gloria Hallelujah', cursive; color:#ffffff; }
+    h3 { font-family:'Gloria Hallelujah', cursive; color:#ffffff; text-align:center; }
+
+    a h3 {
+      color:#0088cc;
+      &:hover { text-decoration:none; }
     }
 
     ////////////////////////////////////////////////
@@ -95,6 +99,23 @@ html.application {
 
         p { text-indent:10px; padding-top:10px  ; }
         &.solid { background: #1d2024; }
+      }
+    }
+
+    ////////////////////////////////////////////////
+    // Sidebar
+    ////////////////////////////////////////////////
+    aside {
+      text-align:center;
+      .blurb { font-size:13px; position:relative; top:-15px; }
+
+      // Social Buttons
+      ul { margin:0px;
+        li { width:50px; height:50px; display:inline-block; position:relative; margin:0px 3px 0px 3px;
+          img { width:50px; position:relative; opacity:0.5; display:block;
+            &:last-child { opacity:0.8; left:0px; top:0px; position:absolute; display:none; }
+          }
+        }
       }
     }
 
