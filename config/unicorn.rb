@@ -1,5 +1,5 @@
 # number of workers
-worker_processes (ENV['RAILS_ENV'] == 'production' ? 4 : 1)
+worker_processes 2
 
 # listen on a unix socket
 listen "#{Dir.pwd}/tmp/sockets/unicorn.sock"
@@ -14,9 +14,7 @@ stderr_path "#{Dir.pwd}/log/unicorn.stderr.log"
 stdout_path "#{Dir.pwd}/log/unicorn.stdout.log"
 
 # preload_app true is required for New Relic and REE
-if ENV['RAILS_ENV'] == 'production'
-  preload_app true
-end
+preload_app true
 
 before_fork do |server, worker|
   # the following is highly recomended for Rails + "preload_app true"
