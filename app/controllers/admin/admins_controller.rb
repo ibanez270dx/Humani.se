@@ -1,14 +1,15 @@
 class Admin::AdminsController < ApplicationController
+  before_filter :require_admin, except: [ :login ]
   layout "admin"
-  
+
   def index
     @admins = Admin.all
   end
-  
+
   def new
     @admin = Admin.new
   end
-  
+
   def create
     @admin = Admin.create(admin_params)
     if @admin.valid?
@@ -18,11 +19,11 @@ class Admin::AdminsController < ApplicationController
       render action: 'new'
     end
   end
-  
+
   def edit
     @admin = Admin.find params[:id]
   end
-  
+
   def update
     @admin = Admin.find params[:id]
     logger.debug(admin_params)
@@ -33,19 +34,19 @@ class Admin::AdminsController < ApplicationController
       render action: 'edit'
     end
   end
-  
+
   def destroy
     @admin = Admin.find(params[:id]).destroy
     flash[:success] = "Admin destroyed successfully."
     redirect_to admin_admins_path
   end
-  
+
   #############################
   # Authentication
   #############################
-  
+
   def login
-    if request.post? 
+    if request.post?
       if @admin = Admin.find_by_login(params[:admin][:login])
         if @admin.authenticate(params[:admin][:password])
           session[:admin_id] = @admin.id
@@ -59,16 +60,16 @@ class Admin::AdminsController < ApplicationController
       end
     end
   end
-  
+
   def logout
     session[:admin_id] = nil
     redirect_to admin_login_path
   end
-  
+
   private
-  
+
     def admin_params
       params.require(:admin).permit(:name, :login, :password, :password_confirmation)
     end
-  
+
 end

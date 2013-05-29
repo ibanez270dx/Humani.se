@@ -1,10 +1,10 @@
-<%= form_for :admin, url: admin_path do |f| %>
+<%= form_for :admin, url: admin_login_path do |f| %>
   <%= f.label :login %>
   <%= f.text_field :login %>
-  
+
   <%= f.label :password %>
   <%= f.password_field :password %>
-  
+
   <br />
   <%= f.submit 'Submit', class: 'btn' %>
 <% end %>
