@@ -67,14 +67,14 @@ html.application {
         width:996px; height:50px; margin-left:auto; margin-right:auto; display:inline;
         li { display:inline-block;
           a { padding:18px 14px 11px 14px; color:#367b9f; font-size:26px; font-family:'Homenaje', sans-serif; display:block; opacity:0.75; text-align:center;
-            &:hover { background-image:url('glass.png'); color:#80b4d0; opacity:1; text-decoration:none; }
+            &:hover { background:rgba(0, 0, 0, 0.75); color:#80b4d0; opacity:1; text-decoration:none; }
           }
         }
       }
     }
 
     ul.nav {
-      background-image:url(<%= image_path 'glass.png' %>);
+      background:rgba(0,0,0,0.75);
       box-shadow: 0px 3px 8px #031017;
       li:hover {
         a { color: #ffffff; }

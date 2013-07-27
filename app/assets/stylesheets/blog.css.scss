@@ -49,6 +49,9 @@ html.blog {
       .calendar {
         position:absolute;
         z-index:10;
+        background:rgba(0,0,0,0.75);
+        width:63px;
+        height:150px;
 
         span {
           display:block;
@@ -65,13 +68,6 @@ html.blog {
             font-size:9px; color:#2d648b; font-weight:bold;
             line-height:17px; }
         }
-      }
-
-      // Black Glass
-      .calendar-glass {
-        position:absolute; z-index:9;
-        width:65px; height:150px;
-        background-color:#000000; opacity:0.8;
       }
 
       // Details
