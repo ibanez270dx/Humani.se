@@ -57,6 +57,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    font-awesome-sass (4.0.2)
+      sass-rails (>= 3.1.1)
     hike (1.2.3)
     i18n (0.6.5)
     jquery-rails (3.0.4)
@@ -142,6 +144,7 @@ DEPENDENCIES
   bourbon
   coffee-rails
   debugger
+  font-awesome-sass
   jquery-rails
   mysql2
   neat

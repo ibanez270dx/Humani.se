@@ -12,6 +12,7 @@ group :assets do
   gem 'sass-rails'
   gem 'bourbon'
   gem 'neat'
+  gem 'font-awesome-sass'
   gem 'coffee-rails'
   gem 'therubyracer'
 end
