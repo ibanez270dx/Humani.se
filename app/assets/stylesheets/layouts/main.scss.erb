@@ -7,6 +7,8 @@ html.main {
   body {
     background: $background;
     font-family: $helvetica;
+    margin: 0px;
+    padding: 50px 0px 0px 0px;  
 
     [data-background] { 
       background: $background; 
@@ -21,12 +23,12 @@ html.main {
       top: 0;
       width: 100%;
       height: 50px;
-      margin: -8px 0px 0px -8px;
-      padding: 3px 8px;
+      box-shadow: 0px 2px 7px #020e11;
 
       .content {
         position: relative;
         @include outer-container;
+        padding: 0px 8px;
 
         h1 {
           color: #fff; 
@@ -36,7 +38,7 @@ html.main {
           text-transform: uppercase;
           display: inline-block;
           float: left;
-          padding-top: 9px;
+          padding-top: 8px;
           margin-top: 0px;
         }
 
@@ -48,7 +50,7 @@ html.main {
               height: 50px;
               a { 
                 display: block; 
-                padding: 18px 14px 12px 14px; 
+                padding: 18px 14px 15px 14px; 
                 font-size: 14px; 
                 text-align: center;
                 text-decoration: none;
@@ -67,169 +69,63 @@ html.main {
 
     section#page {
       @include outer-container;
+      padding: 0px 8px;
 
       article {
-        padding:15px;
-        position:relative;
-        background: #1d2024 url(<%= image_path 'background-blurred.jpg' %>) no-repeat left top;
+        padding: 15px;
+        position: relative;
         box-shadow: 0px 2px 7px #020e11;
-
-        -moz-border-radius: 20px;
-        -webkit-border-radius: 20px;
-        border-radius: 20px; /* future proofing */
-        -khtml-border-radius: 20px; /* for old Konqueror browsers */
+        @include border-top-radius(20px);
+        @include border-bottom-radius(20px);
+        @include border-left-radius(20px);
+        @include border-right-radius(20px);
 
         font-family: 'Cabin','Noto Sans', sans-serif;
-        font-size:16px;
-        letter-spacing:1px;
-        line-height:28px;
-        color:#ecf4f9;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 28px;
+        color: #ecf4f9;
 
-        p { text-indent:10px; padding-top:10px  ; }
-        &.solid { background: #1d2024; }
- 
+        p { 
+          text-indent: 10px; 
+          padding-top: 10px; 
+        }
+
+        a {
+          color: #0088cc;
+          text-decoration: none;
+          &:hover {
+            color: #005580;
+            text-decoration: underline;
+          }
+        }
       }
     }
-
-
-    ////////////////////////////////////////////////
-    // Typography
-    ////////////////////////////////////////////////
-
-    // h2 { font-family:'Gloria Hallelujah', cursive; color:#ffffff; }
-    // h3 { font-family:'Gloria Hallelujah', cursive; color:#ffffff; text-align:center; }
-
-    // a h3 {
-    //   color:#0088cc;
-    //   &:hover { text-decoration:none; }
-    // }
-
-    ////////////////////////////////////////////////
-    // Utility
-    ////////////////////////////////////////////////
-    // .page-width {
-    //   width:996px;
-    //   margin-left:auto;
-    //   margin-right:auto;
-    // }
-
-    // .navbar-fixed-top {
-    //   position:static;
-    // }
-
-    // .no-margins { margin:0px; }
-
-    ////////////////////////////////////////////////
-    // Navigation bar
-    ////////////////////////////////////////////////
-
-    // .brand {
-    //   color:#ffffff; opacity:0.9; font-size:28px; font-family:'Fjalla One', sans-serif;
-    //   &:hover { text-decoration:none; }
-    // }
-
-    // .navbar-inner {
-    //   background-image:url(<%= image_path 'background-blurred.jpg' %>) !important;
-    //   height:40px; padding-top:5px; border:none;
-    //   box-shadow: 0px 3px 8px #031017;
-    // }
-
-    // nav {
-    //   width:100%;
-    //   height:50px;
-    //   background-image:url(<%= image_path 'background-blurred.jpg' %>);
-    //   box-shadow: 0px 3px 8px #031017;
-
-    //   ul {
-    //     width:996px; height:50px; margin-left:auto; margin-right:auto; display:inline;
-    //     li { display:inline-block;
-    //       a { padding:18px 14px 11px 14px; color:#367b9f; font-size:26px; font-family:'Homenaje', sans-serif; display:block; opacity:0.75; text-align:center;
-    //         &:hover { background:rgba(0, 0, 0, 0.75); color:#80b4d0; opacity:1; text-decoration:none; }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // ul.nav {
-    //   background:rgba(0,0,0,0.75);
-    //   box-shadow: 0px 3px 8px #031017;
-    //   li:hover {
-    //     a { color: #ffffff; }
-    //   };
-    // }
-
-    ////////////////////////////////////////////////
-    // Content Area
-    ////////////////////////////////////////////////
-
-    // .content-section {
-    //   margin-top:120px;
-
-    //   .glass-box {
-    //   }
-    // }
-
-    ////////////////////////////////////////////////
-    // Sidebar
-    ////////////////////////////////////////////////
-    // aside {
-    //   text-align:center;
-    //   .blurb { font-size:13px; position:relative; top:-15px; }
-
-    //   // Social Icons
-    //   ul { margin:0px;
-    //     li { width:50px; height:50px; display:inline-block; position:relative; margin:0px 3px 0px 3px;
-    //       img { width:50px; position:relative; opacity:0.5; display:block;
-    //         &:last-child { opacity:0.8; left:0px; top:0px; position:absolute; display:none; }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // // Social Buttons
-    // div.social-buttons {
-    //   margin-top:20px;
-    //   ul { margin:0px; list-style-type:none;
-    //     li { display:block; margin-bottom:5px; }
-    //   }
-    // }
 
     ////////////////////////////////////////////////
     // Footer
     ////////////////////////////////////////////////
 
     footer {
-      margin-left:auto;
-      margin-right:auto;
-      padding:15px;
-      position:relative;
-      text-align:center;
-
-      // Social Buttons
-      ul {
-        li { 
-          width: 150px; 
-          height: 150px; 
-          display: inline-block; 
-          position: relative; 
-          margin: 0px 30px 0px 30px;
-          i {
-            font-size: 140px;
-            padding: 10px;
-            width: 150px;
-            height: 150px;
-            color: rgba(5,20,55,0.35);
-            background: rgba(255,255,255,0.3);
-            @include transition(all 0.5s ease);
-            &:hover {
-              color: #fff;
-              &.fa-github { background: $github; }
-              &.fa-twitter { background: $twitter; }
-              &.fa-linkedin { background: $linkedin; }
-              &.fa-facebook { background: $facebook; }
-            }
-          }
-        }
+      margin-left: auto;
+      margin-right: auto;
+      padding: 8px;
+      position: relative;
+      text-align: center;
+      @include media($desktop) {
+        @include social-buttons();
+      }
+      @include media($not-desktop) {
+        @include social-buttons(150px, 140px, 10px);
+      }
+      @include media($mobile) {
+        @include social-buttons(120px, 110px, 10px);
+      }
+      @include media($small) {
+        @include social-buttons(95px, 85px, 5px);
+      }
+      @include media($tiny) {
+        @include social-buttons(120px, 110px, 10px);
       }
     }
   }

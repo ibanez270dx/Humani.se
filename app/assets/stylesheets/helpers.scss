@@ -1,0 +1,29 @@
+
+@mixin social-buttons($size: 150px, $font-size: 140px, $margin: 30px) {
+ ul {
+  padding: 0px;
+    li { 
+      width: $size; 
+      height: size; 
+      display: inline-block; 
+      position: relative; 
+      margin: $margin;
+      i {
+        padding: 10px;
+        font-size: $font-size;
+        width: $size;
+        height: $size;
+        color: rgba(5,20,55,0.35);
+        background: rgba(255,255,255,0.3);
+        @include transition(all 0.5s ease);
+        &:hover {
+          color: #fff;
+          &.fa-github { background: $github; }
+          &.fa-twitter { background: $twitter; }
+          &.fa-linkedin { background: $linkedin; }
+          &.fa-facebook { background: $facebook; }
+        }
+      }
+    }
+  }
+}
