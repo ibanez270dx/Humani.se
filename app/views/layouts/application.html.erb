@@ -1,48 +1,36 @@
 <!DOCTYPE html>
-<html class="application <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
+<html class="main <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
   <head>
     <title><%= @title || "Humani.se" %></title>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,800|PT+Sans+Caption|Cabin|Gloria+Hallelujah|Homenaje|Special+Elite|Economica|Play:700|Noto+Sans|Quicksand' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Gloria+Hallelujah|Homenaje|Cabin' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
-    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     <%= csrf_meta_tags %>
     <%= yield :head %>
   </head>
-  <body>
+  <body data-background>
     <%= yield :root %>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'HUMANI.SE', about_path, class: 'brand' %>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="<%= 'active' if request.url==about_url %>">
-                <%= link_to 'About', about_path %>
-              </li>
-              <li class="<%= 'active' if request.url==blog_url %>">
-                <%= link_to 'Blog', blog_path %>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <header data-background='blurred'>
+      <div class="content">
+        <%= link_to about_path do %>
+          <h1>humani.se</h1>
+        <% end %>
+        <nav>
+          <ul>
+            <li><%= link_to 'About', about_path %></li>
+            <li><%= link_to 'Blog', blog_path %></li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div class="container content-section">
+    <section id="page">
       <%= yield %>
-    </div>
+    </section>
 
-    <div class="container">
-      <footer>
-        <%= yield :footer %>
-      </footer>
-    </div>
+    <footer>
+      <%= yield :footer %>
+    </footer>
   </body>
 </html>

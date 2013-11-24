@@ -1,31 +1,15 @@
 
-if $('html').hasClass('application')
+if $('html').hasClass('main')
 
   #########################
   # Methods
   #########################
 
   scaleSite = ->
-    console.log "scaling site..."
-
-    # Grab site width
-    width = $('.navbar').width()
-
-    # Scale background and navbar
-    $("body, .navbar-inner").css
-      backgroundSize: "#{width}px"
-
-    # Scale glass boxes articles
-    $(".glass-box").each ->
-      x = $(this).offset().left
-      y = $(this).offset().top
-
+    $('[data-background]').each ->
       $(this).css
-        backgroundPosition: "-#{x}px -#{y}px"
-        backgroundSize: "#{width}px"
-
-    # Scale the shadow on the photo for the main article page
-    scaleShadow()
+        backgroundPosition: "-#{$(this).offset().left}px -#{$(this).offset().top}px"
+        backgroundSize: "#{$(document).width()}px"
 
   scaleShadow = ->
     $('.photo-shadow').css

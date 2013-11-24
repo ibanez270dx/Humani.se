@@ -1,6 +1,9 @@
 @import 'bourbon';
+@import 'neat';
+@import 'globals/variables';
 @import 'globals/pygments';
 
 @import 'layouts/main';
 @import 'layouts/admin';
+@import 'layouts/about';
 @import 'layouts/blog';

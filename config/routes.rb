@@ -1,6 +1,6 @@
 HumaniSe::Application.routes.draw do
 
-  root to: 'site#index', as: :about
+  root to: 'site#about', as: :about
 
   get 'blog' => 'blog#index',  as: :blog
   get 'blog/:url_title' => 'blog#show', as: :blog_post
