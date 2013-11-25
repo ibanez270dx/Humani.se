@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html.main {
-
+  
   body {
     background: $background;
     font-family: $helvetica;
     margin: 0px;
-    padding: 50px 0px 0px 0px;  
+    padding: 50px 0px 0px 0px; 
 
     [data-background] { 
       background: $background; 
@@ -76,18 +76,15 @@ html.main {
         position: relative;
         box-shadow: 0px 2px 7px #020e11;
         background-color: #1d2025;
-        @include border-top-radius(20px);
-        @include border-bottom-radius(20px);
-        @include border-left-radius(20px);
-        @include border-right-radius(20px);
+        @include border-radius(20px);
 
         font-family: 'Cabin','Noto Sans', sans-serif;
         font-size: 16px;
         letter-spacing: 1px;
-        line-height: 28px;
         color: #ecf4f9;
 
         p { 
+          line-height: 28px;
           text-indent: 10px; 
           padding-top: 10px; 
         }

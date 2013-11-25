@@ -13,45 +13,37 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 <% end %>
 
-<div class="row-fluid">
-  <div class="span9">
+<div id="articles">
 
-    <!-- Post -->
-    <article class="glass-box">
-      <div class="post" id="<%= @post.id %>">
-        <div class="article-photo">
-          <%= filepicker_image_tag(@post.filepicker_url, { w: 850, fit: 'crop' }, class: 'article-photo' ) %>
-        </div>
-        <div class="photo-shadow"></div>
-        <h5>Posted on <%= human_date @post.published_at %></h5>
-        <h2><%= link_to @post.title, blog_post_path(@post.url_title) %></h2>
-
-        <div class="body"><%= markdown @post.body %></div>
-      </div>
-    </article>
-
-    <br />
-
-    <article class="glass-box solid">
-      <h2>Comments</h2><br />
-      <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
-    </article>
-
-  </div>
-  <div class="span3">
-    <%= render partial: 'sidebar' %>
-    <div class="social-buttons">
-      <ul>
-        <li><div class="fb-like" data-href="<%= blog_post_url(@post.url_title) %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="segoe ui"></div></li>
-        <li>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="ibanez270dx">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </li>
-        <li>
-          <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-          <g:plusone></g:plusone>
-        </li>
+  <article id="<%= @post.id %>" data-background='blurred'>
+    <div class="photo">
+      <%= filepicker_image_tag(@post.filepicker_url, { w: '768', fit: 'crop' }, id: 'photo' ) %>
+      <h5>Posted on <%= human_date @post.published_at %></h5>
     </div>
-  </div>
+    <h2><%= link_to @post.title, blog_post_path(@post.url_title) %></h2>
+    <p><%= markdown @post.body %></p>
+  </article>
+
+  <article data-background='blurred'>
+    <h2>Comments</h2><br />
+    <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
+  </article>
+
 </div>
 
+<aside>
+  <%= render partial: 'sidebar' %>
+  <ul id="social-buttons">
+    <li>
+      <div class="fb-like" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-layout="button_count" data-width="450" data-action="like" data-show-faces="false" data-share="false"></div>
+    </li>
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="ibanez270dx">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    <li>
+      <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+      <g:plusone></g:plusone>
+    </li>
+  </ul>
+</aside> 
