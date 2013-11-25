@@ -14,7 +14,7 @@ group :assets do
   gem 'neat'
   gem 'font-awesome-sass'
   gem 'coffee-rails'
-  gem 'closure-compiler'
+  gem 'uglifier'
   gem 'therubyracer'
 end
 
