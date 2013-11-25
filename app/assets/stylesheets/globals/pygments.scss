@@ -8,6 +8,7 @@ code, pre {
   border: 1px solid #5e5e5e ;
   color: #709dbd;
   @include border-radius(3px);
+  word-break: normal;
 }
 
 pre {
@@ -23,7 +24,6 @@ pre {
 }
 
 .highlight { overflow:hidden; }
-
 .highlight .hll { background-color: #49483e }
 .highlight  { /*background: #272822;*/ color: #f8f8f2 }
 .highlight .c { color: #c8a46f } /* Comment */

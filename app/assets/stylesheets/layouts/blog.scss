@@ -106,15 +106,23 @@ html.main.blog {
             background: rgba(0,0,0,0.7);
             padding-right: 15px;
             @include border-bottom-radius(20px);
+            @include media($tiny) {
+              background: none;
+              bottom: -40px;
+              padding: 0px;
+              text-align: center;
+            }
           }
         }
-
 
         h2 {
           font-family: 'Gloria Hallelujah', cursive;
           font-size: 32px;
           margin: 0px;
           line-height: 40px;
+          @include media($tiny) {
+            padding-top: 10px;
+          }
         }
 
         p {
@@ -156,6 +164,9 @@ html.main.blog {
       text-align: left;
       li {
         margin: 5px 0px;
+      }
+      @include media($mobile) {
+        display: none;
       }
     }
   }
