@@ -1,5 +1,5 @@
 
-@mixin social-buttons($size: 150px, $font-size: 140px, $margin: 30px) {
+@mixin social-buttons($size: 150px, $font-size: 140px, $margin: 30px, $color: rgba(0,25,55,0.40)) {
  ul {
   padding: 0px;
     li { 
@@ -13,7 +13,7 @@
         font-size: $font-size;
         width: $size;
         height: $size;
-        color: rgba(5,20,55,0.35);
+        color: $color;
         background: rgba(255,255,255,0.3);
         @include transition(all 0.5s ease);
         &:hover {

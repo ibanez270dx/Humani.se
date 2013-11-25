@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html.blog {
-  article.glass-box { min-height:160px; padding-top:5px !important; }
+html.main.blog {
 
   // Fix Facebook Recommend Box
   .fb-like { z-index: 9999; }
@@ -14,6 +13,94 @@ html.blog {
 
   // Fix Facebook Comments
   .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe { width: 100% !important; }
+
+  section#page {
+    padding-top: 100px !important;
+    div#articles {
+      @include media($not-mobile) { @include span-columns(9); }
+
+      article {
+        overflow: auto;
+        margin: 20px 0px;
+
+        a.photo {
+          position: relative;
+          float: left;
+          width: 250px;
+          height: 150px;
+          margin: 0px 15px 15px 0px;
+
+          // Date
+          .calendar {
+            position:absolute;
+            z-index:10;
+            background:rgba(0,0,0,0.65);
+            width:63px;
+            height:150px;
+
+            span {
+              display:block;
+              width:65px;
+
+              &.day {
+                font-size:46px; font-weight:bold; color:#ffffff;
+                line-height:15px; text-align:center; padding-top:15px; }
+              &.month {
+                font-size:9px; color:#ffffff; padding-top:5px;
+                line-height:17px; text-align:center; }
+              &.year {
+                position:absolute; top:130px; left:6px;
+                font-size:9px; color:#2d648b; font-weight:bold;
+                line-height:17px; }
+            }
+          }
+          &:after {
+            content: '';
+            width: 250px;
+            height: 150px;
+            position: absolute;
+            top: 0px;
+            z-index: 6;
+            box-shadow: 0px 0px 20px 6px #000 inset;
+          }
+        }
+
+        h2 {
+          font-family: 'Gloria Hallelujah', cursive;
+          font-size: 32px;
+          margin: 0px;
+          line-height: 40px;
+        }
+
+        p {
+          display: block;
+          text-indent: 20px;
+          padding: 0px;
+        }
+      }
+    }
+    aside {
+      padding-top: 20px;
+      text-align: center;
+      @include media($not-mobile) { 
+        @include span-columns(3); 
+      }
+
+      article {
+        padding: 15px 0px;
+        h3 {
+          font-family: 'Gloria Hallelujah', cursive;
+          font-size: 24px;
+          margin-bottom: 0px;
+        }
+        span.blurb {
+          font-size: 12px;
+        }
+
+        @include social-buttons(70px, 60px, 5px);
+      }
+    }
+  }
 
   // Article
   .post {

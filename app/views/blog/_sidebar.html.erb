@@ -1,35 +1,11 @@
-<aside class="glass-box">
+<article data-background='blurred'>
   <a href="<%= about_path %>">
     <%= image_tag('me.png') %>
     <h3>Jeff Miller</h3>
   </a>
-  <div class="blurb">
+  <span class="blurb">
     Conducting code in the Bay -- Hella.
-  </div>
-  <ul class="social-icons">
-    <li>
-      <%= link_to 'http://github.com/ibanez270dx' do %>
-        <%= image_tag('social-icons/github-off.png') %>
-        <%= image_tag('social-icons/github-on.png') %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://twitter.com/ibanez270dx' do %>
-        <%= image_tag('social-icons/twitter-off.png') %>
-        <%= image_tag('social-icons/twitter-on.png') %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://www.linkedin.com/in/ibanez270dx' do %>
-        <%= image_tag('social-icons/linkedin-off.png') %>
-        <%= image_tag('social-icons/linkedin-on.png') %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://www.facebook.com/ibanez270dx' do %>
-        <%= image_tag('social-icons/facebook-off.png') %>
-        <%= image_tag('social-icons/facebook-on.png') %>
-      <% end %>
-    </li>
-  </ul>
-</aside>
+  </span>
+  
+  <%= render partial: 'layouts/social_links', formats: [:html] %>
+</article>

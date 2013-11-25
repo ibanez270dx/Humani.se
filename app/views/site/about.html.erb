@@ -14,26 +14,5 @@
 </article>
 
 <% content_for :footer do %>
-  <ul class="social-icons">
-    <li>
-      <%= link_to 'http://www.github.com/ibanez270dx' do %>
-        <i class="fa fa-github"></i>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://www.twitter.com/ibanez270dx' do %>
-        <i class="fa fa-twitter"></i>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://www.linkedin.com/in/ibanez270dx' do %>
-        <i class="fa fa-linkedin"></i>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to 'http://www.facebook.com/ibanez270dx' do %>
-        <i class="fa fa-facebook"></i>
-      <% end %>
-    </li>
-  </ul>
+  <%= render partial: 'layouts/social_links', formats: [:html] %>
 <% end %>
