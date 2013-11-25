@@ -15,6 +15,7 @@ group :assets do
   gem 'font-awesome-sass'
   gem 'coffee-rails'
   gem 'therubyracer'
+  gem 'uglifier'
 end
 
 group :production do
