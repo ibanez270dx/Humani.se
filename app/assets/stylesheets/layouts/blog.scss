@@ -115,14 +115,29 @@ html.main.blog {
           }
         }
 
+        div#social-mobile {
+          @include media($not-mobile) {
+            display: none; 
+          }
+          ul {
+            list-style-type: none;
+            padding-left: 0px;
+            @include media($tiny) {
+              margin-top: 30px;
+              margin-bottom: 5px;
+            }
+            li {
+              display: inline-block;
+              margin:5px;
+            }
+          }
+        }
+
         h2 {
           font-family: 'Gloria Hallelujah', cursive;
           font-size: 32px;
           margin: 0px;
           line-height: 40px;
-          @include media($tiny) {
-            padding-top: 10px;
-          }
         }
 
         p {
