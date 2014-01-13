@@ -11,6 +11,11 @@ code, pre {
   word-break: normal;
 }
 
+code {
+  display: inline-block;
+  padding: 0px 8px;
+}
+
 pre {
   padding-top: 5px;
   margin-top: 30px;
