@@ -3,6 +3,7 @@ html.admin {
   
   body {
     padding:30px;
+    font-family: $helvetica;  
         
     ////////////////////////////////////////////////
     // Utility
@@ -24,6 +25,10 @@ html.admin {
       border:1px solid #b94a48;
     }
     
+    .btn {
+      @include button;
+    }
+
     ////////////////////////////////////////////////
     // Layout
     ////////////////////////////////////////////////
@@ -36,7 +41,8 @@ html.admin {
     
     h1 { font-size:30px; font-weight:bold; }
     table { margin-top:10px;
-      td { vertical-align:middle; } 
+      th { text-align: left; }
+      td { vertical-align:middle; padding: 5px; } 
       form { margin:0px; float:right; }
     }
     

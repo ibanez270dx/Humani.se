@@ -16,6 +16,24 @@ html.main.blog {
         overflow: auto;
         margin: 20px 0px;
 
+        h3 { 
+          color: $blue; 
+          font-family: 'Gloria Hallelujah', cursive;
+          font-size: 32px;
+          margin-top: 50px;
+          margin-bottom: 0px;
+          line-height: 32px;
+        }
+        
+        strong { 
+          font-family: 'Roboto','Noto Sans', sans-serif;
+          font-weight: 700;
+        }
+
+        p a {
+          font-weight: 500;
+        }
+
         // Blog Index Photo
         a.photo {
           position: relative;
@@ -31,9 +49,7 @@ html.main.blog {
             margin-right: auto;
           }
 
-          img {
-            @include border-radius(10px);
-          }
+          img { @include border-radius(10px); }
 
           // Date
           .calendar {
@@ -144,6 +160,16 @@ html.main.blog {
           display: block;
           text-indent: 20px;
           padding: 0px;
+        }
+
+        // Console
+        .console {
+          width: 100%;
+          background: #000000;
+          font-family: 'Inconsolata';
+          padding: 10px;
+          border: 1px solid #5e5e5e;
+          @include border-radius(5px);
         }
       }
     }
