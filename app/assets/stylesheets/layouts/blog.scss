@@ -166,12 +166,15 @@ html.main.blog {
         // Console
         .console {
           width: 100%;
+          white-space: nowrap;
           background: #000000;
           font-family: 'Inconsolata';
           padding: 10px;
           border: 1px solid #5e5e5e;
           color: #d0cfcf;
           @include border-radius(5px);
+          word-break: normal;
+          overflow-x: scroll;
           .g  { color: #b4c978; }
           .gr { color: #97938c; font-style: italic; }
           .p { color: #af91bd; }
@@ -208,6 +211,29 @@ html.main.blog {
         @include social-buttons(70px, 60px, 5px);
         @include media($mobile) {
           @include social-buttons(60px, 50px, 5px);
+        }
+      }
+
+      #related-posts {
+        h4 {
+          color: $blue;
+          font-family: 'Gloria Hallelujah', cursive;
+          font-size : 20px;
+          margin: 0px 0px 12px 0px;
+          line-height: 20px;
+        }
+        .separator {
+          display: block;
+          border-top: 1px solid #151515;
+          border-bottom: 1px solid #757575;
+          opacity: 0.5;
+        }
+        a {
+          color: $white;
+          font-weight: 300;
+          display: block;
+          margin: 12px 0px;
+          font-size: 14px;
         }
       }
     }
