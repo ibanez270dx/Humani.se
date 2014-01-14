@@ -1,5 +1,13 @@
 <%= content_for :head do %>
+  <meta itemprop="name" content="<%= @post.title %>">
+  <meta itemprop="description" content="<%= @post.abstract %>">
+  <meta itemprop="image" content="<%= @post.filepicker_url %>">
   <meta property="fb:admins" content="ibanez270dx"/>
+  <meta property="og:title" content="<%= @post.title %>" />
+  <meta property="og:url" content="<%= blog_post_url(@post.url_title) %>" />
+  <meta property="og:image" content="<%= @post.filepicker_url %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Humani.se" />
 <% end %>
 
 <%= content_for :root do %>
