@@ -32,7 +32,7 @@ html.main.blog {
             margin-right: auto;
           }
 
-          img { @include border-radius(10px); }
+          img { @include border-radius(10px); border: 0; }
 
           // Date
           .calendar {
@@ -85,6 +85,7 @@ html.main.blog {
             height: 100%;
             position: absolute;
             top: 0px;
+            left: 0px;
             z-index: 2;
             @include border-radius(20px);
             box-shadow: 0px 0px 40px 20px rgba(0,0,0,0.7) inset;
@@ -203,6 +204,7 @@ html.main.blog {
 
       article {
         padding: 15px 0px;
+        img { border: 0; }
         h3 {
           font-family: 'Gloria Hallelujah', cursive;
           font-size: 24px;
@@ -230,6 +232,7 @@ html.main.blog {
           display: block;
           border-top: 1px solid #151515;
           border-bottom: 1px solid #757575;
+          height:2px;
           opacity: 0.5;
         }
         a {
