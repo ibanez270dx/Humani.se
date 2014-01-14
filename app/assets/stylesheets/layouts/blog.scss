@@ -177,6 +177,7 @@ html.main.blog {
           @include border-radius(5px);
           word-break: normal;
           overflow-x: scroll;
+          -ms-overflow-style: -ms-autohiding-scrollbar;
           .g  { color: #b4c978; }
           .gr { color: #97938c; font-style: italic; }
           .p { color: #af91bd; }
