@@ -5,20 +5,20 @@
 html.main {
   
   body {
-    background: $background;
+    @include scaled-background();
     font-family: $helvetica;
     word-break: break-word;
     margin: 0px;
     padding: 50px 0px 0px 0px; 
 
-    [data-background] { 
-      background: $background; 
-    }
-    
-    [data-background='blurred'] { 
-      background: $background-blurred; 
+    [data-background] {
+      @include scaled-background();
     }
 
+    [data-background='blurred'] {
+      @include scaled-background('-blurred');
+    }
+    
     header {
       position: absolute;
       top: 0;
