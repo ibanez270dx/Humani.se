@@ -1,8 +1,6 @@
 
 if $('html').hasClass('main')
 
-
-
   # Scale the background to the document width
   scaleSite = ->
     $('[data-background]').each ->
@@ -30,4 +28,3 @@ if $('html').hasClass('main')
 
   window.onload = ->
     scaleSite() 
-
