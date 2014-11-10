@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Core
 #################################################
 
-gem 'rails'
+gem 'rails', '4.1.7'
 gem 'mysql2'
 gem 'jquery-rails'
 
@@ -12,7 +12,6 @@ group :assets do
   gem 'sass-rails'
   gem 'bourbon'
   gem 'neat'
-  gem 'font-awesome-sass'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'therubyracer'
@@ -41,6 +40,9 @@ end
 #################################################
 # Convenience
 #################################################
+
+# Speed things up
+gem 'turbolinks'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
