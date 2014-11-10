@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html class="main <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
+<html class="main">
   <head>
     <title><%= @title || "Humani.se" %></title>
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Gloria+Hallelujah|Homenaje|Inconsolata|Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= yield :head %>
     <%= render partial: 'layouts/google_analytics' %>
   </head>
-  <body data-background>
+  <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <%= yield :root %>
 
-    <header data-background='blurred'>
+    <header class="glass">
       <div class="content">
         <%= link_to about_path do %>
           <h1>humani.se</h1>
