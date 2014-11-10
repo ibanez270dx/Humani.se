@@ -3,22 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html.main {
-  
+  @include scaled-background();
+  .glass { @include scaled-background('-blurred'); }
+
   body {
-    @include scaled-background();
     font-family: $helvetica;
     word-break: break-word;
     margin: 0px;
-    padding: 50px 0px 0px 0px; 
+    padding: 50px 0px 0px 0px;
 
-    [data-background] {
-      @include scaled-background();
-    }
-
-    [data-background='blurred'] {
-      @include scaled-background('-blurred');
-    }
-    
     header {
       position: absolute;
       top: 0;
@@ -32,10 +25,10 @@ html.main {
         padding: 0px 8px;
 
         h1 {
-          color: #fff; 
-          opacity: 0.9; 
-          font-size: 28px; 
-          font-family: 'Fjalla One', sans-serif; 
+          color: #fff;
+          opacity: 0.9;
+          font-size: 28px;
+          font-family: 'Fjalla One', sans-serif;
           text-transform: uppercase;
           display: inline-block;
           float: left;
@@ -46,20 +39,20 @@ html.main {
         nav {
           ul {
             display: inline;
-            li { 
+            li {
               display: inline-block;
               height: 50px;
-              a { 
-                display: block; 
-                padding: 18px 14px 15px 14px; 
-                font-size: 14px; 
+              a {
+                display: block;
+                padding: 18px 14px 15px 14px;
+                font-size: 14px;
                 text-align: center;
                 text-decoration: none;
-                color: #fff; 
+                color: #fff;
                 opacity: 0.75;
-                &:hover { 
+                &:hover {
                   background: rgba(0, 0, 0, 0.75);
-                  opacity: 1; 
+                  opacity: 1;
                 }
               }
             }
@@ -85,10 +78,10 @@ html.main {
         letter-spacing: 1px;
         color: #ecf4f9;
 
-        p { 
+        p {
           line-height: 28px;
-          text-indent: 10px; 
-          padding-top: 10px; 
+          text-indent: 10px;
+          padding-top: 10px;
         }
 
         a {

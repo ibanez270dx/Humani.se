@@ -3,14 +3,13 @@ if $('html').hasClass('main')
 
   # Scale the background to the document width
   scaleSite = ->
-    $('[data-background]').each ->
+    $('.glass').each ->
       width  = $(document).width()
       offset = $(this).offset()
-
       if width > 1440
         position = "-#{offset.left}px -#{offset.top}px"
         size = "#{width}px"
-      else 
+      else
         breakpoint = switch
           when width > 800 then 1440
           when width > 500 then 800
@@ -22,9 +21,10 @@ if $('html').hasClass('main')
         backgroundPosition: position
         backgroundSize: size
 
-  # Rescale the background as the window size changes
+  # Rescale the glass as the window size changes
   $(window).resize ->
     scaleSite()
 
-  window.onload = ->
-    scaleSite() 
+  # Rescale the glass on turbolinks page change
+  $(document).on "page:change", ->
+    scaleSite()

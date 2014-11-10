@@ -25,7 +25,7 @@
 
 <div id="articles">
 
-  <article id="<%= @post.id %>" data-background='blurred'>
+  <article id="<%= @post.id %>" class="glass">
     <div class="photo">
       <%= filepicker_image_tag(@post.filepicker_url, { w: '768', fit: 'crop' }, id: 'photo' ) %>
       <h5>Posted on <%= human_date @post.published_at %></h5>
@@ -47,17 +47,16 @@
     <p><%= markdown @post.body %></p>
   </article>
 
-  <article data-background='blurred'>
+  <article class="glass">
     <h2>Comments</h2><br />
     <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
   </article>
-
 </div>
 
 <aside>
   <%= render partial: 'sidebar' %>
   <br />
-  <article id="related-posts" data-background='blurred'>
+  <article id="related-posts" class="glass">
     <h4>Other Posts</h4>
     <% @posts.each do |post| %>
       <span class="separator"></span>

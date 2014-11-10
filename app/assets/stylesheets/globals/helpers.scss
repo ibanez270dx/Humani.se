@@ -2,11 +2,11 @@
 @mixin social-buttons($size: 150px, $font-size: 140px, $margin: 30px, $color: rgba(0,25,55,0.40)) {
  ul {
   padding: 0px;
-    li { 
-      width: $size; 
-      height: size; 
-      display: inline-block; 
-      position: relative; 
+    li {
+      width: $size;
+      height: size;
+      display: inline-block;
+      position: relative;
       margin: $margin;
       i {
         padding: 10px;

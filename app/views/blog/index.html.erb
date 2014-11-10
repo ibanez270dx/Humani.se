@@ -1,15 +1,14 @@
 
 <div id="articles">
   <% @posts.each do |post| %>
-    <article id="<%= post.id %>" data-background='blurred'>
+    <article id="<%= post.id %>" class="glass">
       <%= link_to blog_post_path(post.url_title), class: 'photo' do %>
-        <!-- Calendar + Cropped Article Photo -->
         <div class="calendar">
           <span class="month"><%= post.published_at.strftime('%B') %></span>
           <span class="day"><%= post.published_at.day %></span>
           <span class="year"><%= post.published_at.year %></span>
         </div>
-        <%= filepicker_image_tag post.filepicker_url, w: 250, h: 150, fit: 'crop' %>  
+        <%= filepicker_image_tag post.filepicker_url, w: 250, h: 150, fit: 'crop' %>
       <% end %>
 
       <h2><%= link_to post.title, blog_post_path(post.url_title) %></h2>
@@ -20,5 +19,4 @@
 
 <aside>
   <%= render partial: 'sidebar' %>
-</aside> 
-
+</aside>
