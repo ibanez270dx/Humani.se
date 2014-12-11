@@ -45,7 +45,7 @@ end
 gem 'turbolinks'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 # Markdown
 gem 'redcarpet'
