@@ -5,4 +5,8 @@ class SiteController < ApplicationController
   def about
   end
 
+  def channel
+    render layout: false
+  end
+
 end

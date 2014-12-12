@@ -207,11 +207,18 @@ html.main {
 
         article {
           padding: 15px 0px;
-          img { border: 0; }
-          h3 {
-            font-family: 'Gloria Hallelujah', cursive;
-            font-size: 24px;
-            margin-bottom: 0px;
+          a {
+            img {
+              border: 0;
+              width: 150px;
+              height: 150px;
+            }
+            h3 {
+              font-family: 'Gloria Hallelujah', cursive;
+              font-size: 24px;
+              height: 48px;
+              margin: 0px;
+            }
           }
           span.blurb {
             font-size: 12px;
@@ -255,6 +262,9 @@ html.main {
         text-align: left;
         li {
           margin: 5px 0px;
+          &.facebook {
+            margin-bottom: 7px;
+          }
         }
         @include media($mobile) {
           display: none;
