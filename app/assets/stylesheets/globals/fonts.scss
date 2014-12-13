@@ -1,0 +1,16 @@
+
+@mixin custom-font($family, $filename, $weight) {
+  font-family: $family;
+  font-weight: $weight;
+  src: font-url("#{$filename}.eot");
+  src: font-url("#{$filename}.eot?#iefix") format('embedded-opentype'),
+  font-url("#{$filename}.woff") format('woff'),
+  font-url("#{$filename}.ttf") format('truetype'),
+  font-url("#{$filename}.svg") format('svg');
+}
+
+// Fonts
+@font-face { @include custom-font('Gloria Hallelujah', 'gloriahallelujah', 'regular'); }
+@font-face { @include custom-font('Fjalla One', 'fjallaone-regular', 'regular'); }
+@font-face { @include custom-font('Inconsolata', 'inconsolata-regular', 'regular'); }
+@font-face { @include custom-font('Inconsolata', 'inconsolata-bold', 'bold'); }

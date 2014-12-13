@@ -137,6 +137,7 @@ html.main {
           }
 
           h2 {
+            display: inline;
             font-family: 'Gloria Hallelujah', cursive;
             font-size: 32px;
             margin: 0px;
@@ -160,11 +161,6 @@ html.main {
               font-weight: 400;
               &.w { color: #fff; }
             }
-          }
-
-          strong {
-            font-family: 'Roboto','Noto Sans', sans-serif;
-            font-weight: 700;
           }
 
           // Console
@@ -216,7 +212,6 @@ html.main {
             h3 {
               font-family: 'Gloria Hallelujah', cursive;
               font-size: 24px;
-              height: 48px;
               margin: 0px;
             }
           }
