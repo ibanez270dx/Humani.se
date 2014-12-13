@@ -29,6 +29,9 @@
         <li>
           <div class="g-plusone" data-size="tall"></div>
         </li>
+        <li class="linkedin">
+          <script type="IN/Share" data-url="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-counter="top"></script>
+        </li>
       </ul>
     </div>
     <h2><%= link_to @post.title, blog_post_path(@post.url_title) %></h2>
