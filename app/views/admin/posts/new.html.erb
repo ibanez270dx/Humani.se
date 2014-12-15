@@ -1,6 +1,11 @@
-<h1>New Post</h1>
-<%= link_to 'Back', admin_posts_path, class: 'btn' %>
+<% content_for :page_header do %>
+	<h1>New Post</h1>
+<% end %>
 
-<%= form_for [:admin, @post], html: { class: 'form-horizontal long-fields' } do |f| %>
+<p>
+	<%= link_to 'Back', admin_posts_path, class: 'pure-button' %>
+</p>
+
+<%= form_for [:admin, @post], html: { class: 'pure-form pure-form-stacked' } do |f| %>
 	<%= render partial: "form", formats: [:html], locals: { f: f } %>
 <% end %>

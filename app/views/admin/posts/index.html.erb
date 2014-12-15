@@ -1,21 +1,36 @@
-<h1>Posts</h1>
-<%= link_to 'New Post', new_admin_post_path, class: 'btn' %>
+<% content_for :page_header do %>
+  <h1>Posts</h1>
+  <h2>Blog posts on Humani.se</h2>
+<% end %>
 
-<table class="table table-striped">
+<p>
+  <%= link_to new_admin_post_path, class: 'pure-button pure-button-primary' do %>
+    <i class="fa fa-plus"></i>
+    New Post
+  <% end %>
+</p>
+
+<table class="pure-table pure-table-striped">
   <thead>
     <tr>
       <th>Title</th>
       <th>Author</th>
-      <th colspan="2">Enabled?</th>
+      <th>Enabled?</th>
+      <th>Actions</th>
     </tr>
   </thead>
-  <tbody>  
+  <tbody>
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, edit_admin_post_path(post) %></td>
         <td><%= post.author.name %></td>
         <td><%= post.enabled? ? "Yes" : "No" %></td>
-        <td><%= button_to 'Delete', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <td>
+          <%= button_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button' do %>
+            <i class="fa fa-trash"></i>
+            Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

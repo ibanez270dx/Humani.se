@@ -1,10 +1,19 @@
-<%= form_for :admin, url: admin_login_path do |f| %>
-  <%= f.label :login %>
-  <%= f.text_field :login %>
+<% content_for :page_header do %>
+  <h1>Login</h1>
+<% end %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <br />
-  <%= f.submit 'Submit', class: 'btn' %>
+<%= form_for :admin, url: admin_login_path, html: { class: 'pure-form pure-form-aligned' } do |f| %>
+  <fieldset>
+    <div class="pure-control-group">
+      <%= f.label :login, 'Username' %>
+      <%= f.text_field :login %>
+    </div>
+    <div class="pure-control-group">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="pure-controls">
+      <%= f.submit 'Submit', class: 'pure-button pure-button-primary' %>
+    </div>
+  </fieldset>
 <% end %>

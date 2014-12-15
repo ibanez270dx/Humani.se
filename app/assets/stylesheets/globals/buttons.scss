@@ -1,0 +1,28 @@
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #BDC3C7;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-size: 15px;
+  line-height: 1.4;
+  text-decoration: none;
+  color: #fff;
+  &:hover {
+    background-color: #ECF0F1;
+  }
+
+  &.btn-primary {
+    background-color: #2980B9;
+    &:hover {
+      background-color: #3498DB;
+    }
+  }
+
+  &.btn-danger {
+    background-color: #C0392B;
+    &:hover {
+      background-color: #E74C3C;
+    }
+  }
+}

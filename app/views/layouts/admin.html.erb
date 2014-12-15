@@ -2,25 +2,46 @@
 <html class="admin <%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
   <head>
     <title><%= @title || "Humani.se Admin" %></title>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag    "admin", media: "all" %>
     <%= javascript_include_tag "application" %>
-    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav>
-      <span class="logo">HUMANI.SE</span>
-      <% if current_admin %>
-        <%= link_to 'Admins', admin_admins_path %>
-        <%= link_to 'Posts', admin_posts_path %>
-      <% end %>
-    </nav>
-    
-    <%= render 'layouts/flash_messages' %>
-    
-    <section>
-      <%= yield %>
-    </section>
+
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+
+      <div id="menu">
+        <div class="pure-menu pure-menu-open">
+          <%= link_to 'Humani.se', admin_login_path, class: "pure-menu-heading" %>
+          <ul>
+            <% if current_admin %>
+              <li><%= link_to 'Admins', admin_admins_path %></li>
+              <li><%= link_to 'Posts', admin_posts_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="header">
+          <%= yield :page_header %>
+        </div>
+
+        <div class="content">
+          <%= render 'layouts/flash_messages' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
   </body>
 </html>

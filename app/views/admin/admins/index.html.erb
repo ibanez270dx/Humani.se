@@ -1,15 +1,31 @@
-<h1>Admins</h1>
-<%= link_to 'New Admin', new_admin_admin_path, class: 'btn' %>
+<% content_for :page_header do %>
+  <h1>Admins</h1>
+<% end %>
 
-<table class="table table-striped">
+<p>
+  <%= link_to new_admin_admin_path, class: 'pure-button pure-button-primary' do %>
+    <i class="fa fa-plus"></i>
+    New Admin
+  <% end %>
+</p>
+
+<table class="pure-table pure-table-striped">
   <thead>
-    <tr><th colspan="2">Login</th></tr>
+    <tr>
+      <th>Login</th>
+      <th>Actions</th>
+    </tr>
   </thead>
-  <tbody>  
+  <tbody>
     <% @admins.each do |admin| %>
       <tr>
         <td><%= link_to admin.name, edit_admin_admin_path(admin) %></td>
-        <td><%= button_to 'Delete', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <td>
+          <%= button_to admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button' do %>
+            <i class="fa fa-trash"></i>
+            Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

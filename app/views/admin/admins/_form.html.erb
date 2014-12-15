@@ -1,23 +1,17 @@
 <%= render partial: 'layouts/errors', formats: [:html], locals: { klass: @admin } %>
 
-<div class="control-group">
-  <%= f.label :name, class: 'control-label' %>
-  <%= f.text_field :name %>
-</div>
+<%= f.label :name %>
+<%= f.text_field :name, class: 'pure-input-1-2' %>
 
-<div class="control-group">
-  <%= f.label :login, class: 'control-label' %>
-  <%= f.text_field :login %>
-</div>
+<%= f.label :login %>
+<%= f.text_field :login, class: 'pure-input-1-2' %>
 
-<div class="control-group">
-  <%= f.label :password, class: 'control-label' %>
-  <%= f.password_field :password %>
-</div>
+<%= f.label :password %>
+<%= f.password_field :password, class: 'pure-input-1-2' %>
 
-<div class="control-group">
-  <%= f.label :password_confirmation, "Password\nConfirmation", class: 'control-label' %>
-  <%= f.password_field :password_confirmation %>
-</div>
+<%= f.label :password_confirmation, "Password Confirmation" %>
+<%= f.password_field :password_confirmation, class: 'pure-input-1-2' %>
 
-<%= f.submit 'Save Admin', class: 'btn' %>
+<p>
+  <%= f.submit 'Save Admin', class: 'pure-button pure-button-primary' %>
+</p>
