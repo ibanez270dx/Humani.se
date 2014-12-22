@@ -4,7 +4,7 @@
     <title><%= @title || "Humani.se Admin" %></title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= stylesheet_link_tag    "admin", media: "all" %>
+    <link rel="stylesheet" href="<%= asset_path('admin.css') %>">
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
