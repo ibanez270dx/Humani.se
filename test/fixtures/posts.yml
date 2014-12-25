@@ -1,11 +1,22 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+blog_post_1:
+  author: vvega
+  title: The Foot Massage
+  url_title: the-foot-massage
+  body: I ain't saying it's right. But you're saying a foot massage don't mean nothing, and I'm saying it does. Now look, I've given a million ladies a million foot massages, and they all meant something. We act like they don't, but they do, and that's what's so fucking cool about them. There's a sensuous thing going on where you don't talk about it, but you know it, she knows it, fucking Marsellus knew it, and Antwan should have fucking better known better. I mean, that's his fucking wife, man. He can't be expected to have a sense of humor about that shit. You know what I'm saying?
+  published_at: "2014-12-05 12:00:00"
+  created_at: "2014-12-01 11:00:00"
+  updated_at: "2014-12-01 11:00:00"
+  abstract: You're saying a foot massage don't mean nothing...
+  enabled: true
+
+blog_post_2:
+  author: jwinnfield
+  title: Ezekiel 25:17
+  url_title: ezekiel-25-17
+  body: The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother’s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+  published_at: "1994-09-23 00:00:00"
+  created_at: "1994-09-23 00:00:00"
+  updated_at: "2000-01-15 11:00:00"
+  abstract: The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.
+  enabled: true
