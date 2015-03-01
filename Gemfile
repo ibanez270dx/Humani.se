@@ -4,37 +4,32 @@ source 'https://rubygems.org'
 # Core
 #################################################
 
-gem 'rails', '4.1.7'
+gem 'rails', '4.2.0'
 gem 'mysql2'
-gem 'jquery-rails'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'bourbon'
-  gem 'neat'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'therubyracer'
-end
+# Stylesheets
+gem 'sass-rails'
+gem 'bourbon'
+gem 'neat'
+
+# Javascript
+gem 'jquery-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'therubyracer'
+
+#################################################
+# Environments
+#################################################
 
 group :production do
-  # App server
   gem 'unicorn'
 end
 
-group :development do
-  # Use debugger
-  gem 'debugger'
-
-  # Better Errors
-  gem 'better_errors'
-  gem 'binding_of_caller'
-
-  # App Server
-  gem 'thin'
-
-  # Quiet Assets
-  gem 'quiet_assets'
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 end
 
 #################################################
