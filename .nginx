@@ -1,0 +1,26 @@
+upstream humanise {
+  # path to Unicorn sock file:
+  server unix:/home/deploy/srv/humani.se/shared/sockets/unicorn.sock fail_timeout=0;
+}
+
+server {
+  listen 80;
+  root /home/deploy/srv/humani.se/public;
+  
+  server_name www.humani.se humani.se;
+  try_files $uri/index.html $uri @humani.se;
+
+  access_log /var/log/nginx/humani.se_access.log combined;
+  error_log /var/log/nginx/humani.se_error.log;
+  
+  location @humani.se {
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_pass http://humani.se;
+  }
+
+  error_page 500 502 503 504 /500.html;
+  client_max_body_size 4G;
+  keepalive_timeout 10;
+}
