@@ -13,27 +13,27 @@
 
 ActiveRecord::Schema.define(version: 20130425062918) do
 
-  create_table "admins", force: true do |t|
-    t.string   "name"
-    t.string   "login"
-    t.string   "password_digest"
+  create_table "admins", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "login",           limit: 255
+    t.string   "password_digest", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
-    t.integer  "author_id"
-    t.string   "title"
-    t.text     "body"
+  create_table "posts", force: :cascade do |t|
+    t.integer  "author_id",        limit: 4
+    t.string   "title",            limit: 255
+    t.text     "body",             limit: 65535
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "abstract"
-    t.boolean  "enabled",          default: false
-    t.string   "url_title"
-    t.string   "meta_description"
-    t.string   "meta_keywords"
-    t.string   "filepicker_url"
+    t.text     "abstract",         limit: 65535
+    t.boolean  "enabled",          limit: 1,     default: false
+    t.string   "url_title",        limit: 255
+    t.string   "meta_description", limit: 255
+    t.string   "meta_keywords",    limit: 255
+    t.string   "filepicker_url",   limit: 255
   end
 
 end

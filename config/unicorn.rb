@@ -1,4 +1,4 @@
-APP_PATH = "/home/deploy/srv/humani.se"
+APP_PATH = "/srv/humani.se"
 
 ##############################################
 # Basic Configuration
