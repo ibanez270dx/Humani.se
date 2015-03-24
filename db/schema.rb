@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130425062918) do
+ActiveRecord::Schema.define(version: 20150324130426) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -35,5 +35,8 @@ ActiveRecord::Schema.define(version: 20130425062918) do
     t.string   "meta_keywords",    limit: 255
     t.string   "filepicker_url",   limit: 255
   end
+
+  add_index "posts", ["published_at"], name: "index_posts_on_published_at", using: :btree
+  add_index "posts", ["url_title"], name: "index_posts_on_url_title", unique: true, using: :btree
 
 end
