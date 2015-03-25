@@ -1,0 +1,26 @@
+
+body {
+  @include font-feature-settings("liga");
+  @include font-feature-settings("pnum", "kern" false);
+  font-family: $body-font;
+  color: $off-white;
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h1 {
+    color: $white;
+    text-align: center;
+  }
+
+  h2 {
+    color: $blue;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: none;
+    text-align: center;
+  }
+}

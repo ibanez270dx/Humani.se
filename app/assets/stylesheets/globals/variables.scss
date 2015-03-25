@@ -2,19 +2,26 @@
 // Colors
 $white: #ffffff;
 $blue: #0088cc;
-
-// Backgrounds
-$background: #101316 url(asset-path('background.jpg')) no-repeat center top;
-$background-blurred: #101316 url(asset-path('background-blurred.jpg')) no-repeat center top;
+$black: #000000;
+$off-white: #ecf4f9;
 
 // Social
-$facebook: rgba(60,91,146,0.8);
-$twitter: rgba(6,173,231,0.8);
-$linkedin: rgba(72,117,180,0.8);
-$github: rgba(50,50,50,0.8);
+$facebook: #3b5998;
+$twitter: #55acee;
+$linkedin: #0976b4;
+$github: #333333;
+$pinterest: #cc2127;
+$google-plus: #dd4b39;
+$tumblr: #35465c;
+$stumble-upon: #eb4924;
 
-@import "neat-helpers";
+// Fonts
+$logo-font: 'Fjalla One', sans-serif;
+$header-font: 'Gloria Hallelujah', cursive;
+$body-font: $helvetica;
+
 // Responsive breakpoints
+@import "neat-helpers";
 $tiny: new-breakpoint(max-width 450px);
 $small: new-breakpoint(max-width 590px);
 $mobile: new-breakpoint(max-width 767px);
