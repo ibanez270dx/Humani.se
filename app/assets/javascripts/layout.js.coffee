@@ -1,7 +1,7 @@
 
 # Scale the background to the document width
 scaleSite = ->
-  $('.glass').each ->
+  $('nav, article').each ->
     width  = $(document).width()
     offset = $(this).offset()
 
@@ -30,5 +30,4 @@ $(window).resize ->
 
 # Rescale the glass on turbolinks page load
 $(document).on "ready page:load", ->
-  console.log("page:load called");
   scaleSite()

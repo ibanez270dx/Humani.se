@@ -1,0 +1,149 @@
+html {
+  @include scaled-background();
+}
+
+body {
+  margin: 0px;
+  padding: 50px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+////////////////////////////////////////////////
+// Navigation
+////////////////////////////////////////////////
+
+nav {
+  @include position(absolute, 0px 0px null 0px);
+  @include scaled-background('-blurred');
+  box-shadow: 0px 2px 7px #020e11;
+
+  ul {
+    @include outer-container;
+    li {
+      display: inline-block;
+      float: left;
+      &:first-child a {
+        padding-left: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  h1 {
+    font-family: $logo-font;
+    font-size: 28px;
+    color: rgba($white, 0.9);
+    text-transform: uppercase;
+  }
+
+  a {
+    display: block;
+    padding: 0 1.25em;
+    line-height: 50px;
+    font-size: 14px;
+    color: rgba($white, 0.75);
+    @include transition(all, 0.2s);
+    &:hover {
+      background: rgba($blue, 0.2);
+      color: rgba($white, 0.95);
+    }
+  }
+}
+
+////////////////////////////////////////////////
+// Main Page
+////////////////////////////////////////////////
+
+#page {
+  @include outer-container;
+
+  article {
+    position: relative;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #1d2025;
+    @include scaled-background('-blurred');
+    box-shadow: 0px 2px 7px #020e11;
+    font-size: 16px;
+    color: $off-white;
+    letter-spacing: 1px;
+
+    p {
+      padding-top: 10px;
+      line-height: 28px;
+      text-indent: 10px;
+    }
+
+    a {
+      color: $blue;
+      font-weight: 400;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////
+// Footer
+////////////////////////////////////////////////
+
+footer {
+  @include outer-container;
+
+  .social-icons {
+    @include display(flex);
+    padding: 0 6em;
+
+    li {
+      @include flex(1);
+      position: relative;
+      margin: 2.5em 1.5em;
+    }
+
+    a {
+      @include position(absolute, 0px);
+      font-size: 10em;
+
+      i {
+        @include position(absolute, 0px);
+        @include transition(all, 0.2s);
+        &:first-of-type { color: rgba($black, 0.1); }
+        &:last-of-type { color: rgba($white, 0.3); }
+      }
+
+      &:hover i {
+        &:first-of-type { color: rgba($white,0.85); }
+        &:last-of-type {
+          &.hu-github-cutout { color: rgba($github, 0.65); }
+          &.hu-twitter-cutout { color: rgba($twitter, 0.65); }
+          &.hu-linkedin-cutout { color: rgba($linkedin, 0.65); }
+          &.hu-facebook-cutout { color: rgba($facebook, 0.65); }
+        }
+      }
+    }
+
+    // a {
+    //   &:hover {
+    //     color: $white;
+    //     &.github { color: $github; }
+    //     &.twitter { color: $twitter; }
+    //     &.linkedin { color: $linkedin; }
+    //     &.facebook { color: $facebook; }
+    //   }
+    // }
+
+  }
+
+
+  // @include media($desktop) { @include social-buttons(); }
+  // @include media($not-desktop) { @include social-buttons(150px, 140px, 10px); }
+  // @include media($mobile) { @include social-buttons(120px, 110px, 10px); }
+  // @include media($small) { @include social-buttons(95px, 85px, 5px); }
+  // @include media($tiny) { @include social-buttons(120px, 110px, 10px); }
+}

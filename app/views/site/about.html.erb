@@ -1,6 +1,6 @@
 
 <h1>Hi. I'm a Software Engineer.</h1>
-<article class="glass">
+<article>
   <p>
     My name is Jeff Miller and I enjoy creating software. Particularly, I like Ruby on Rails and exploring the world of web applications
     not only for desktop, but also for mobile. I am currently an engineer over at <%= link_to 'Funny Or Die', 'http://www.funnyordie.com', target: '_blank' %>
@@ -14,5 +14,5 @@
 </article>
 
 <% content_for :footer do %>
-  <%= render partial: 'layouts/social_links', formats: [:html] %>
+  <%= render 'layouts/social_links' %>
 <% end %>
