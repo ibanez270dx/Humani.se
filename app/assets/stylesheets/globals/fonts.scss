@@ -9,7 +9,7 @@
   font-url("#{$filename}.svg") format('svg');
 }
 
-// Fonts
+// Import fonts
 @font-face { @include custom-font('Gloria Hallelujah', 'gloriahallelujah', 'regular'); }
 @font-face { @include custom-font('Fjalla One', 'fjallaone-regular', 'regular'); }
 @font-face { @include custom-font('Inconsolata', 'inconsolata-regular', 'regular'); }
