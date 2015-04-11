@@ -1,0 +1,66 @@
+body.blog.index {
+  section {
+    @include media($not-mobile) {
+      @include span-columns(9);
+    }
+
+    // Post Container
+    article {
+      @include clearfix;
+      margin: 1.25em 0px;
+      &:hover .post-thumbnail:before {
+        opacity: 0;
+      }
+    }
+
+    // Thumbnail
+    .post-thumbnail {
+      position: relative;
+      z-index: 2;
+      margin: 0px 1.5em 10px 0px;
+      width: 250px; height: 150px;
+      float: left;
+      border-radius: 8px;
+      box-shadow: 1px 1px 0px 0px rgba(255,255,255,0.1);
+      overflow: hidden;
+      &:before {
+        content: '';
+        @include position(absolute, 0px);
+        @include background-image(linear-gradient(transparent 0, rgba($black,0.7) 100%));
+        border-radius: 8px;
+        opacity: 1;
+        @include transition(all, 0.5s);
+      }
+      &:after {
+        content: '';
+        @include position(absolute, 0px);
+        border-radius: 8px;
+        box-shadow: inset 0px 2px 1px -1px rgba(0,0,0,0.9);
+      }
+    }
+
+    // Calendar on Thumbnail
+    .post-published-date {
+      @include position(absolute, 0px null 0px 0px);
+      z-index: 1;
+      padding-top: 0.5em;
+      width:65px;
+      background: rgba(0,0,0,0.65);
+      font-weight: bold;
+      color: $white;
+      big {
+        font-size: 46px;
+      }
+      small:last-of-type {
+        @include position(absolute, null null 0.6em 0.8em);
+        font-weight: normal;
+        color: darken($blue, 10%);
+      }
+    }
+
+    // Posting Title
+    .post-title {
+      text-align: left;
+    }
+  }
+}

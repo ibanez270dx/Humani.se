@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0px;
-  padding: 50px;
+  padding-top: 50px;
 }
 
 ul {
@@ -42,7 +42,7 @@ nav {
 
   a {
     display: block;
-    padding: 0 1.25em;
+    padding: 0 1.75em;
     line-height: 50px;
     font-size: 14px;
     color: rgba($white, 0.75);
@@ -58,16 +58,19 @@ nav {
 // Main Page
 ////////////////////////////////////////////////
 
-#page {
+main {
   @include outer-container;
 
   article {
     position: relative;
     padding: 15px;
     border-radius: 20px;
-    background-color: #1d2025;
     @include scaled-background('-blurred');
-    box-shadow: 0px 2px 7px #020e11;
+    background-color: #1d2025;
+    box-shadow:
+      0px 0px 20px -5px #020e11,
+      inset 0px 2px 0px -1px rgba($off-white, 0.15),
+      0px 4px 7px -2px #020e11;
     font-size: 16px;
     color: $off-white;
     letter-spacing: 1px;
@@ -90,60 +93,31 @@ nav {
 }
 
 ////////////////////////////////////////////////
-// Footer
+// Shared Social
 ////////////////////////////////////////////////
 
-footer {
-  @include outer-container;
+.social-links {
+  @include display(flex);
 
-  .social-icons {
-    @include display(flex);
-    padding: 0 6em;
+  a {
+    position: relative;
+    display: inline-block;
+    color: rgba($white, 0.4);
+    overflow: hidden;
+    @include transition(all, 0.5s);
 
-    li {
-      @include flex(1);
-      position: relative;
-      margin: 2.5em 1.5em;
+    &:hover {
+      i { color: rgba($white, 0.85); }
+      &[class*="github"] { color: rgba($github, 0.65);}
+      &[class*="twitter"] { color: rgba($twitter, 0.65); }
+      &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
+      &[class*="facebook"] { color: rgba($facebook, 0.65); }
     }
-
-    a {
-      @include position(absolute, 0px);
-      font-size: 10em;
-
-      i {
-        @include position(absolute, 0px);
-        @include transition(all, 0.2s);
-        &:first-of-type { color: rgba($black, 0.1); }
-        &:last-of-type { color: rgba($white, 0.3); }
-      }
-
-      &:hover i {
-        &:first-of-type { color: rgba($white,0.85); }
-        &:last-of-type {
-          &.hu-github-cutout { color: rgba($github, 0.65); }
-          &.hu-twitter-cutout { color: rgba($twitter, 0.65); }
-          &.hu-linkedin-cutout { color: rgba($linkedin, 0.65); }
-          &.hu-facebook-cutout { color: rgba($facebook, 0.65); }
-        }
-      }
-    }
-
-    // a {
-    //   &:hover {
-    //     color: $white;
-    //     &.github { color: $github; }
-    //     &.twitter { color: $twitter; }
-    //     &.linkedin { color: $linkedin; }
-    //     &.facebook { color: $facebook; }
-    //   }
-    // }
-
   }
 
-
-  // @include media($desktop) { @include social-buttons(); }
-  // @include media($not-desktop) { @include social-buttons(150px, 140px, 10px); }
-  // @include media($mobile) { @include social-buttons(120px, 110px, 10px); }
-  // @include media($small) { @include social-buttons(95px, 85px, 5px); }
-  // @include media($tiny) { @include social-buttons(120px, 110px, 10px); }
+  i {
+    @include position(absolute, 0px);
+    @include transition(all, 0.5s);
+    color: transparent;
+  }
 }

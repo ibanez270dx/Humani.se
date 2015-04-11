@@ -1,12 +1,35 @@
-
 body.about {
-  #page {
+  main {
     h1 {
-      margin: 0.9em 0;
-      font-size:55px;
+      margin: 1.2em 0em 0.9em 0em;
       font-family: $header-font;
+      font-size:55px;
+      color: $white;
+      text-align: center;
       @include media($mobile) {
         font-size: 35px;
+      }
+    }
+  }
+
+  footer {
+    @include outer-container;
+    .social-links {
+      @include justify-content(space-between);
+      padding: 2.5em 6em;
+    }
+    a {
+      @include size(160px);
+      border-radius: 8px;
+      font-size: 160px;
+      color: rgba($white, 0.3);
+      &:nth-child(-n+2) {
+        box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset -1px -1px 0px 0px rgba($white, 0.1);
+        &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
+      }
+      &:nth-child(n+3) {
+        box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset 1px -1px 0px 0px rgba($white, 0.1);
+        &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
       }
     }
   }

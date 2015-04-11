@@ -1,0 +1,9 @@
+@import 'blog/index';
+@import 'blog/show';
+@import 'blog/sidebar';
+
+body.blog {
+  main {
+    padding-top: 100px;
+  }
+}

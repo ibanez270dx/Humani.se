@@ -11,13 +11,14 @@
   <meta property="og:site_name" content="Humani.se" />
 <% end %>
 
-<div id="articles">
+<section>
+  <article id="<%= @post.id %>" class="post">
+    <figure>
+      <%= filepicker_image_tag @post.filepicker_url, { w: '768', fit: 'crop' } %>
+      <figcaption>Posted on <%= human_date @post.published_at %></figcaption>
+    </figure>
 
-  <article id="<%= @post.id %>" class="glass">
-    <div class="photo">
-      <%= filepicker_image_tag(@post.filepicker_url, { w: '768', fit: 'crop' }, id: 'photo' ) %>
-      <h5>Posted on <%= human_date @post.published_at %></h5>
-    </div>
+    <% if false %>
     <div id="social-mobile">
       <ul>
         <li>
@@ -34,20 +35,27 @@
         </li>
       </ul>
     </div>
-    <h2><%= link_to @post.title, blog_post_path(@post.url_title) %></h2>
+    <% end %>
+
+    <h1><%= link_to @post.title, blog_post_path(@post.url_title) %></h1>
     <p><%= markdown @post.body %></p>
   </article>
 
-  <article class="glass">
-    <h2>Comments</h2><br />
-    <div class="fb-comments" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-width="750" data-num-posts="10" data-colorscheme="dark"></div>
+  <article class="comments">
+    <h2>Comments</h2>
+    <div class="fb-comments"
+      data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>"
+      data-width="750"
+      data-num-posts="10"
+      data-colorscheme="dark">
+    </div>
   </article>
-</div>
+</section>
 
 <aside>
   <%= render partial: 'sidebar' %>
-  <br />
-  <article id="related-posts" class="glass">
+
+  <article class="sidebar related-posts">
     <h4>Other Posts</h4>
     <% @posts.each do |post| %>
       <span class="separator"></span>
@@ -55,6 +63,7 @@
     <% end %>
   </article>
 
+  <% if false %>
   <ul id="social-buttons">
     <li class="facebook">
       <div class="fb-like" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-layout="button_count" data-width="450" data-action="like" data-show-faces="false" data-share="false"></div>
@@ -70,4 +79,5 @@
       <script type="IN/Share" data-url="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-counter="right"></script>
     </li>
   </ul>
+  <% end %>
 </aside>

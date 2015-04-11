@@ -7,13 +7,10 @@
   }
 %>
 
-<ul class="social-icons">
+<div class="social-links">
   <% social.each do |network, url| %>
-    <li>
-      <%= link_to url, class: network do %>
-        <i class="hu-<%= network %>"></i>
-        <i class="hu-<%= network %>-cutout"></i>
-      <% end %>
-    </li>
+    <%= link_to url, class: "hu-#{network}-cutout" do %>
+      <i class="hu-<%= network %>"></i>
+    <% end %>
   <% end %>
-</ul>
+</div>

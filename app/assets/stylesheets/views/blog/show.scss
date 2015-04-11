@@ -1,0 +1,239 @@
+body.blog.show {
+  section {
+    @include media($not-mobile) {
+      @include span-columns(9);
+    }
+
+    article {
+      figure {
+        position: relative;
+        z-index: 10;
+        margin: 0px 0px 20px 0px;
+        border-radius: 20px;
+        overflow: hidden;
+        &:before {
+          content: '';
+          @include position(absolute, 0px);
+          box-shadow: inset 0px 5px 15px -2px rgba(0,0,0,1);
+        }
+        img { width: 100%; }
+        figcaption {
+          @include position(absolute, null 0px 0px 0px);
+          padding: 1.2em;
+          width: 100%; height: 50px;
+          background-color: rgba(0,0,0,0.7);
+          font-size: 14px;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+//
+//   section#page {
+//
+//     div#articles {
+//       @include media($not-mobile) { @include span-columns(9); }
+//
+//       article {
+//         overflow: auto;
+//         margin: 20px 0px;
+//
+//         // Blog Show Photo
+//         div.photo {
+//           position: relative;
+//           line-height: 0 !important;
+//           margin-bottom: 20px;
+//           border-radius: 20px;
+//
+//           &:after {
+//             content: '';
+//             width: 100%;
+//             height: 100%;
+//             position: absolute;
+//             top: 0px;
+//             left: 0px;
+//             z-index: 2;
+//             border-radius: 20px;
+//             box-shadow: 0px 0px 40px 20px rgba(0,0,0,0.7) inset;
+//           }
+//           img {
+//             width: 100%;
+//             border-radius: 20px;
+//           }
+//           h5 {
+//             position: absolute;
+//             z-index: 3;
+//             bottom: 0px;
+//             right: 0px;
+//             width: 100%;
+//             height: 50px;
+//             line-height: 50px;
+//             text-align: right;
+//             margin: 0px;
+//             background: rgba(0,0,0,0.7);
+//             padding-right: 15px;
+//             @include border-bottom-radius(20px);
+//             @include media($tiny) {
+//               background: none;
+//               bottom: -40px;
+//               padding: 0px;
+//               text-align: center;
+//             }
+//           }
+//         }
+//
+//         div#social-mobile {
+//           @include media($not-mobile) {
+//             display: none;
+//           }
+//           ul {
+//             list-style-type: none;
+//             padding-left: 0px;
+//             @include media($tiny) {
+//               margin-top: 30px;
+//               margin-bottom: 5px;
+//             }
+//             li {
+//               display: inline-block;
+//               margin:5px;
+//             }
+//           }
+//         }
+//
+//         h2 {
+//           display: inline;
+//           font-family: 'Gloria Hallelujah', cursive;
+//           font-size: 32px;
+//           margin: 0px;
+//           line-height: 33px;
+//         }
+//
+//         h3 {
+//           color: $blue;
+//           font-family: 'Gloria Hallelujah', cursive;
+//           font-size: 29px;
+//           margin-top: 50px;
+//           margin-bottom: 0px;
+//           line-height: 32px;
+//         }
+//
+//         p {
+//           display: block;
+//           text-indent: 20px;
+//           padding: 0px;
+//           a {
+//             font-weight: 400;
+//             &.w { color: #fff; }
+//           }
+//         }
+//
+//         // Console
+//         .console {
+//           width: 100%;
+//           white-space: nowrap;
+//           background: #000000;
+//           font-family: 'Inconsolata';
+//           padding: 10px;
+//           border: 1px solid #5e5e5e;
+//           color: #d0cfcf;
+//           border-radius: 5px;
+//           word-break: normal;
+//           overflow-x: scroll;
+//           -ms-overflow-style: -ms-autohiding-scrollbar;
+//           .g  { color: #b4c978; }
+//           .gr { color: #97938c; font-style: italic; }
+//           .p { color: #af91bd; }
+//           .r { color: #c8484d; }
+//           .w { color: #ffffff; }
+//         }
+//
+//         div.console { margin: 35px 0px; }
+//         span.console {
+//           padding: 5px 8px;
+//           display: inline-block;
+//           width: auto;
+//           text-indent: 0px;
+//           line-height: 14px;
+//           vertical-align: bottom;
+//         }
+//       }
+//     }
+//     aside {
+//       padding-top: 20px;
+//       text-align: center;
+//       @include media($not-mobile) {
+//         @include span-columns(3);
+//       }
+//
+//       article {
+//         padding: 15px 0px;
+//         a {
+//           img {
+//             border: 0;
+//             width: 150px;
+//             height: 150px;
+//           }
+//           h3 {
+//             font-family: 'Gloria Hallelujah', cursive;
+//             font-size: 24px;
+//             margin: 0px;
+//           }
+//         }
+//         span.blurb {
+//           font-size: 12px;
+//         }
+//
+//         @include social-buttons(70px, 60px, 5px);
+//         @include media($mobile) {
+//           @include social-buttons(60px, 50px, 5px);
+//         }
+//       }
+//
+//       #related-posts {
+//         h4 {
+//           color: $blue;
+//           font-family: 'Gloria Hallelujah', cursive;
+//           font-size : 20px;
+//           margin: 0px 0px 12px 0px;
+//           line-height: 20px;
+//         }
+//         .separator {
+//           display: block;
+//           border-top: 1px solid #151515;
+//           border-bottom: 1px solid #757575;
+//           height:2px;
+//           opacity: 0.5;
+//         }
+//         a {
+//           color: $white;
+//           font-weight: 300;
+//           display: block;
+//           margin: 12px 0px;
+//           font-size: 14px;
+//         }
+//       }
+//     }
+//
+//     ul#social-buttons {
+//       padding: 20px 0px;
+//       margin: 0;
+//       list-style-type: none;
+//       text-align: left;
+//       li {
+//         margin: 5px 0px;
+//         &.facebook {
+//           margin-bottom: 7px;
+//         }
+//       }
+//       @include media($mobile) {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+
+// // Fix Facebook Comments
+// .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe { width: 100% !important; }

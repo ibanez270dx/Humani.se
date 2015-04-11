@@ -1,10 +1,17 @@
-<article class="glass">
-  <a href="<%= about_path %>">
-    <%= image_tag('me.png') %>
-    <h3>Jeff Miller</h3>
-  </a>
-  <span class="blurb">
-    Conducting code in the Bay -- Hella.
-  </span>
+<article class="sidebar">
+
+  <div id="me">
+    <%= link_to 'mailto:jeff@humani.se', class: 'email-link' do %>
+      <span>
+        <%= image_tag 'me.png' %>
+        <div class="email-overlay">
+          <i class="hu-email">jeff@humani.se</i>
+        </div>
+      </span>
+      <h3>Jeff Miller</h3>
+    <% end %>
+  </div>
+
+  <span class="blurb">Conducting code in the Bay -- Hella.</span>
   <%= render partial: 'layouts/social_links', formats: [:html] %>
 </article>
