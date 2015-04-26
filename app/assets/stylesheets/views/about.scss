@@ -23,14 +23,20 @@ body.about {
       border-radius: 8px;
       font-size: 160px;
       color: rgba($white, 0.3);
+
       &:nth-child(-n+2) {
         box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset -1px -1px 0px 0px rgba($white, 0.1);
         &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
       }
+
       &:nth-child(n+3) {
         box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset 1px -1px 0px 0px rgba($white, 0.1);
         &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
       }
+
+      //Darken interior of icon slightly but turn white on hover
+      i { color: rgba(22, 59, 85, 0.3); }
+      
     }
   }
 }
