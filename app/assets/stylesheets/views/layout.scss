@@ -7,49 +7,37 @@ body {
   padding-top: 50px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 ////////////////////////////////////////////////
 // Navigation
 ////////////////////////////////////////////////
 
-nav {
+header {
   @include position(absolute, 0px 0px null 0px);
   @include scaled-background('-blurred');
+  @include clearfix();
   box-shadow: 0px 2px 7px #020e11;
 
-  ul {
+  nav {
     @include outer-container;
-    li {
+
+    h1 {
+      // display:none;
+      font-family: $logo-font;
+      color: rgba($white, 0.9);
+      text-transform: uppercase;
+    }
+
+    a {
       display: inline-block;
       float: left;
-      &:first-child a {
-        padding-left: 0;
-        background: transparent;
+      line-height: 50px;
+      padding: 0 1.75em;
+      color: rgba($white, 0.75);
+      @include transition(all, 0.2s);
+      &:nth-child(n+2):hover {
+        background: rgba($blue, 0.2);
+        color: rgba($white, 0.95);
       }
-    }
-  }
-
-  h1 {
-    font-family: $logo-font;
-    font-size: 28px;
-    color: rgba($white, 0.9);
-    text-transform: uppercase;
-  }
-
-  a {
-    display: block;
-    padding: 0 1.75em;
-    line-height: 50px;
-    font-size: 14px;
-    color: rgba($white, 0.75);
-    @include transition(all, 0.2s);
-    &:hover {
-      background: rgba($blue, 0.2);
-      color: rgba($white, 0.95);
     }
   }
 }
@@ -63,7 +51,7 @@ main {
 
   article {
     position: relative;
-    padding: 15px;
+    padding: 1.5% 2.5%;
     border-radius: 20px;
     @include scaled-background('-blurred');
     background-color: #1d2025;
