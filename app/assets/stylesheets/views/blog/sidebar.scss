@@ -1,71 +1,70 @@
 body.blog {
+
   aside {
-    padding-top: 20px;
+    padding: 0;
+    min-width: 250px;
+    max-width: 250px;
     text-align: center;
-    @include media($not-mobile) {
-      @include span-columns(3);
+
+    article {
+      padding: 2em 1em;
+    }
+  }
+
+  #me {
+    .email-link {
+      display: inline-block;
+      &:hover {
+        .email-overlay { opacity: 1; }
+        .hu-email { top: 0; }
+      }
     }
 
-    ////////////////////////////////////////
-    // My Info + Blurb
-    ////////////////////////////////////////
+    span {
+      position: relative;
+      display: inline-block;
+      z-index: 10;
+      background: #666;
+      border-radius: 50%;
+      overflow: hidden;
+    }
 
-    #me {
-      .email-link {
-        display: inline-block;
-        &:hover {
-          .email-overlay { opacity: 1; }
-          .hu-email { top: 0; }
+    .email-overlay {
+      @include position(absolute, 0px);
+      @include transition(opacity 0.2s);
+      padding: 15px;
+      background: rgba($black, 0.85);
+      border: 1px solid #000;
+      opacity: 0;
+      i {
+        @include position(relative, -120px null null null);
+        @include transition(top 0.4s $ease-out-back);
+        font-size: 13px;
+        &:before {
+          display: block;
+          @include position(relative, 8px null null null);
+          font-size: 72px;
+          color: rgba($white, 0.9);
         }
       }
-      span {
-        position: relative;
-        display: inline-block;
-        z-index: 10;
-        background: #666;
-        border-radius: 50%;
-        overflow: hidden;
-      }
-      .email-overlay {
-        @include position(absolute, 0px);
-        @include transition(opacity 0.2s);
-        padding: 15px;
-        background: rgba($black, 0.85);
-        border: 1px solid #000;
-        opacity: 0;
-        i {
-          @include position(relative, -120px null null null);
-          @include transition(top 0.4s $ease-out-back);
-          font-size: 13px;
-          &:before {
-            display: block;
-            @include position(relative, 8px null null null);
-            font-size: 72px;
-            color: rgba($white, 0.9);
-          }
-        }
-      }
     }
+  }
 
-    .blurb {
-      font-size: 12px;
-      letter-spacing: 0px;
-    }
+  .blurb {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
 
-    ////////////////////////////////////////
-    // Social Links
-    ////////////////////////////////////////
 
-    .social-links {
-      @include flex-wrap(wrap);
-      @include justify-content(center);
-      margin-top: 10px;
-      a {
-        margin: 6px;
-        @include size(70px);
-        font-size: 70px;
-        border-radius: 4px;
-      }
+  .social-links {
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    margin-top: 10px;
+    a {
+      margin: 6px;
+      @include size(70px);
+      font-size: 70px;
+      border-radius: 4px;
     }
   }
 }

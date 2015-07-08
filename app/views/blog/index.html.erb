@@ -1,21 +1,31 @@
-
 <section>
   <% @posts.each do |post| %>
-    <article id="<%= post.id %>" class="post">
-      <%= link_to blog_post_path(post.url_title), class: 'post-thumbnail' do %>
-        <time class="post-published-date" datetime="<%= post.published_at.to_date.to_s %>">
-          <small><%= post.published_at.strftime('%B') %></small>
-          <big><%= post.published_at.day %></big>
-          <small><%= post.published_at.year %></small>
-        </time>
-        <%= filepicker_image_tag post.filepicker_url, w: 250, h: 150, fit: 'crop' %>
-      <% end %>
+    <article id="<%= post.id %>" class="post" style="<%= bg(post.filepicker_url) %>">
 
-      <%= link_to blog_post_path(post.url_title), class: 'post-title' do %>
-        <h2><%= post.title %></h2>
-      <% end %>
+      <!-- Background Image + Date Info -->
+      <div class="post-date">
+          <time class="post-published-date" datetime="<%= post.published_at.to_date.to_s %>">
+            <small><%= post.published_at.strftime('%B') %></small>
+            <big><%= post.published_at.day %></big>
+            <small><%= post.published_at.year %></small>
+          </time>
+        
+      </div>
 
-      <p><%= post.abstract.html_safe %></p>
+
+      <!-- Content -->
+      <div class="post-content" style="<% if false %><%= bg(post.filepicker_url) %><% end %>">
+          <h2>
+            <%= link_to blog_post_path(post.url_title) do %>
+              <%= post.title %>
+            <% end %>
+          </h2>
+
+          <div class="post-abstract">
+            <p><%= post.abstract.html_safe %></p>
+          </div>
+
+      </div>
     </article>
   <% end %>
 </section>

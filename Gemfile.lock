@@ -163,8 +163,8 @@ DEPENDENCIES
   mysql2
   neat
   pygmentize
-  rails (= 4.2.1)
   quiet_assets
+  rails (= 4.2.1)
   redcarpet
   sass-rails
   spring
@@ -173,3 +173,6 @@ DEPENDENCIES
   uglifier
   unicorn
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.3

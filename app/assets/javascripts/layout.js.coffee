@@ -1,7 +1,7 @@
 
 # Scale the background to the document width
 scaleSite = ->
-  $('nav, article').each ->
+  $('nav, article:not(.post)').each ->
     width  = $(document).width()
     offset = $(this).offset()
 

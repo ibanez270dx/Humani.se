@@ -4,35 +4,47 @@ body {
   @include font-feature-settings("pnum", "kern" false);
   font-family: $body-font;
   color: $off-white;
+}
 
-  h1, h2, h3 {
-    margin: 0;
-    font-family: $header-font;
-    font-weight: 400;
-    color: $blue;
-  }
+///////////////////////////////////////
+// Headers
+///////////////////////////////////////
 
-  h1, h2 {
-    font-size: 32px;
-  }
+h1, h2, h3 {
+  margin: 0;
+  font-family: $header-font;
+  font-weight: 400;
+  color: $blue;
+}
 
-  h3 {
-    font-size: 24px;
-  }
+h1, h2 {
+  font-size: 32px;
+}
 
-  a {
-    color: $blue;
-    text-decoration: none;
-    text-align: center;
-  }
+h3 {
+  font-size: 24px;
+}
 
-  p {
-    margin-top: 0;
-  }
+///////////////////////////////////////
+// Links
+///////////////////////////////////////
 
-  small {
-    display: block;
-    font-size: 9px;
-    text-align: center;
-  }
+a {
+  color: $blue;
+  text-decoration: none;
+  text-align: center;
+}
+
+///////////////////////////////////////
+// Typographic Containers
+///////////////////////////////////////
+
+p {
+  margin-top: 0;
+}
+
+small {
+  display: block;
+  font-size: 9px;
+  text-align: center;
 }
