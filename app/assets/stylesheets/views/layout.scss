@@ -51,10 +51,11 @@ main {
 
   article {
     position: relative;
+    margin-bottom: 1.5em;
     padding: 1.5% 2.5%;
     border-radius: 1em;
     @include scaled-background('-blurred');
-    background-color: #1d2025;
+    background-color: #242B37;
     box-shadow:
       0px 0px 20px -5px #020e11,
       inset 0px 2px 0px -1px rgba($off-white, 0.15),
@@ -62,6 +63,9 @@ main {
     font-size: 16px;
     color: $off-white;
     letter-spacing: 1px;
+    &.comments {
+      background: #242B37;
+    }
 
     p {
       padding-top: 10px;

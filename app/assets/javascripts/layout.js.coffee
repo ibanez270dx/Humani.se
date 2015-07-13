@@ -1,20 +1,25 @@
 
 # Scale the background to the document width
 scaleSite = ->
-  $('nav, article:not(.post)').each ->
-    width  = $(document).width()
+  $('nav, article').each ->
+    docWidth = $(document).width()
     offset = $(this).offset()
+    position = ""
+    size = ""
 
-    if width > 1440
+    if docWidth > 1440
       position = "-#{offset.left}px -#{offset.top}px"
-      size = "#{width}px"
+      size = "#{docWidth}px"
     else
       breakpoint = switch
-        when width > 800 then 1440
-        when width > 500 then 800
+        when docWidth > 800 then 1440
+        when docWidth > 500 then 800
         else 500
-      position = "-#{((breakpoint-width)/2)+offset.left}px -#{offset.top}px"
+      position = "-#{((breakpoint-docWidth)/2)+offset.left}px -#{offset.top}px"
       size = "#{breakpoint}px"
+
+    console.log "position: ", position
+    console.log "size: ", size
 
     $(this).css
       backgroundPosition: position

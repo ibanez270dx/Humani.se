@@ -33,6 +33,7 @@
   background-color: #101316;
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: 100%;
   @include media(new-breakpoint(min-width 2561px)) { background-image: url(asset-path("background/3200#{$tag}.jpg")); }
   @include media(new-breakpoint(min-width 1441px max-width 2560px)) { background-image: url(asset-path("background/2560#{$tag}.jpg")); }
   @include media(new-breakpoint(min-width 801px max-width 1440px)) { background-image: url(asset-path("background/1440#{$tag}.jpg")); }
