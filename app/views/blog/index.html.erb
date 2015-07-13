@@ -1,16 +1,17 @@
 <section>
   <% @posts.each do |post| %>
-    <article id="<%= post.id %>" class="post" style="<%= bg(post.filepicker_url) %>">
+    <article id="<%= post.id %>" class="post">
+
+      <div class="post-date">
+        <time class="post-published-date" datetime="<%= post.published_at.to_date.to_s %>">
+          <small><%= post.published_at.strftime('%B') %></small>
+          <big><%= post.published_at.day %></big>
+          <small><%= post.published_at.year %></small>
+        </time>
+      </div>
 
       <!-- Background Image + Date Info -->
-      <div class="post-date">
-          <time class="post-published-date" datetime="<%= post.published_at.to_date.to_s %>">
-            <small><%= post.published_at.strftime('%B') %></small>
-            <big><%= post.published_at.day %></big>
-            <small><%= post.published_at.year %></small>
-          </time>
-        
-      </div>
+      <%= link_to '', blog_post_path(post.url_title), class: 'post-thumbnail', style: bg(post.filepicker_url) %>
 
 
       <!-- Content -->
