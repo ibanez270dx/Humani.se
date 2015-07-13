@@ -13,8 +13,8 @@
 
 <section>
   <article id="<%= @post.id %>" class="post">
-    <figure>
-      <%= filepicker_image_tag @post.filepicker_url, { w: '768', fit: 'crop' } %>
+    <figure class="post-figure">
+      <%= filepicker_image_tag @post.filepicker_url %>
       <figcaption>Posted on <%= human_date @post.published_at %></figcaption>
     </figure>
 
@@ -43,12 +43,19 @@
 
   <article class="comments">
     <h2>Comments</h2>
-    <div class="fb-comments"
-      data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>"
-      data-width="750"
-      data-num-posts="10"
-      data-colorscheme="dark">
-    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'humanise';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
   </article>
 </section>
 
