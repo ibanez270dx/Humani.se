@@ -38,7 +38,24 @@ header {
         background: rgba($blue, 0.2);
         color: rgba($white, 0.95);
       }
+      &:first-child {
+        position: relative;
+        padding-right: 65px;
+      }
     }
+    
+    .nav-logo {
+      position: absolute;
+      top: 5px; right: 10px;
+      height: 40px;
+      opacity: 0.9;
+    }
+  }
+}
+
+@include media(new-breakpoint(min-width 0px max-width 450px)) {
+  header nav a {
+    padding: 0 0.75em !important;
   }
 }
 
@@ -99,7 +116,7 @@ main {
     @include transition(all, 0.5s);
 
     &:hover {
-      border-radius: 50%;
+      margin-top: -5px;
       i { color: rgba($white, 0.85); }
       &[class*="github"] { color: rgba($github, 0.65);}
       &[class*="twitter"] { color: rgba($twitter, 0.65); }
