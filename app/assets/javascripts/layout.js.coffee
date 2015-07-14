@@ -7,16 +7,16 @@ scaleSite = ->
     position = ""
     size = ""
 
-    if docWidth > 1440
-      position = "-#{offset.left}px -#{offset.top}px"
-      size = "#{docWidth}px"
-    else
-      breakpoint = switch
-        when docWidth > 800 then 1440
-        when docWidth > 500 then 800
-        else 500
-      position = "-#{((breakpoint-docWidth)/2)+offset.left}px -#{offset.top}px"
-      size = "#{breakpoint}px"
+    # if docWidth > 1440
+    position = "-#{offset.left}px -#{offset.top}px"
+    size = "#{docWidth}px"
+    # else
+    #   breakpoint = switch
+    #     when docWidth > 800 then 1440
+    #     when docWidth > 500 then 800
+    #     else 500
+    #   position = "-#{((breakpoint-docWidth)/2)+offset.left}px -#{offset.top}px"
+    #   size = "#{breakpoint}px"
 
     console.log "position: ", position
     console.log "size: ", size
