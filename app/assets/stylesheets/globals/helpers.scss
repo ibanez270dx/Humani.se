@@ -1,33 +1,4 @@
 
-@mixin social-buttons($size: 150px, $font-size: 140px, $margin: 30px, $color: rgba(0,25,55,0.40)) {
- ul {
-  padding: 0px;
-    li {
-      width: $size;
-      height: size;
-      display: inline-block;
-      position: relative;
-      margin: $margin;
-      i {
-        padding: 10px;
-        font-size: $font-size;
-        width: $size;
-        height: $size;
-        color: $color;
-        background: rgba(255,255,255,0.3);
-        @include transition(all 0.5s ease);
-        &:hover {
-          color: #fff;
-          &.fa-github { background: $github; }
-          &.fa-twitter { background: $twitter; }
-          &.fa-linkedin { background: $linkedin; }
-          &.fa-facebook { background: $facebook; }
-        }
-      }
-    }
-  }
-}
-
 @mixin scaled-background($tag: '') {
   // background-color: rgba($black, 0.5);
   background-color: #101316;
@@ -44,8 +15,8 @@
 @mixin outer-container {
   @include clearfix;
   margin: 0 auto;
-  padding: 0;
-  width: $max-width;
+  padding: 0 1em;
+  max-width: $max-width;
 }
 
 // Fixes deprecation warning
