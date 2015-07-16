@@ -11,10 +11,6 @@
   <meta property="og:site_name" content="Humani.se" />
 <% end %>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a3768c374b8b23" async="async"></script>
-
-
 <section>
   <article id="<%= @post.id %>" class="post">
     <figure class="post-figure">
@@ -73,22 +69,5 @@
       <%= link_to post.title, blog_post_path(post.url_title) %>
     <% end %>
   </article>
-
-  <% if false %>
-  <ul id="social-buttons">
-    <li class="facebook">
-      <div class="fb-like" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-layout="button_count" data-width="450" data-action="like" data-show-faces="false" data-share="false"></div>
-    </li>
-    <li class="twitter">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="ibanez270dx">Tweet</a>
-    </li>
-    <li class="google-plus">
-      <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-      <g:plusone></g:plusone>
-    </li>
-    <li class="linkedin">
-      <script type="IN/Share" data-url="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-counter="right"></script>
-    </li>
-  </ul>
-  <% end %>
+  
 </aside>
