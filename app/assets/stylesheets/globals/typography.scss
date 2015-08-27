@@ -4,6 +4,9 @@ body {
   @include font-feature-settings("pnum", "kern" false);
   font-family: $body-font;
   color: $off-white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ///////////////////////////////////////
