@@ -13,29 +13,9 @@
 
 <section>
   <article id="<%= @post.id %>" class="post">
-    <figure class="post-figure">
-      <%= filepicker_image_tag @post.filepicker_url %>
+    <figure class="post-figure" style="background-image:url(<%= @post.filepicker_url %>);">
       <figcaption>Posted on <%= human_date @post.published_at %></figcaption>
     </figure>
-
-    <% if false %>
-    <div id="social-mobile">
-      <ul>
-        <li>
-          <div class="fb-like" data-href="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-layout="box_count" data-width="450" data-action="like" data-show-faces="false" data-share="false"></div>
-        </li>
-        <li>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-lang="en">Tweet</a>
-        </li>
-        <li>
-          <div class="g-plusone" data-size="tall"></div>
-        </li>
-        <li class="linkedin">
-          <script type="IN/Share" data-url="<%= blog_post_url(@post.url_title, domain: 'humani.se', port: nil) %>" data-counter="top"></script>
-        </li>
-      </ul>
-    </div>
-    <% end %>
 
     <h1><%= link_to @post.title, blog_post_path(@post.url_title) %></h1>
     <p><%= markdown @post.body %></p>
@@ -69,5 +49,5 @@
       <%= link_to post.title, blog_post_path(post.url_title) %>
     <% end %>
   </article>
-  
+
 </aside>

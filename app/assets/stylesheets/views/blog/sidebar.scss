@@ -55,7 +55,6 @@ body.blog {
     letter-spacing: 0px;
   }
 
-
   .social-links {
     @include flex-wrap(wrap);
     @include justify-content(center);
@@ -91,7 +90,7 @@ body.blog {
     }
   }
 
-  // TODO: Need a responsive solition to these stupid social buttons
+  // TODO: Need a responsive solution to these stupid social buttons
   @include media(new-breakpoint(min-width 0px max-width 400px)) {
     .social-links {
       width: 200px;
