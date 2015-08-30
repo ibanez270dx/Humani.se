@@ -20,10 +20,18 @@ header {
   nav {
     @include outer-container;
 
-    h1 {
-      font-family: $logo-font;
-      color: rgba($white, 0.9);
-      text-transform: uppercase;
+    #humanise {
+      &:hover {
+        h1 { color: rgba($white, 1); }
+        img { opacity: 1; }
+      }
+
+      h1 {
+        font-family: $logo-font;
+        color: rgba($white, 0.9);
+        text-transform: uppercase;
+        @include transition(color 0.2s);
+      }
     }
 
     a {
@@ -48,6 +56,7 @@ header {
       top: 5px; right: 10px;
       height: 40px;
       opacity: 0.9;
+      @include transition(opacity 0.2s);
     }
   }
 }

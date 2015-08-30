@@ -12,7 +12,7 @@
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <header>
       <nav>
-        <%= link_to about_path do %>
+        <%= link_to about_path, id: 'humanise' do %>
           <h1>humani.se</h1>
           <%= image_tag('logo.png', class: 'nav-logo') %>
         <% end %>
