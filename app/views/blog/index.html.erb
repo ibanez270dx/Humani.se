@@ -16,10 +16,8 @@
 
       <!-- Content -->
       <div class="post-content" style="<% if false %><%= bg(post.filepicker_url) %><% end %>">
-          <h2>
-            <%= link_to blog_post_path(post.url_title) do %>
-              <%= post.title %>
-            <% end %>
+          <h2 class="post-title" wrap="bt-rl">
+            <%= link_to post.title, blog_post_path(post.url_title) %>
           </h2>
 
           <div class="post-abstract">

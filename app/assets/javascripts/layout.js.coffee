@@ -11,14 +11,25 @@ scaleSite = ->
       backgroundPosition: position
       backgroundSize: size
 
+wrapTitles = ->
+  $('[wrap="bt-rl"]').each (i, title) ->
+    width = 0
+    originalHeight = $(title).height()
+    spacer = $('<div style="float:left;height:1px;" />').prependTo(title);
+    while (originalHeight == $(title).height())
+      spacer.width( ++width );
+    spacer.width( --width );
+
 ###################################################################
 # Init / Events
 ###################################################################
 
-# Rescale the glass as the window size changes
-$(window).resize ->
+init = ->
   scaleSite()
+  wrapTitles()
+
+# Rescale the glass as the window size changes
+$(window).resize -> init()
 
 # Rescale the glass on turbolinks page load
-$(document).on "ready page:load", ->
-  scaleSite()
+$(document).on "ready page:load", -> init()
