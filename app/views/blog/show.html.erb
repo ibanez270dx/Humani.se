@@ -14,10 +14,11 @@
 <section>
   <article id="<%= @post.id %>" class="post">
     <figure class="post-figure" style="background-image:url(<%= @post.filepicker_url %>);">
-      <figcaption>Posted on <%= human_date @post.published_at %></figcaption>
+      <figcaption>
+        <h1 wrap="bt"><%= @post.title %></h1>
+        <span>Posted on <%= human_date @post.published_at %></span>
+      </figcaption>
     </figure>
-
-    <h1><%= link_to @post.title, blog_post_path(@post.url_title) %></h1>
     <p><%= markdown @post.body %></p>
   </article>
 
