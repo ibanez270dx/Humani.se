@@ -16,6 +16,6 @@
 #= require turbolinks
 #= require_tree .
 
-# Add strLength method to
-if Array::strLength == undefined
-  Array::strLength = -> this.join(' ').length
+# Add to_s to Array
+if Array::to_s == undefined
+  Array::to_s = -> this.join(' ')
