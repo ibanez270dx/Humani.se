@@ -17,9 +17,12 @@ $tumblr: #35465c;
 $stumble-upon: #eb4924;
 
 // Fonts
-$logo-font: 'Fjalla One', sans-serif;
-$header-font: 'Seans Other Hand', cursive;
-$body-font: 'Open Sans';
+$logo-font: 'Fjalla One', Impact, sans-serif;
+$header-font: 'Seans Other Hand', 'Comic Sans MS', 'sans-serif';
+$body-font: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+
+// Max page width
+$max-width: 1224px;
 
 // Responsive breakpoints
 @import "neat-helpers";

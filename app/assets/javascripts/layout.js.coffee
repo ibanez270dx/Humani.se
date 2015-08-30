@@ -17,8 +17,8 @@ wrapTitles = ->
     originalHeight = $(title).height()
     spacer = $('<div style="float:left;height:1px;" />').prependTo(title);
     while (originalHeight == $(title).height())
-      spacer.width( ++width );
-    spacer.width( --width );
+      spacer.width( ++width )
+    spacer.width( --width )
 
 ###################################################################
 # Init / Events
@@ -32,4 +32,8 @@ init = ->
 $(window).resize -> init()
 
 # Rescale the glass on turbolinks page load
-$(document).on "ready page:load", -> init()
+$(document).on "page:change", ->
+  fontSpy 'Seans Other Hand',
+    success: ->
+      scaleSite()
+      wrapTitles()      
