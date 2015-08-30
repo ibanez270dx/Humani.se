@@ -99,6 +99,9 @@ body.blog.index {
         text-align: center !important;
       }
     }
+    .post-title {
+      white-space: pre-line;
+    }
   }
 
   // TODO: Made this CSS mobile-first.

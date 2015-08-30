@@ -21,7 +21,6 @@ header {
     @include outer-container;
 
     h1 {
-      // display:none;
       font-family: $logo-font;
       color: rgba($white, 0.9);
       text-transform: uppercase;
@@ -56,6 +55,7 @@ header {
 @include media(new-breakpoint(min-width 0px max-width 450px)) {
   header nav a {
     padding: 0 0.75em !important;
+    img { display: none; }
   }
 }
 

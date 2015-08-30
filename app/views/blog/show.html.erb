@@ -15,7 +15,7 @@
   <article id="<%= @post.id %>" class="post">
     <figure class="post-figure" style="background-image:url(<%= @post.filepicker_url %>);">
       <figcaption>
-        <h1 wrap="bt"><%= @post.title %></h1>
+        <h1 wrap="bt" scale-font="0.055"><%= @post.title %></h1>
         <span>Posted on <%= human_date @post.published_at %></span>
       </figcaption>
     </figure>
