@@ -43,7 +43,7 @@ header {
         padding-right: 65px;
       }
     }
-    
+
     .nav-logo {
       position: absolute;
       top: 5px; right: 10px;
@@ -77,9 +77,8 @@ main {
       0px 0px 20px -5px #020e11,
       inset 0px 2px 0px -1px rgba($off-white, 0.15),
       0px 4px 7px -2px #020e11;
-    font-size: 16px;
+    font-size: 17px;
     color: $off-white;
-    letter-spacing: 1px;
     &.comments {
       background: #242B37;
     }
@@ -88,15 +87,16 @@ main {
       padding-top: 10px;
       line-height: 28px;
       text-indent: 10px;
+      a {
+        font-weight: bold;
+      }
     }
 
     a {
+      // color: rgba(255,255,255,0.9);
       color: $blue;
       font-weight: 400;
       text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
     }
   }
 }

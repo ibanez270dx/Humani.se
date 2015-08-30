@@ -3,7 +3,7 @@ body {
   @include font-feature-settings("liga");
   @include font-feature-settings("pnum", "kern" false);
   font-family: $body-font;
-  color: $off-white;
+  color: $white;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,8 +34,9 @@ h3 {
 
 a {
   color: $blue;
-  text-decoration: none;
-  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 ///////////////////////////////////////

@@ -2,8 +2,7 @@ body.about {
   main {
     h1 {
       margin: 1.2em 0em 0.9em 0em;
-      font-family: $header-font;
-      font-size:55px;
+      font-size: 55px;
       color: $white;
       text-align: center;
       @include media($mobile) {
