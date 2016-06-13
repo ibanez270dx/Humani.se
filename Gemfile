@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 # Core
 ###########################################################
 
-gem 'rails', '4.2.5'
+gem 'rails', '5.0.0.rc1'
 gem 'mysql2'                # A modern, simple, and very fast Mysql library
+gem 'puma'                  # A fast, threaded, and highly concurrent HTTP 1.1 server
 
 # Stylesheets
 gem 'sass-rails'            # Sass adapter for the Rails asset pipeline
@@ -31,10 +32,6 @@ gem 'pygmentize'            # A standalone Pygments for Ruby
 ###########################################################
 # Environments
 ###########################################################
-
-group :production do
-  gem 'unicorn'             # HTTP Server for Rack apps
-end
 
 group :development do
   gem 'capistrano',        '~> 3.4.0'   # Remote multi-server automation tool
