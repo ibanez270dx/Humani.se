@@ -43,9 +43,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano'                # Remote multi-server automation tool
-  gem 'capistrano-rails'          # Rails integration for Capistrano 3.x
-  gem 'capistrano-rbenv'          # Rbenv integration for Capistrano 3.x
-  gem 'capistrano-unicorn-nginx'  # Unicorn & Nginx tasks for Capistrano
-  gem 'quiet_assets'              # Mute asset pipeline log messages
+  gem 'capistrano'          # Remote multi-server automation tool
+  gem 'capistrano-rails'    # Rails integration for Capistrano 3.x
+  gem 'capistrano-rbenv'    # Rbenv integration for Capistrano 3.x
+  gem 'capistrano-nginx'    # Nginx tasks for Capistrano
+  gem 'capistrano3-puma'    # Puma taks for Capistrano
+  gem 'quiet_assets'        # Mute asset pipeline log messages
 end
