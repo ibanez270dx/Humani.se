@@ -8,6 +8,10 @@ gem 'rails', '5.0.0.rc1'
 gem 'mysql2'                # A modern, simple, and very fast Mysql library
 gem 'puma'                  # A fast, threaded, and highly concurrent HTTP 1.1 server
 
+###########################################################
+# Assets
+###########################################################
+
 # Stylesheets
 gem 'sass-rails'            # Sass adapter for the Rails asset pipeline
 gem 'bourbon'               # A simple and lightweight mixin library for Sass
@@ -20,28 +24,28 @@ gem 'uglifier'              # Ruby wrapper for UglifyJS JavaScript compressor
 gem 'therubyracer'          # Embed the V8 Javascript Interpreter into Ruby
 gem 'turbolinks'            # Following links faster using AJAX
 
-# Authentication
+###########################################################
+# Miscellaneous
+###########################################################
+
 gem 'bcrypt'                # Ruby bindings for OpenBSD's password hashing algorithm
-
-# Markdown
 gem 'redcarpet'             # A fast, safe and extensible Markdown to (X)HTML parser
-
-# Syntax Highlighting
 gem 'pygmentize'            # A standalone Pygments for Ruby
 
 ###########################################################
 # Environments
 ###########################################################
 
-group :development do
-  gem 'capistrano',        '~> 3.4.0'   # Remote multi-server automation tool
-  gem 'capistrano-rails',  '~> 1.1'     # Rails integration for Capistrano 3.x
-  gem 'capistrano-rbenv',  '~> 2.0'     # rbenv integration for Capistrano 3.x
-  gem 'quiet_assets'                    # Mute asset pipeline log messages
-end
-
 group :development, :test do
-  gem 'byebug'                  # A simple to use, feature rich debugger
+  gem 'pry-rails'               # An IRB alternative and runtime developer console
   gem 'web-console', '~> 2.0'   # Debugging in views with <% console %>
   gem 'spring'                  # Keep running the app in the background
+end
+
+group :development do
+  gem 'capistrano'                # Remote multi-server automation tool
+  gem 'capistrano-rails'          # Rails integration for Capistrano 3.x
+  gem 'capistrano-rbenv'          # Rbenv integration for Capistrano 3.x
+  gem 'capistrano-unicorn-nginx'  # Unicorn & Nginx tasks for Capistrano
+  gem 'quiet_assets'              # Mute asset pipeline log messages
 end
