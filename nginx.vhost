@@ -1,6 +1,6 @@
 upstream humanise {
   # path to Puma sock file:
-  server unix:/srv/humani.se/shared/tmp/sockets/puma.sock fail_timeout=0;
+  server unix:///srv/humani.se/shared/tmp/sockets/puma.sock fail_timeout=0;
 }
 
 server {
