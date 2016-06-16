@@ -1,11 +1,11 @@
 upstream humanise {
   # path to Puma sock file:
-  server unix:///srv/humani.se/shared/tmp/sockets/puma.sock fail_timeout=0;
+  server unix:///srv/humani.se/shared/tmp/sockets/puma.sock;
 }
 
 server {
   server_name www.humani.se humani.se;
-  root /srv/humani.se/public;
+  root /srv/humani.se/current/public;
   listen 80;
 
   try_files $uri/index.html $uri @humanise;
