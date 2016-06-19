@@ -8,7 +8,7 @@ body.blog.show {
         border: 0px;
         background-color: inherit;
         .blob-code {
-          font-size: 16px;
+          // font-size: 16px;
         }
         .highlight {
           background-color: #2B2B2B;
@@ -22,6 +22,9 @@ body.blog.show {
           color: lighten(#3f4549, 20%);
           // font-size: 14px;
         }
+        .pl-e, .pl-smi {
+          color: #fff;
+        }
         .pl-en {
           color: #8fc2ba;
         }
@@ -31,8 +34,14 @@ body.blog.show {
         .pl-k {
           color: #af91bd;
         }
-        .pl-smi {
+        .pl-v {
           color: #f49f5c;
+        }
+        .pl-sr, .pl-s, .pl-pds {
+          color: #b4c978;
+        }
+        .pl-s1 {
+          color: #63ab66;
         }
       }
     }
