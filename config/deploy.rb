@@ -25,3 +25,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # RbEnv
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
+
+# Puma
+set :puma_init_active_record, true
