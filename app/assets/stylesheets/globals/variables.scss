@@ -24,6 +24,9 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 // Max page width
 $max-width: 1224px;
 
+// Border radii
+$article-border-radius: 10px;
+
 // Responsive breakpoints
 @import "neat-helpers";
 $tiny: new-breakpoint(max-width 450px);

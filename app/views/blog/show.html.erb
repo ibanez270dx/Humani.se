@@ -19,7 +19,9 @@
         <span>Posted on <%= human_date @post.published_at %></span>
       </figcaption>
     </figure>
-    <p><%= markdown @post.body %></p>
+    <section class="post-body-wrapper">
+      <p><%= markdown @post.body %></p>
+    </section>
   </article>
 
   <article class="comments">

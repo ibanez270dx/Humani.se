@@ -1,4 +1,43 @@
 body.blog.show {
+
+  .gist {
+    .gist-file {
+      border: 1px solid #3f4549 !important;
+
+      .gist-data {
+        border: 0px;
+        background-color: inherit;
+        .blob-code {
+          font-size: 16px;
+        }
+        .highlight {
+          background-color: #2B2B2B;
+        }
+        .blob-code-inner {
+          color: #F4F1ED;
+        }
+        .blob-num {
+          border: 0px;
+          background-color: #3f4549;
+          color: lighten(#3f4549, 20%);
+          // font-size: 14px;
+        }
+        .pl-en {
+          color: #8fc2ba;
+        }
+        .pl-c1 {
+          color: #81adc9;
+        }
+        .pl-k {
+          color: #af91bd;
+        }
+        .pl-smi {
+          color: #f49f5c;
+        }
+      }
+    }
+  }
+
   main {
     @include display(flex);
   }
@@ -10,13 +49,16 @@ body.blog.show {
     padding-right: 1.45em;
 
     article.post {
+      padding: 0px;
+
       figure {
         position: relative;
-        margin: 10px 0px 0px 0px;
+        margin: 0px;
         height: 350px;
         background-size: cover;
         background-position: center center;
-        border-radius: 1em;
+        border-top-left-radius: $article-border-radius;
+        border-top-right-radius: $article-border-radius;
         overflow: hidden;
 
         figcaption {
@@ -40,6 +82,10 @@ body.blog.show {
         }
       }
 
+      .post-body-wrapper {
+        padding: 0% 2.5% 1.5%;
+      }
+
       h2 {
         display: inline-block;
         margin: 1.5em auto 0.25em -4.5%;
@@ -53,6 +99,18 @@ body.blog.show {
                     inset 10px 0px 75px -10px rgba(0, 0, 0, 0.8);
         text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
         color: rgb(1, 32, 47);
+      }
+
+      h2 {
+        display: inline-block;
+        margin: 1.5em auto 0.25em -4.5%;
+        padding: 2px 25px 5px;
+        border-radius: 0.25em;
+        background-color: #0080bf;
+        background-image: url(asset-path('textures/otis-redding.png'));
+        box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),inset 0px 1px 0px 0px rgba(255,255,255,0.15),inset 0px -1px 0px 0px rgba(0,0,0,0.25),inset 10px 0px 75px -10px rgba(0,0,0,0.8);
+        text-shadow: 0px 1px 0px rgba(255,255,255,0.25);
+        color: #01202f;
       }
 
       // Console

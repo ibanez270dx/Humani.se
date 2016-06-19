@@ -20,13 +20,16 @@ body.blog {
       }
     }
 
-    span {
+    .email-wrapper {
       position: relative;
       display: inline-block;
       z-index: 10;
-      background: #666;
+      background: #6c6e79;
       border-radius: 50%;
       overflow: hidden;
+      img {
+        width: 125px;
+      }
     }
 
     .email-overlay {
@@ -39,13 +42,15 @@ body.blog {
       i {
         @include position(relative, -120px null null null);
         @include transition(top 0.4s $ease-out-back);
-        font-size: 13px;
         &:before {
           display: block;
           @include position(relative, 8px null null null);
-          font-size: 72px;
+          font-size: 60px;
           color: rgba($white, 0.9);
         }
+      }
+      span {
+        font-size: 12px;
       }
     }
   }

@@ -8,6 +8,8 @@
     <%= csrf_meta_tags %>
     <%= yield :head %>
     <%= render 'layouts/google_analytics' %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+
   </head>
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <header>

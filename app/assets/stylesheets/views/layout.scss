@@ -15,7 +15,7 @@ header {
   @include position(absolute, 0px 0px null 0px);
   @include scaled-background('-blurred');
   @include clearfix();
-  box-shadow: 0px 2px 7px #020e11;
+  box-shadow: 0px 1px 1px rgba(#020e11,0.7);
 
   nav {
     @include outer-container;
@@ -79,13 +79,17 @@ main {
     position: relative;
     margin-bottom: 1.5em;
     padding: 1.5% 2.5%;
-    border-radius: 1em;
+    // border-radius: 1em;
+    border-radius: $article-border-radius;
     @include scaled-background('-blurred');
     background-color: #242B37;
+    // box-shadow:
+    //   0px 0px 20px -5px rgba(#020e11, 0.3),
+    //   inset 0px 2px 0px -1px rgba($off-white, 0.15),
+    //   0px 4px 7px -2px rgba(#020e11, 0.7);
     box-shadow:
-      0px 0px 20px -5px #020e11,
-      inset 0px 2px 0px -1px rgba($off-white, 0.15),
-      0px 4px 7px -2px #020e11;
+      inset 0px 1px 0px 0px rgba(236, 244, 249, 0.1),
+      0px 1px 1px 0px rgba(2, 14, 17, 0.7);
     font-size: 17px;
     color: $off-white;
     &.comments {
