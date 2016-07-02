@@ -7,12 +7,10 @@
   }
 %>
 
-<div class="social-links">
+<div id="social-links">
   <% social.each do |network, url| %>
-    <div class="social-link-container">
-      <%= link_to url, class: "hu-#{network}-cutout" do %>
-        <i class="hu-<%= network %>"></i>
-      <% end %>
-    </div>
+    <%= link_to url, target: '_blank', class: "hu-#{network}-cutout" do %>
+      <i class="hu-<%= network %>"></i>
+    <% end %>
   <% end %>
 </div>
