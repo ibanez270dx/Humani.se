@@ -5,19 +5,11 @@
   <% end %>
 
   <span class="blurb">Conducting code in the Bay -- Hella.</span>
-  <%
-    social = {
-      github: 'http://www.github.com/ibanez270dx',
-      twitter: 'http://www.twitter.com/ibanez270dx',
-      linkedin: 'http://www.linkedin.com/in/ibanez270dx',
-      facebook: 'http://www.facebook.com/ibanez270dx'
-    }
-  %>
 
   <div id="social-links">
     <%= link_to 'jeff@humani.se', 'mailto:jeff@humani.se', id: 'social-email' %>
 
-    <% social.each do |network, url| %>
+    <% SOCIAL.each do |network, url| %>
       <%= link_to url, target: '_blank', class: network do %>
         <i class="hu-<%= network %>"></i>
       <% end %>

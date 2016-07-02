@@ -13,14 +13,14 @@
 
 <section>
   <article id="<%= @post.id %>" class="post">
-    <figure class="post-figure" style="background-image:url(<%= @post.filepicker_url %>);">
+    <%= content_tag :figure, style: bg(@post.filepicker_url) do %>
       <figcaption>
         <h1 wrap="bt" scale-font="0.055"><%= @post.title %></h1>
         <span>Posted on <%= human_date @post.published_at %></span>
       </figcaption>
-    </figure>
-    <section class="post-body-wrapper">
-      <p><%= markdown @post.body %></p>
+    <% end %>
+    <section class="post-content">
+      <%= markdown @post.body %>
     </section>
   </article>
 
@@ -48,7 +48,6 @@
   <article class="sidebar related-posts">
     <h4>Other Posts</h4>
     <% @posts.each do |post| %>
-      <span class="separator"></span>
       <%= link_to post.title, blog_post_path(post.url_title) %>
     <% end %>
   </article>

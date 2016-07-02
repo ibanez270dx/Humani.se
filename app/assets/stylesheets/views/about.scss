@@ -35,6 +35,41 @@ body.about {
       }
     }
   }
+
+  /***********************************************/
+  /* Desktop ( > 768px )                         */
+  /***********************************************/
+
+  @media(min-width: 768px) {
+    footer {
+      #social-links a {
+        top: 0px;
+        font-size: 12.5vw;
+        color: rgba($white, 0.3) !important;
+        border-radius: $article-border-radius;
+        overflow: hidden;
+        box-shadow:
+          1px 1px 15px 1px rgba(14,58,81,0.2),
+          inset 0px -1px 0px 0px rgba(255,255,255,0.1);
+        @include transition(all 0.4s);
+
+        i {
+          text-shadow: none;
+          color: rgba(38, 65, 92, 0.25);
+          @include transition(all 0.4s);
+        }
+
+        &:hover {
+          top: -10px;
+          &[class*="github"] { color: rgba($github, 0.8) !important; }
+          &[class*="twitter"] { color: rgba($twitter, 0.8) !important; }
+          &[class*="linkedin"] { color: rgba($linkedin, 0.8) !important; }
+          &[class*="facebook"] { color: rgba($facebook, 0.8) !important; }
+          i { color: rgba($white, 1); }
+        }
+      }
+    }
+  }
 }
   // footer {
   //   .social-links {

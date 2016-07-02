@@ -98,7 +98,6 @@
             highlightLineNumbers,
             $responseDiv;
 
-          console.log("max width: ", maxWidth);
           // the html payload is in the div property
           if (response && response.div) {
             // github returns /assets/embed-id.css now, but let's be sure about that
