@@ -49,11 +49,12 @@ ready = ->
   scaleBackground()
   scaleFonts()
   wrapTitles()
+  $('[data-gist-id]').gist();
 
 # Rescale the glass as the window size changes
 $(window).resize -> ready()
 
 # Rescale the glass on turbolinks page load
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   fontSpy 'Seans Other Hand',
     success: -> ready()
