@@ -2,29 +2,22 @@
   <% @posts.each do |post| %>
     <article id="<%= post.id %>" class="post">
 
-      <div class="post-date">
-        <time class="post-published-date" datetime="<%= post.published_at.to_date.to_s %>">
+      <!-- Figure + Date Info -->
+      <%= link_to blog_post_path(post.url_title), class: 'post-thumbnail', style: bg(post.filepicker_url) do %>
+        <time datetime="<%= post.published_at.to_date.to_s %>">
           <small><%= post.published_at.strftime('%B') %></small>
           <big><%= post.published_at.day %></big>
           <small><%= post.published_at.year %></small>
         </time>
-      </div>
-
-      <!-- Background Image + Date Info -->
-      <%= link_to '', blog_post_path(post.url_title), class: 'post-thumbnail', style: bg(post.filepicker_url) %>
-
+      <% end %>
 
       <!-- Content -->
-      <div class="post-content" style="<% if false %><%= bg(post.filepicker_url) %><% end %>">
-          <h2 class="post-title" wrap="bt-rl">
-            <%= link_to post.title, blog_post_path(post.url_title) %>
-          </h2>
-
-          <div class="post-abstract">
-            <p><%= post.abstract.html_safe %></p>
-          </div>
-
+      <div class="post-content">
+        <h2 wrap="bt-rl"><%= link_to post.title, blog_post_path(post.url_title) %></h2>
+        <p><%= post.abstract.html_safe %></p>
+        <%= link_to icon('ellipsis-h'), blog_post_path(post.url_title) %>
       </div>
+
     </article>
   <% end %>
 </section>
