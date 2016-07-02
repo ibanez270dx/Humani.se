@@ -25,14 +25,14 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 $max-width: 1224px;
 
 // Border radii
-$article-border-radius: 10px;
+$article-border-radius: 8px;
 
 // Responsive breakpoints
-@import "neat-helpers";
-$tiny: new-breakpoint(max-width 450px);
-$small: new-breakpoint(max-width 590px);
-$mobile: new-breakpoint(max-width 767px);
-$not-mobile: new-breakpoint(min-width 768px);
-$tablet: new-breakpoint(min-width 768px max-width 979px);
-$not-desktop: new-breakpoint(max-width 979px);
-$desktop: new-breakpoint(min-width 980px);
+// @import "neat-helpers";
+// $tiny: new-breakpoint(max-width 450px);
+// $small: new-breakpoint(max-width 590px);
+// $mobile: new-breakpoint(max-width 767px);
+// $not-mobile: new-breakpoint(min-width 768px);
+// $tablet: new-breakpoint(min-width 768px max-width 979px);
+// $not-desktop: new-breakpoint(max-width 979px);
+// $desktop: new-breakpoint(min-width 980px);

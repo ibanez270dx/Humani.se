@@ -1,123 +1,172 @@
 body.blog.index {
 
-  main {
-    @include display(flex);
-  }
+  article.post {
+    padding: 0px;
+    overflow: auto;
 
-  section {
-    @include display(flex);
-    @include flex-direction(column);
-    @include flex(1);
-    padding-right: 1.45em;
-
-    article {
-      @include display(flex);
-      @include justify-content(space-between);
-      margin-bottom: 2em;
-      padding: 0;
-      background-size: 100% auto;
-      background-position: center 40%;
-      overflow: hidden;
-      &:hover {
-        .post-thumbnail {
-          opacity: 1;
-        }
-      }
-
-      .post-date {
-        position: absolute;
-        top: 1px; bottom: 0px; left: 1px;
-        z-index: 10;
-        padding-top: 1em;
-        min-width: 60px;
-        max-width: 60px;
-        border-top-left-radius: $article-border-radius;
-        border-bottom-left-radius: $article-border-radius;
-        background: rgba(0,0,0,0.65);
-        font-weight: bold;
-        color: $white;
-        text-align: center;
-        big {
-          font-size: 36px;
-        }
-      }
-
-      .post-thumbnail {
-        position: relative;
-        top: 1px; left: 1px;
-        min-width: 40%;
-        max-width: 40%;
-        border-top-left-radius: $article-border-radius;
-        border-bottom-left-radius: $article-border-radius;
-        background-size: cover;
-        background-position: center center;
-        box-shadow: inset -10px 0px 40px -10px #000;
-        opacity: 0.6;
-        @include transition(all 0.5s);
-      }
-
-      .post-content {
-        min-width: 60%;
-        max-width: 60%;
-        padding: 1em;
-        border-top-right-radius: 1em;
-        border-bottom-right-radius: 1em;
-
-        .post-title {
-          position: relative;
-          text-align: right;
-          line-height: 120%;
-          text-shadow: 0px 0px 10px rgba(1, 16, 42, 0.60);
-        }
-      }
-    }
-  }
-
-  // TODO: Make this CSS mobile-first. This is UGLY.
-  // Stack article image vertically.
-  @include media(new-breakpoint(min-width 0px max-width 768px)) {
-    section article {
-      display: block;
-    }
-    .post-date {
-      bottom: auto;
-      height: 175px;
-      border-bottom-left-radius: 0px !important;
-    }
     .post-thumbnail {
       display: block;
-      min-width: 100% !important;
-      max-width: 100% !important;
-      height: 175px;
-      box-shadow: inset 0px -15px 50px -5px #000 !important;
-      border-top-right-radius: 1em;
-    }
-    .post-content {
-      min-width: 100% !important;
-      max-width: 100% !important;
-      h2 {
-        text-align: center !important;
-      }
-    }
-    .post-title {
-      white-space: pre-line;
-    }
-  }
+      position: relative;
+      top: 1px;
+      background-size: cover;
+      border-top-left-radius: $article-border-radius;
+      border-top-right-radius: $article-border-radius;
+      box-shadow: inset 0px -20px 120px 0px #000;
 
-  // TODO: Made this CSS mobile-first.
-  // Push the sidebar down below the posts.
-  @include media(new-breakpoint(min-width 0px max-width 600px)) {
-    main {
-      display: block;
-      section {
-        padding: 0px;
+      &:before {
+        content: "";
+        display: block;
+        padding-bottom: 56.25%;
       }
-      .post-thumbnail {
-        opacity: 1 !important;
+
+      time {
+        @include position(absolute, 0px null 0px 0px);
+        width: 60px;
+        padding-top: 1em;
+        border-top-left-radius: $article-border-radius;
+        background: rgba($black, 0.68);
+        color: $white;
+
+        small, big {
+          display: block;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        big {
+          font-size: 32px;
+        }
       }
-      aside {
-        max-width: 100%;
+    }
+
+    .post-content {
+      h2 {
+        padding: 15px 10px;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 0px;
+        padding: 0em 1.25em;
+      }
+      & > a {
+        padding: 0em 1.25em 1.25em;
+        float: right;
       }
     }
   }
 }
+
+// body.blog.index {
+//
+//   section {
+//     @include flex(1);
+//     padding-right: 1.45em;
+//
+//     article {
+//       @include display(flex);
+//       margin-bottom: 2em;
+//       padding: 0;
+//       background-size: 100% auto;
+//       background-position: center 40%;
+//       overflow: hidden;
+//       &:hover {
+//         .post-thumbnail {
+//           opacity: 1;
+//         }
+//       }
+//
+//       .post-date {
+//         position: absolute;
+//         top: 1px; bottom: 0px; left: 1px;
+//         z-index: 10;
+//         padding-top: 1em;
+//         min-width: 60px;
+//         max-width: 60px;
+//         border-top-left-radius: $article-border-radius;
+//         border-bottom-left-radius: $article-border-radius;
+//         background: rgba(0,0,0,0.65);
+//         font-weight: bold;
+//         color: $white;
+//         text-align: center;
+//         big {
+//           font-size: 36px;
+//         }
+//       }
+//
+//       .post-thumbnail {
+//         @include flex(2);
+//         position: relative;
+//         top: 1px; left: 1px;
+//         border-top-left-radius: $article-border-radius;
+//         border-bottom-left-radius: $article-border-radius;
+//         background-size: cover;
+//         background-position: center center;
+//         box-shadow: inset -10px 0px 40px -10px #000;
+//         opacity: 0.6;
+//         @include transition(all 0.5s);
+//       }
+//
+//       .post-content {
+//         @include flex(3);
+//         padding: 1em;
+//         border-top-right-radius: 1em;
+//         border-bottom-right-radius: 1em;
+//
+//         .post-title {
+//           position: relative;
+//           text-align: right;
+//           line-height: 120%;
+//           text-shadow: 0px 0px 10px rgba(1, 16, 42, 0.60);
+//         }
+//       }
+//     }
+//   }
+//
+//   // TODO: Make this CSS mobile-first. This is UGLY.
+//   // Stack article image vertically.
+//   @media(max-width: 768px) {
+//     section article {
+//       display: block;
+//     }
+//     .post-date {
+//       bottom: auto;
+//       height: 175px;
+//       border-bottom-left-radius: 0px !important;
+//     }
+//     .post-thumbnail {
+//       display: block;
+//       min-width: 100% !important;
+//       max-width: 100% !important;
+//       height: 175px;
+//       box-shadow: inset 0px -15px 50px -5px #000 !important;
+//       border-top-right-radius: 1em;
+//     }
+//     .post-content {
+//       min-width: 100% !important;
+//       max-width: 100% !important;
+//       h2 {
+//         text-align: center !important;
+//       }
+//     }
+//     .post-title {
+//       white-space: pre-line;
+//     }
+//   }
+//
+//   // TODO: Made this CSS mobile-first.
+//   // Push the sidebar down below the posts.
+//   @media(max-width: 600px) {
+//     main {
+//       display: block;
+//       section {
+//         padding: 0px;
+//       }
+//       .post-thumbnail {
+//         opacity: 1 !important;
+//       }
+//       aside {
+//         max-width: 100%;
+//       }
+//     }
+//   }
+// }

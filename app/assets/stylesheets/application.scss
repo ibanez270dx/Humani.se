@@ -1,12 +1,13 @@
 @import 'bourbon';
-@import 'neat';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 @import 'globals/variables';
 @import 'globals/helpers';
 @import 'globals/fonts';
 @import 'globals/typography';
-@import 'globals/pygments';
 @import 'globals/icons';
+@import 'globals/gist';
 
 @import 'views/layout';
 @import 'views/about';

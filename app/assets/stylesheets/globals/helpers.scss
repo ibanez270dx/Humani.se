@@ -1,22 +1,15 @@
 
 @mixin scaled-background($tag: '') {
-  // background-color: rgba($black, 0.5);
   background-color: #101316;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100%;
-  @include media(new-breakpoint(min-width 2561px)) { background-image: url(asset-path("background/3200#{$tag}.jpg")); }
-  @include media(new-breakpoint(min-width 1441px max-width 2560px)) { background-image: url(asset-path("background/2560#{$tag}.jpg")); }
-  @include media(new-breakpoint(min-width 801px max-width 1440px)) { background-image: url(asset-path("background/1440#{$tag}.jpg")); }
-  @include media(new-breakpoint(min-width 501px max-width 800px)) { background-image: url(asset-path("background/crop-800#{$tag}.jpg")); }
-  @include media(new-breakpoint(min-width 1px max-width 500px)) { background-image: url(asset-path("background/crop-500#{$tag}.jpg")); }
-}
 
-@mixin outer-container {
-  @include clearfix;
-  margin: 0 auto;
-  padding: 0 1em;
-  max-width: $max-width;
+  @media(min-width: 2561px) { background-image: url(asset-path("background/3200#{$tag}.jpg")); }
+  @media(max-width: 2560px) { background-image: url(asset-path("background/2560#{$tag}.jpg")); }
+  @media(max-width: 1440px) { background-image: url(asset-path("background/1440#{$tag}.jpg")); }
+  @media(max-width: 800px) { background-image: url(asset-path("background/crop-800#{$tag}.jpg")); }
+  @media(max-width: 500px) { background-image: url(asset-path("background/crop-500#{$tag}.jpg")); }
 }
 
 // Fixes deprecation warning

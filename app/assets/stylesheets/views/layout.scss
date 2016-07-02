@@ -4,7 +4,6 @@ html {
 
 body {
   margin: 0px;
-  padding-top: 50px;
 }
 
 ////////////////////////////////////////////////
@@ -12,59 +11,43 @@ body {
 ////////////////////////////////////////////////
 
 header {
-  @include position(absolute, 0px 0px null 0px);
   @include scaled-background('-blurred');
-  @include clearfix();
   box-shadow: 0px 1px 1px rgba(#020e11,0.7);
 
   nav {
-    @include outer-container;
-
-    #humanise {
-      &:hover {
-        h1 { color: rgba($white, 1); }
-        img { opacity: 1; }
-      }
-
-      h1 {
-        font-family: $logo-font;
-        color: rgba($white, 0.9);
-        text-transform: uppercase;
-        @include transition(color 0.2s);
-      }
-    }
+    @include display(flex);
+    margin: auto;
+    max-width: $max-width;
 
     a {
-      display: inline-block;
-      float: left;
       line-height: 50px;
-      padding: 0 1.75em;
       color: rgba($white, 0.75);
-      @include transition(all, 0.2s);
-      &:nth-child(n+2):hover {
-        background: rgba($blue, 0.2);
-        color: rgba($white, 0.95);
-      }
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+      // Humani.se Logo
       &:first-child {
-        position: relative;
-        padding-right: 65px;
+        @include flex(1);
+        padding: 0 0.65em;
+        h1 {
+          font-family: $logo-font;
+          color: rgba($white, 0.9);
+          text-transform: uppercase;
+          @include transition(color 0.2s);
+        }
+        img {
+          display: none;
+        }
+      }
+
+      // Navigation Links
+      &:nth-child(n+2) {
+        padding: 0 1.75em;
+        &.selected {
+          box-shadow: inset 0px -2px 0px 0px $blue;
+          color: $white;
+        }
       }
     }
-
-    .nav-logo {
-      position: absolute;
-      top: 5px; right: 10px;
-      height: 40px;
-      opacity: 0.9;
-      @include transition(opacity 0.2s);
-    }
-  }
-}
-
-@include media(new-breakpoint(min-width 0px max-width 450px)) {
-  header nav a {
-    padding: 0 0.75em !important;
-    img { display: none; }
   }
 }
 
@@ -73,40 +56,44 @@ header {
 ////////////////////////////////////////////////
 
 main {
-  @include outer-container;
+  margin: auto;
+  padding: 0px 10px;
+  max-width: $max-width;
+  overflow: auto;
+
 
   article {
     position: relative;
     margin-bottom: 1.5em;
-    padding: 1.5% 2.5%;
-    // border-radius: 1em;
+    padding: 1.25em;
     border-radius: $article-border-radius;
+    background-url: "http://api.thumbr.it/whitenoise-361x370.png?background=#242B37ff&noise=626262&density=15&opacity=15";
     @include scaled-background('-blurred');
     background-color: #242B37;
-    // box-shadow:
-    //   0px 0px 20px -5px rgba(#020e11, 0.3),
-    //   inset 0px 2px 0px -1px rgba($off-white, 0.15),
-    //   0px 4px 7px -2px rgba(#020e11, 0.7);
     box-shadow:
-      inset 0px 1px 0px 0px rgba(236, 244, 249, 0.1),
-      0px 1px 1px 0px rgba(2, 14, 17, 0.7);
-    font-size: 17px;
+      inset 0px 1px 0px 0px rgba(236, 244, 249, 0.15),
+      0px 1px 1px 0px rgba(2, 14, 17, 0.7),
+      inset 0px -50px 100px -40px #181c22;
+
+    font-size: 18px;
     color: $off-white;
+
     &.comments {
       background: #242B37;
     }
 
     p {
-      padding-top: 10px;
-      line-height: 28px;
+      line-height: 1.68em;
+      letter-spacing: 0.03em;
+      word-spacing: 0.075em;
       text-indent: 10px;
+
       a {
         font-weight: bold;
       }
     }
 
     a {
-      // color: rgba(255,255,255,0.9);
       color: $blue;
       font-weight: 400;
       text-decoration: none;
@@ -118,29 +105,29 @@ main {
 // Shared Social
 ////////////////////////////////////////////////
 
-.social-links {
-  @include display(flex);
-
-  a {
-    display: inline-block;
-    position: relative;
-    color: rgba($white, 0.4);
-    overflow: hidden;
-    @include transition(all, 0.5s);
-
-    &:hover {
-      margin-top: -5px;
-      i { color: rgba($white, 0.85); }
-      &[class*="github"] { color: rgba($github, 0.65);}
-      &[class*="twitter"] { color: rgba($twitter, 0.65); }
-      &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
-      &[class*="facebook"] { color: rgba($facebook, 0.65); }
-    }
-  }
-
-  i {
-    @include position(absolute, 0px);
-    @include transition(all, 0.5s);
-    color: transparent;
-  }
-}
+// .social-links {
+//   @include display(flex);
+//
+//   a {
+//     display: inline-block;
+//     position: relative;
+//     color: rgba($white, 0.4);
+//     overflow: hidden;
+//     @include transition(all, 0.5s);
+//
+//     &:hover {
+//       margin-top: -5px;
+//       i { color: rgba($white, 0.85); }
+//       &[class*="github"] { color: rgba($github, 0.65);}
+//       &[class*="twitter"] { color: rgba($twitter, 0.65); }
+//       &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
+//       &[class*="facebook"] { color: rgba($facebook, 0.65); }
+//     }
+//   }
+//
+//   i {
+//     @include position(absolute, 0px);
+//     @include transition(all, 0.5s);
+//     color: transparent;
+//   }
+// }

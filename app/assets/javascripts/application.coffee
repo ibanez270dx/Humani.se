@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.fontspy
+#= require gist-embed
 #= require turbolinks
 #= require_tree .
 

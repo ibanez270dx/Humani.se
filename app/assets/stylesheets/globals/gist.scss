@@ -1,0 +1,58 @@
+
+.gist {
+  overflow: auto;
+
+  .gist-file {
+    border: 1px solid #3f4549 !important;
+
+    .gist-data {
+      border: 0px;
+      background-color: inherit;
+      .blob-code {
+        font-size: 1.25em;
+      }
+      .highlight {
+        background-color: #2B2B2B;
+      }
+      .blob-code-inner {
+        color: #F4F1ED;
+        // white-space:normal;
+      }
+      .blob-num {
+        border: 0px;
+        background-color: #3f4549;
+        color: lighten(#3f4549, 20%);
+        font-size: 14px;
+      }
+      .pl-e, .pl-smi {
+        color: #fff;
+      }
+      .pl-en {
+        color: #8fc2ba;
+      }
+      .pl-c1 {
+        color: #81adc9;
+      }
+      .pl-k {
+        color: #af91bd;
+      }
+      .pl-v {
+        color: #f49f5c;
+      }
+      .pl-sr, .pl-s, .pl-pds {
+        color: #b4c978;
+      }
+      .pl-s1 {
+        color: #63ab66;
+      }
+    }
+  }
+}
+
+code:not([data-gist-id]) {
+  background-color: #2b2b2b;
+  border: 1px solid #3f4549;
+  padding: 2px 4px 4px;
+  font-size: 16px;
+  border-radius: 3px;
+}

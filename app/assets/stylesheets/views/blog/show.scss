@@ -1,156 +1,109 @@
 body.blog.show {
 
-  .gist {
-    .gist-file {
-      border: 1px solid #3f4549 !important;
+  main {
+    @include display(flex);
 
-      .gist-data {
-        border: 0px;
-        background-color: inherit;
-        .blob-code {
-          // font-size: 16px;
-        }
-        .highlight {
-          background-color: #2B2B2B;
-        }
-        .blob-code-inner {
-          color: #F4F1ED;
-        }
-        .blob-num {
-          border: 0px;
-          background-color: #3f4549;
-          color: lighten(#3f4549, 20%);
-          // font-size: 14px;
-        }
-        .pl-e, .pl-smi {
-          color: #fff;
-        }
-        .pl-en {
-          color: #8fc2ba;
-        }
-        .pl-c1 {
-          color: #81adc9;
-        }
-        .pl-k {
-          color: #af91bd;
-        }
-        .pl-v {
-          color: #f49f5c;
-        }
-        .pl-sr, .pl-s, .pl-pds {
-          color: #b4c978;
-        }
-        .pl-s1 {
-          color: #63ab66;
-        }
-      }
+    & > section {
+      @include display(flex);
+      @include flex-direction(column);
+      @include flex(1);
+      padding-right: 1.45em;
     }
   }
 
-  main {
-    @include display(flex);
-  }
+  article.post {
+    padding: 0px;
 
-  section {
-    @include display(flex);
-    @include flex-direction(column);
-    @include flex(1);
-    padding-right: 1.45em;
+    figure {
+      position: relative;
+      margin: 0px;
+      height: 350px;
+      background-size: cover;
+      background-position: center center;
+      border-top-left-radius: $article-border-radius;
+      border-top-right-radius: $article-border-radius;
+      overflow: hidden;
 
-    article.post {
-      padding: 0px;
+      figcaption {
+        @include position(absolute, null 0 0 0);
+        padding: 4em 2% 2%;
+        @include background-image(linear-gradient(bottom, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0) 100%));
 
-      figure {
-        position: relative;
-        margin: 0px;
-        height: 350px;
-        background-size: cover;
-        background-position: center center;
-        border-top-left-radius: $article-border-radius;
-        border-top-right-radius: $article-border-radius;
-        overflow: hidden;
+        h1 {
+          margin-bottom: 1%;
+          text-align: center;
+          font-size: 48px;
+          white-space: pre-line;
+          color: $white;
+        }
 
-        figcaption {
-          @include position(absolute, null 0 0 0);
-          padding: 4em 2% 2%;
-          @include background-image(linear-gradient(bottom, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0) 100%));
-
-          h1 {
-            margin-bottom: 1%;
-            text-align: center;
-            font-size: 48px;
-            white-space: pre-line;
-            color: $white;
-          }
-
-          span {
-            display: block;
-            font-size: 12px;
-            text-align: right;
-          }
+        span {
+          display: block;
+          font-size: 12px;
+          text-align: right;
         }
       }
+    }
 
-      .post-body-wrapper {
-        padding: 0% 2.5% 1.5%;
-      }
+    .post-body-wrapper {
+      padding: 0% 2.5% 1.5%;
+    }
 
-      h2 {
-        display: inline-block;
-        margin: 1.5em auto 0.25em -4.5%;
-        padding: 2px 25px 5px;
-        border-radius: 0.25em;
-        background-color: rgb(0, 128, 191);
-        background-image: url(asset-path('textures/otis-redding.png'));
-        box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),
-                    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15),
-                    inset 0px -1px 0px 0px rgba(0, 0, 0, 0.25),
-                    inset 10px 0px 75px -10px rgba(0, 0, 0, 0.8);
-        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
-        color: rgb(1, 32, 47);
-      }
+    h2 {
+      display: inline-block;
+      margin: 1.5em auto 0.25em -4.5%;
+      padding: 2px 25px 5px;
+      border-radius: 0.25em;
+      background-color: rgb(0, 128, 191);
+      background-image: url(asset-path('textures/otis-redding.png'));
+      box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),
+                  inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15),
+                  inset 0px -1px 0px 0px rgba(0, 0, 0, 0.25),
+                  inset 10px 0px 75px -10px rgba(0, 0, 0, 0.8);
+      text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+      color: rgb(1, 32, 47);
+    }
 
-      h2 {
-        display: inline-block;
-        margin: 1.5em auto 0.25em -4.5%;
-        padding: 2px 25px 5px;
-        border-radius: 0.25em;
-        background-color: #0080bf;
-        background-image: url(asset-path('textures/otis-redding.png'));
-        box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),inset 0px 1px 0px 0px rgba(255,255,255,0.15),inset 0px -1px 0px 0px rgba(0,0,0,0.25),inset 10px 0px 75px -10px rgba(0,0,0,0.8);
-        text-shadow: 0px 1px 0px rgba(255,255,255,0.25);
-        color: #01202f;
-      }
+    h2 {
+      display: inline-block;
+      margin: 1.5em auto 0.25em -4.5%;
+      padding: 2px 25px 5px;
+      border-radius: 0.25em;
+      background-color: #0080bf;
+      background-image: url(asset-path('textures/otis-redding.png'));
+      box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),inset 0px 1px 0px 0px rgba(255,255,255,0.15),inset 0px -1px 0px 0px rgba(0,0,0,0.25),inset 10px 0px 75px -10px rgba(0,0,0,0.8);
+      text-shadow: 0px 1px 0px rgba(255,255,255,0.25);
+      color: #01202f;
+    }
 
-      // Console
-      .console {
-        width: 100%;
-        white-space: nowrap;
-        background: #000000;
-        font-family: 'Inconsolata';
-        padding: 10px;
-        border: 1px solid #5e5e5e;
-        color: #d0cfcf;
-        border-radius: 5px;
-        word-break: normal;
-        overflow-x: scroll;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        .g  { color: #b4c978; }
-        .gr { color: #97938c; font-style: italic; }
-        .p { color: #af91bd; }
-        .r { color: #c8484d; }
-        .w { color: #ffffff; }
-      }
+    // Console
+    .console {
+      width: 100%;
+      white-space: nowrap;
+      background: #000000;
+      font-family: 'Inconsolata';
+      padding: 10px;
+      border: 1px solid #5e5e5e;
+      color: #d0cfcf;
+      border-radius: 5px;
+      word-break: normal;
+      overflow-x: scroll;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      .g  { color: #b4c978; }
+      .gr { color: #97938c; font-style: italic; }
+      .p { color: #af91bd; }
+      .r { color: #c8484d; }
+      .w { color: #ffffff; }
+    }
 
-      div.console { margin: 35px 0px; }
-      span.console {
-        padding: 5px 8px;
-        display: inline-block;
-        width: auto;
-        text-indent: 0px;
-        line-height: 14px;
-        vertical-align: bottom;
-      }
+    div.console { margin: 35px 0px; }
+    span.console {
+      padding: 5px 8px;
+      display: inline-block;
+      width: auto;
+      text-indent: 0px;
+      line-height: 14px;
+      vertical-align: bottom;
     }
   }
 
