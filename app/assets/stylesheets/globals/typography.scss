@@ -4,9 +4,11 @@ body {
   @include font-feature-settings("pnum", "kern" false);
   font-family: $body-font;
   color: $white;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .03em;
 }
 
 ///////////////////////////////////////

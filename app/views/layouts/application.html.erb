@@ -8,18 +8,16 @@
     <%= csrf_meta_tags %>
     <%= yield :head %>
     <%= render 'layouts/google_analytics' %>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
-
   </head>
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <header>
       <nav>
-        <%= link_to about_path, id: 'humanise' do %>
+        <%= link_to about_path do %>
           <h1>humani.se</h1>
           <%= image_tag('logo.png', class: 'nav-logo') %>
         <% end %>
-        <%= link_to 'About', about_path %>
-        <%= link_to 'Blog', blog_path %>
+        <%= nav_link_to 'About', about_path, selected: 'site#about' %>
+        <%= nav_link_to 'Blog', blog_path, selected: 'blog#' %>
       </nav>
     </header>
 
@@ -27,8 +25,5 @@
       <%= yield %>
     </main>
 
-    <footer>
-      <%= yield :footer %>
-    </footer>
   </body>
 </html>
