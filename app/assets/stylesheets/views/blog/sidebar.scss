@@ -50,109 +50,71 @@ body.blog aside {
       &:last-child { border-bottom-right-radius: $article-border-radius; }
     }
   }
+
+  /***********************************************/
+  /* Desktop ( > 768px )                         */
+  /***********************************************/
+
+  @media(min-width: 768px) {
+    min-width: 278px;
+    max-width: 278px;
+
+    #me {
+      figure {
+        position: relative;
+        &:before {
+          content: "jeff@humani.se";
+          @include position(absolute, -1px);
+          @include display(flex);
+          @include align-items(center);
+          @include justify-content(center);
+          border-radius: 125px;
+          font-size: 14px;
+          opacity: 0;
+          @include transition(all 0.2s);
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        figure:before {
+          background-color: rgba($black, 0.85);
+          opacity: 1;
+        }
+      }
+    }
+    .blurb {
+      font-size: 14px;
+    }
+    #social-links {
+      a {
+        font-size: 46px !important;
+        @include transition(all 0.2s);
+
+        &#social-email {
+          display: none;
+        }
+        &:nth-child(2) {
+          border-bottom-left-radius: $article-border-radius;
+        }
+
+        &:hover {
+          background: rgba($off-white, 0.1) !important;
+
+          &.github {
+            i { color: shade($github, 0%); }
+          }
+          &.twitter {
+            i { color: shade($twitter, 25%); }
+          }
+          &.linkedin {
+            i { color: shade($linkedin, 25%); }
+          }
+          &.facebook {
+            i { color: shade($facebook, 25%); }
+          }
+        }
+      }
+    }
+  }
 }
-//
-//   aside {
-//     padding: 0;
-//     min-width: 250px;
-//     max-width: 250px;
-//     text-align: center;
-//
-//     article {
-//       padding: 2em 1em;
-//     }
-//   }
-//
-//   #me {
-//     .email-link {
-//       display: inline-block;
-//       &:hover {
-//         .email-overlay { opacity: 1; }
-//         .hu-email { top: 0; }
-//       }
-//     }
-//
-//     .email-wrapper {
-//       position: relative;
-//       display: inline-block;
-//       z-index: 10;
-//       background: #6c6e79;
-//       border-radius: 50%;
-//       overflow: hidden;
-//       img {
-//         width: 125px;
-//       }
-//     }
-//
-//     .email-overlay {
-//       @include position(absolute, 0px);
-//       @include transition(opacity 0.2s);
-//       padding: 15px;
-//       background: rgba($black, 0.85);
-//       border: 1px solid #000;
-//       opacity: 0;
-//       i {
-//         @include position(relative, -120px null null null);
-//         @include transition(top 0.4s $ease-out-back);
-//         &:before {
-//           display: block;
-//           @include position(relative, 8px null null null);
-//           font-size: 60px;
-//           color: rgba($white, 0.9);
-//         }
-//       }
-//       span {
-//         font-size: 12px;
-//       }
-//     }
-//   }
-//
-//   .blurb {
-//     font-size: 12px;
-//     letter-spacing: 0px;
-//   }
-//
-//   .social-links {
-//     @include flex-wrap(wrap);
-//     @include justify-content(center);
-//     margin-top: 10px;
-//     a {
-//       margin: 6px;
-//       @include size(70px);
-//       font-size: 70px;
-//       border-radius: 4px;
-//     }
-//   }
-//
-//   @media(max-width: 600px) {
-//     main {
-//       display: block !important;
-//       section {
-//         padding: 0px !important;
-//       }
-//       h1 {
-//         text-align: center;
-//         text-shadow: 0px 0px 10px rgba(1, 16, 42, 0.60);
-//       }
-//       aside {
-//         max-width: 100%;
-//         .social-links a {
-//           i { color: rgba($white, 0.85); }
-//           &[class*="github"] { color: rgba($github, 0.65);}
-//           &[class*="twitter"] { color: rgba($twitter, 0.65); }
-//           &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
-//           &[class*="facebook"] { color: rgba($facebook, 0.65); }
-//         }
-//       }
-//     }
-//   }
-//
-//   // TODO: Need a responsive solution to these stupid social buttons
-//   @media(max-width: 400px) {
-//     .social-links {
-//       width: 200px;
-//       margin: auto;
-//       margin-top: 20px;
-//     }
-//   }
-// }

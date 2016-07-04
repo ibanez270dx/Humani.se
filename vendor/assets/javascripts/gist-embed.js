@@ -44,7 +44,7 @@
         data = {};
 
       // set max width
-      var maxWidth = $('article.post').width() - $('article.post').width()*0.025;
+      var maxWidth = $('article.post').width() - 36
 
       // make block level so loading text shows properly
       $elem.css('display', 'block');

@@ -29,8 +29,7 @@ body.about {
         &[class*="linkedin"] { color: shade($linkedin, 50%); }
         &[class*="facebook"] { color: shade($facebook, 50%); }
         i {
-          color: rgba(#fff, 0.0);
-          text-shadow: 0px 0px 10px shade(#242B37, 50%);
+          color: rgba($white, 0.85);
         }
       }
     }
@@ -44,7 +43,7 @@ body.about {
     footer {
       #social-links a {
         top: 0px;
-        font-size: 12.5vw;
+        font-size: 165px;
         color: rgba($white, 0.3) !important;
         border-radius: $article-border-radius;
         overflow: hidden;

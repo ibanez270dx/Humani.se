@@ -67,6 +67,7 @@ body.blog.index {
 
       & > section {
         @include flex(5);
+        padding-right: 20px;
 
         article.post {
           @include display(flex);
@@ -88,24 +89,6 @@ body.blog.index {
         }
       }
 
-      & > aside {
-        @include flex(1.5);
-        margin-left: 20px;
-        .blurb {
-          font-size: 14px;
-        }
-        #social-links {
-          a {
-            font-size: 4vw;
-            &#social-email {
-              display: none;
-            }
-            &:nth-child(2) {
-              border-bottom-left-radius: $article-border-radius;
-            }
-          }
-        }
-      }
     }
   }
 }
