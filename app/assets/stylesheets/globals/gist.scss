@@ -1,4 +1,8 @@
 
+/***********************************************/
+/* Embedded Gists                              */
+/***********************************************/
+
 .gist {
   overflow: auto;
 
@@ -56,4 +60,36 @@ code:not([data-gist-id]) {
   padding: 2px 4px 4px;
   font-size: 16px;
   border-radius: 3px;
+}
+
+/***********************************************/
+/* Console                                     */
+/***********************************************/
+
+.console {
+  padding: 10px;
+  white-space: nowrap;
+  background: rgba($black, 0.7);
+  font-family: 'Inconsolata';
+  border: 1px solid #3f4549;
+  color: #d0cfcf;
+  border-radius: 5px;
+  word-break: normal;
+  overflow-x: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  .g  { color: #b4c978; }
+  .gr { color: #97938c; font-style: italic; }
+  .p { color: #af91bd; }
+  .r { color: #c8484d; }
+  .w { color: #ffffff; }
+}
+
+div.console { margin: 35px 0px; }
+span.console {
+  padding: 5px 8px;
+  display: inline-block;
+  width: auto;
+  text-indent: 0px;
+  line-height: 14px;
+  vertical-align: bottom;
 }
