@@ -26,7 +26,6 @@ body.blog aside {
     border-bottom-right-radius: $article-border-radius;
 
     & > a {
-
       &:first-child {
         @include flex(2.5);
         font-size: 3vw;
@@ -47,7 +46,9 @@ body.blog aside {
         i { color: rgba($off-white, 0.85); }
       }
 
-      &:last-child { border-bottom-right-radius: $article-border-radius; }
+      &:last-child {
+        border-bottom-right-radius: $article-border-radius;
+      }
     }
   }
 
@@ -83,36 +84,23 @@ body.blog aside {
         }
       }
     }
+
     .blurb {
       font-size: 14px;
     }
+
     #social-links {
       a {
         font-size: 46px !important;
         @include transition(all 0.2s);
-
-        &#social-email {
-          display: none;
-        }
-        &:nth-child(2) {
-          border-bottom-left-radius: $article-border-radius;
-        }
-
+        &#social-email { display: none; }
+        &:nth-child(2) { border-bottom-left-radius: $article-border-radius; }
         &:hover {
           background: rgba($off-white, 0.1) !important;
-
-          &.github {
-            i { color: shade($github, 0%); }
-          }
-          &.twitter {
-            i { color: shade($twitter, 25%); }
-          }
-          &.linkedin {
-            i { color: shade($linkedin, 25%); }
-          }
-          &.facebook {
-            i { color: shade($facebook, 25%); }
-          }
+          &.github i { color: shade($github, 0%); }
+          &.twitter i { color: shade($twitter, 25%); }
+          &.linkedin i { color: shade($linkedin, 25%); }
+          &.facebook i { color: shade($facebook, 25%); }
         }
       }
     }

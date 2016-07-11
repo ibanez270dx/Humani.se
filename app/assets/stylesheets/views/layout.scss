@@ -6,9 +6,9 @@ body {
   margin: 0px;
 }
 
-////////////////////////////////////////////////
-// Navigation
-////////////////////////////////////////////////
+/***********************************************/
+/* Navigation                                  */
+/***********************************************/
 
 header {
   @include scaled-background('-blurred');
@@ -51,9 +51,9 @@ header {
   }
 }
 
-////////////////////////////////////////////////
-// Main Page
-////////////////////////////////////////////////
+/***********************************************/
+/* Main Page                                   */
+/***********************************************/
 
 main {
   margin: auto;
@@ -114,45 +114,3 @@ main {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////
-// Shared Social
-////////////////////////////////////////////////
-
-// .social-links {
-//   @include display(flex);
-//
-//   a {
-//     display: inline-block;
-//     position: relative;
-//     color: rgba($white, 0.4);
-//     overflow: hidden;
-//     @include transition(all, 0.5s);
-//
-//     &:hover {
-//       margin-top: -5px;
-//       i { color: rgba($white, 0.85); }
-//       &[class*="github"] { color: rgba($github, 0.65);}
-//       &[class*="twitter"] { color: rgba($twitter, 0.65); }
-//       &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
-//       &[class*="facebook"] { color: rgba($facebook, 0.65); }
-//     }
-//   }
-//
-//   i {
-//     @include position(absolute, 0px);
-//     @include transition(all, 0.5s);
-//     color: transparent;
-//   }
-// }

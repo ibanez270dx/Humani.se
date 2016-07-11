@@ -1,8 +1,82 @@
 @import 'bourbon';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'pure/pure-min';
+@import 'pure/side-menu';
 
 @import 'globals/fonts';
 @import 'globals/variables';
 @import 'globals/helpers';
 
-@import 'admin/side-menu';
-@import 'admin/globals';
+// Humani.se Logo
+#menu .pure-menu-heading {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+// Make tables full width
+.pure-table {
+  width: 100%;
+}
+
+// Make links look decent
+a {
+  color: #3b8bba;
+  text-decoration: none;
+}
+
+// Errors
+.error-messages {
+  width: 100%;
+  color: #D64541;
+  h4 {
+    margin-bottom: 0px;
+  }
+  ul {
+    margin-top: 0px;
+    list-style-type: square;
+    li {
+      font-size: 14px;
+    }
+  }
+}
+
+// Flash
+.flash-messages {
+  width: 100%;
+  margin: 20px 0px;
+  text-align: center;
+  font-weight: bold;
+  color: #3498DB;
+
+}
+
+/***********************************************/
+/* Blog                                        */
+/***********************************************/
+
+#post_abstract {
+  min-height: 100px;
+}
+
+#post_body {
+  height: 350px;
+  min-height: 300px;
+}
+
+.pure-form-stacked label {
+  margin-top: 20px;
+}
+
+#post-image {
+  line-height: 0px;
+  img {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #E6E6E6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}

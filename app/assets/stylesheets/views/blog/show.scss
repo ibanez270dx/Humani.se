@@ -50,8 +50,12 @@ body.blog.show {
       padding: 2px 25px 5px;
       border-radius: 0.25em;
       background-color: #0080bf;
-      background-image: url(asset-path('textures/otis-redding.png'));
-      box-shadow: -20px 7px 40px -10px rgba(0,0,0,0.7),inset 0px 1px 0px 0px rgba(255,255,255,0.15),inset 0px -1px 0px 0px rgba(0,0,0,0.25),inset 10px 0px 75px -10px rgba(0,0,0,0.8);
+      background-image: url(asset-path('textures/noise.png'));
+      box-shadow:
+        -20px 7px 40px -10px rgba(0,0,0,0.7),
+        inset 0px 1px 0px 0px rgba(255,255,255,0.15),
+        inset 0px -1px 0px 0px rgba(0,0,0,0.25),
+        inset 10px 0px 75px -10px rgba(0,0,0,0.8);
       text-shadow: 0px 1px 0px rgba(255,255,255,0.25);
       color: #01202f;
     }
@@ -67,6 +71,7 @@ body.blog.show {
       font-size : 20px;
       line-height: 20px;
     }
+    
     a {
       border-top: 1px solid rgba(255,255,255,0.05);
       border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -90,63 +95,7 @@ body.blog.show {
       & > section {
         @include flex(5);
         padding-right: 20px;
-
-        article.post {
-        }
       }
     }
   }
-
 }
-//
-//   main {
-//     @include display(flex);
-//
-//     & > section {
-//       @include display(flex);
-//       @include flex-direction(column);
-//       @include flex(1);
-//       padding-right: 1.45em;
-//     }
-//   }
-//
-//
-//     .post-body-wrapper {
-//       padding: 0% 2.5% 1.5%;
-//     }
-//
-
-//
-//     // Console
-//     .console {
-//       width: 100%;
-//       white-space: nowrap;
-//       background: #000000;
-//       font-family: 'Inconsolata';
-//       padding: 10px;
-//       border: 1px solid #5e5e5e;
-//       color: #d0cfcf;
-//       border-radius: 5px;
-//       word-break: normal;
-//       overflow-x: scroll;
-//       -ms-overflow-style: -ms-autohiding-scrollbar;
-//       .g  { color: #b4c978; }
-//       .gr { color: #97938c; font-style: italic; }
-//       .p { color: #af91bd; }
-//       .r { color: #c8484d; }
-//       .w { color: #ffffff; }
-//     }
-//
-//     div.console { margin: 35px 0px; }
-//     span.console {
-//       padding: 5px 8px;
-//       display: inline-block;
-//       width: auto;
-//       text-indent: 0px;
-//       line-height: 14px;
-//       vertical-align: bottom;
-//     }
-//   }
-//
-//
-// }

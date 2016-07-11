@@ -13,7 +13,6 @@ body.about {
 
   footer {
     margin-bottom: 1.5em;
-
     #social-links {
       @include display(flex);
       @include align-items(center);
@@ -28,9 +27,7 @@ body.about {
         &[class*="twitter"] { color: shade($twitter, 50%); }
         &[class*="linkedin"] { color: shade($linkedin, 50%); }
         &[class*="facebook"] { color: shade($facebook, 50%); }
-        i {
-          color: rgba($white, 0.85);
-        }
+        i { color: rgba($white, 0.85); }
       }
     }
   }
@@ -43,13 +40,13 @@ body.about {
     footer {
       #social-links a {
         top: 0px;
-        font-size: 165px;
-        color: rgba($white, 0.3) !important;
         border-radius: $article-border-radius;
-        overflow: hidden;
         box-shadow:
           1px 1px 15px 1px rgba(14,58,81,0.2),
           inset 0px -1px 0px 0px rgba(255,255,255,0.1);
+        font-size: 165px;
+        color: rgba($white, 0.3) !important;
+        overflow: hidden;
         @include transition(all 0.4s);
 
         i {
@@ -70,81 +67,3 @@ body.about {
     }
   }
 }
-  // footer {
-  //   .social-links {
-  //     @include justify-content(space-between);
-  //     padding: 2.5em 6em;
-  //   }
-  //   a {
-  //     @include size(160px);
-  //     border-radius: 8px;
-  //     font-size: 160px;
-  //     color: rgba($white, 0.3);
-  //
-  //     &:nth-child(-n+2) {
-  //       box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset -1px -1px 0px 0px rgba($white, 0.1);
-  //       &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
-  //     }
-  //
-  //     &:nth-child(n+3) {
-  //       box-shadow: 1px 1px 15px 1px rgba(14, 58, 81, 0.2), inset 1px -1px 0px 0px rgba($white, 0.1);
-  //       &:hover { box-shadow: 1px 1px 15px 3px rgba(14, 58, 81, 0.2); }
-  //     }
-  //
-  //     //Darken interior of icon slightly but turn white on hover
-  //     i { color: rgba(22, 59, 85, 0.3); }
-  //
-  //   }
-  // }
-
-  //////////////////////////////////////////////////////////////////////////////
-  // TODO: FIX THIS!!! Should be mobile first, dear God this is awful...
-  // Figure out a better way to make this responsive. New social buttons?
-  //////////////////////////////////////////////////////////////////////////////
-//   @media(max-width: 1024px) {
-//     footer {
-//       .social-links { padding: 2.5em 2em; }
-//       a { @include size(145px); font-size: 145px; }
-//     }
-//   }
-//   @media(max-width: 800px) {
-//     footer {
-//       .social-links { padding: 2.5em 1em; }
-//       a { @include size(120px); font-size: 120px; }
-//     }
-//   }
-//   @media(max-width: 600px) {
-//     footer {
-//       .social-links {
-//         @include flex-wrap(wrap);
-//         text-align: center;
-//       }
-//       .social-link-container {
-//         width: 50%;
-//       }
-//       a {
-//         @include size(100px);
-//         font-size: 100px;
-//         margin-bottom: 0.4em;
-//         &:hover {
-//           margin-top: 0px;
-//         }
-//         i { color: rgba($white, 0.85); }
-//         &[class*="github"] { color: rgba($github, 0.65);}
-//         &[class*="twitter"] { color: rgba($twitter, 0.65); }
-//         &[class*="linkedin"] { color: rgba($linkedin, 0.65); }
-//         &[class*="facebook"] { color: rgba($facebook, 0.65); }
-//       }
-//     }
-//   }
-//   @media(max-width: 500px) {
-//     footer {
-//       .social-links { padding: 2.5em 4em; }
-//     }
-//   }
-//   @media(max-width: 400px) {
-//     footer {
-//       .social-links { padding: 2.5em 2em; }
-//     }
-//   }
-// }
