@@ -33,28 +33,19 @@ wrapTitles = ->
       lower.unshift upper.pop()
       $(this).html "#{upper.to_s()}\n#{lower.to_s()}"
 
-# Scale blog titles (show page)
-scaleFonts = ->
-  $('[scale-font]').each ->
-    fontSize = $(this).parent().width() * $(this).attr('scale-font')
-    fontSize = 48 if fontSize >= 48
-    fontSize = 36 if fontSize <= 36
-    $(this).css 'font-size': fontSize
-
 ###################################################################
 # Init / Events
 ###################################################################
 
 ready = ->
   scaleBackground()
-  scaleFonts()
   wrapTitles()
   $('code[data-gist-id]').gist();
 
 # Rescale the glass as the window size changes
 $(window).resize -> ready()
 
-# Rescale the glass on turbolinks page load
+# Run ready function on turbolinks:load
 $(document).on "turbolinks:load", ->
   fontSpy 'Seans Other Hand',
     success: -> ready()
