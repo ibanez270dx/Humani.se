@@ -47,7 +47,7 @@
 
   <article class="sidebar related-posts">
     <h4>Other Posts</h4>
-    <% @posts.each do |post| %>
+    <% @posts.enabled.each do |post| %>
       <%= link_to post.title, blog_post_path(post.url_title) %>
     <% end %>
   </article>
