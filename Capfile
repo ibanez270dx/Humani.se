@@ -10,7 +10,6 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/nginx'
 require 'capistrano/puma'
-require 'capistrano/puma/monit'
 require 'capistrano/puma/nginx'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
