@@ -27,5 +27,6 @@
 # Ignore compiled assets
 /public/assets
 
-# Database
+# Linked files
 /config/database.yml
+/config/secrets.yml
