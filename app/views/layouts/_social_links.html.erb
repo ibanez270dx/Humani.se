@@ -1,14 +1,5 @@
-<%
-  social = {
-    github: 'http://www.github.com/ibanez270dx',
-    twitter: 'http://www.twitter.com/ibanez270dx',
-    linkedin: 'http://www.linkedin.com/in/ibanez270dx',
-    facebook: 'http://www.facebook.com/ibanez270dx'
-  }
-%>
-
 <div id="social-links">
-  <% social.each do |network, url| %>
+  <% SOCIAL.each do |network, url| %>
     <%= link_to url, target: '_blank', class: "hu-#{network}-cutout" do %>
       <i class="hu-<%= network %>"></i>
     <% end %>

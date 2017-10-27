@@ -40,7 +40,7 @@ wrapTitles = ->
 ready = ->
   scaleBackground()
   wrapTitles()
-  $('code[data-gist-id]').gist();
+  $('code[data-gist-id]').gist()
 
 # Rescale the glass as the window size changes
 $(window).resize -> ready()
