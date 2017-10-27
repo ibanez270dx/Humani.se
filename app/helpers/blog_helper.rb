@@ -10,7 +10,7 @@ module BlogHelper
       superscript: true,
       nowrap:true
     }
-    Redcarpet::Markdown.new(HTMLwithPygments, options).render(text).html_safe
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, options).render(text).html_safe
   end
 
 end

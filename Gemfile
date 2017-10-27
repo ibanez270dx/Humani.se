@@ -25,12 +25,11 @@ gem 'therubyracer'          # Embed the V8 Javascript Interpreter into Ruby
 gem 'turbolinks'            # Following links faster using AJAX
 
 ###########################################################
-# Miscellaneous
+# Convenience
 ###########################################################
 
 gem 'bcrypt'                # Ruby bindings for OpenBSD's password hashing algorithm
 gem 'redcarpet'             # A fast, safe and extensible Markdown to (X)HTML parser
-gem 'pygmentize'            # A standalone Pygments for Ruby
 
 ###########################################################
 # Environments
