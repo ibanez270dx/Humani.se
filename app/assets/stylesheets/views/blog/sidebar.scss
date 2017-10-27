@@ -8,32 +8,32 @@ body.blog aside {
   #me {
     figure {
       margin: 10px auto;
-      @include size(125px);
+      width: 125px; height: 125px;
       border-radius: 125px;
       background-size: cover;
     }
   }
 
   #social-links {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-wrap(wrap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 2em;
-    background-color: rgba($white,0.85);
+    background-color: rgba($white, 0.85);
     box-shadow: inset 0px 7px 40px 0px rgba(13, 18, 25, 0.51);
     border-bottom-left-radius: $article-border-radius;
     border-bottom-right-radius: $article-border-radius;
 
     & > a {
       &:first-child {
-        @include flex(2.5);
+        flex: 2.5;
         font-size: 3vw;
         color: $black;
       }
 
       &:nth-child(n+2) {
-        @include flex(1);
+        flex: 1;
         position: relative;
         padding: 6px 0px 5px;
         font-size: 12vw;
@@ -65,14 +65,15 @@ body.blog aside {
         position: relative;
         &:before {
           content: "jeff@humani.se";
-          @include position(absolute, -1px);
-          @include display(flex);
-          @include align-items(center);
-          @include justify-content(center);
+          position: absolute;
+          top: -1px; right: -1px; bottom: -1px; left: -1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 125px;
           font-size: 14px;
           opacity: 0;
-          @include transition(all 0.2s);
+          transition: all 0.2s;
           color: #fff;
         }
       }
@@ -92,7 +93,7 @@ body.blog aside {
     #social-links {
       a {
         font-size: 46px !important;
-        @include transition(all 0.2s);
+        transition: all 0.2s;
         &#social-email { display: none; }
         &:nth-child(2) { border-bottom-left-radius: $article-border-radius; }
         &:hover {

@@ -14,15 +14,18 @@ body.about {
   footer {
     margin-bottom: 1.5em;
     #social-links {
-      @include display(flex);
-      @include align-items(center);
-      @include justify-content(space-around);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
 
       & > a {
         position: relative;
         font-size: 20vw;
 
-        &:before { @include position(absolute, 0px); }
+        &:before {
+          position: absolute;
+          top: 0px; right: 0px; bottom: 0px; left: 0px;
+        }
         &[class*="github"] { color: shade($github, 10%); }
         &[class*="twitter"] { color: shade($twitter, 50%); }
         &[class*="linkedin"] { color: shade($linkedin, 50%); }
@@ -47,12 +50,12 @@ body.about {
         font-size: 165px;
         color: rgba($white, 0.3) !important;
         overflow: hidden;
-        @include transition(all 0.4s);
+        transition: all 0.4s;
 
         i {
           text-shadow: none;
           color: rgba(38, 65, 92, 0.25);
-          @include transition(all 0.4s);
+          transition: all 0.4s;
         }
 
         &:hover {
