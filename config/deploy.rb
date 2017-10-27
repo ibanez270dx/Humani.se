@@ -4,7 +4,7 @@ lock "3.10.0"
 # Name and Repo
 set :application, "humani.se"
 set :repo_url, "git@github.com:ibanez270dx/humani.se.git"
-set :branch, :no_default_branch
+set :branch, "master"
 
 # App Location
 set :user, "deploy"
