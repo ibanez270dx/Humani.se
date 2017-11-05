@@ -2,9 +2,13 @@
 lock "3.10.0"
 
 # Name and Repo
-set :application, "humani.se"
+set :application, "humanise"
 set :repo_url, "git@github.com:ibanez270dx/humani.se.git"
 set :branch, "master"
+
+# Nginx
+set :nginx_redirect_from_www, true
+set :nginx_server_name, "humani.se"
 
 # App Location
 set :user, "deploy"
