@@ -7,8 +7,11 @@ set :repo_url, "git@github.com:ibanez270dx/humani.se.git"
 set :branch, "master"
 
 # Nginx
-set :nginx_redirect_from_www, true
 set :nginx_server_name, "humani.se"
+set :nginx_redirect_from_www, true
+
+# SSL
+set :nginx_use_ssl, true
 set :nginx_ssl_certificate, "/etc/letsencrypt/live/humani.se/fullchain.pem"
 set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/humani.se/privkey.pem"
 
