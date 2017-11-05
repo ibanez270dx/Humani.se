@@ -31,3 +31,7 @@ set :rbenv_ruby, File.read(".ruby-version").strip
 
 # Puma
 set :puma_init_active_record, true
+
+# Update config and bounce NGINX
+after "puma:restart", "puma:nginx_config"
+after "puma:nginx_config", "nginx:restart"
