@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="push-down">
   <head>
     <title><%= @title || "Humani.se" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,18 @@
     <%= yield :head %>
   </head>
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
+    <div id="freelancing">
+      <div>
+        <%= link_to icon("close"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
+        <span class="message">
+          <%= icon "exclamation-triangle" %>
+          &nbsp;Looking for my freelance work?
+        </span>
+        <span class="link">
+          Check out <%= link_to "OverWine.io", "https://overwine.io", target: :_blank %>
+        </span>
+      </div>
+    </div>
     <header>
       <nav>
         <%= link_to about_path do %>
