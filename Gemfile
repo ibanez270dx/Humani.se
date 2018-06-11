@@ -4,7 +4,7 @@ source "https://rubygems.org"
 # Core
 ###########################################################
 
-gem "rails", "~> 5.0.0"     # A full-stack web framework optimized for programmer happiness
+gem "rails", "~> 5.2"       # A full-stack web framework optimized for programmer happiness
 gem "mysql2"                # A modern, simple, and very fast Mysql library
 gem "puma"                  # A fast, threaded, and highly concurrent HTTP 1.1 server
 
@@ -35,13 +35,24 @@ gem "redcarpet"             # A fast, safe and extensible Markdown to (X)HTML pa
 # Environments
 ###########################################################
 
+group :test do
+  gem "rspec-rails"               # BDD testing framework for Rails 3.x, 4.x and 5.0
+  gem "shoulda-matchers"          # Collection of testing matchers extracted from Shoulda
+  gem "factory_bot_rails"         # Fixtures as Ruby objects with a straightforward definition syntax
+  gem "faker"                     # Library for generating fake data such as names, addresses, and phone numbers
+  gem "database_cleaner"          # A set of strategies for cleaning your database in Ruby
+  gem "rails-controller-testing"  # Brings back assigns to your controller tests
+end
+
 group :development, :test do
-  gem "pry-rails"               # An IRB alternative and runtime developer console
-  gem "web-console"             # Debugging in views with <% console %>
-  gem "spring"                  # Keep running the app in the background
+  gem "pry-rails"           # An IRB alternative and runtime developer console
+  gem "spring"              # Keep running the app in the background
+  gem "rubocop",            # Static code analyzer, based on the community Ruby style guide
+    require: false
 end
 
 group :development do
+  gem "web-console"         # Debugging in views with <% console %>
   gem "capistrano"          # Remote multi-server automation tool
   gem "capistrano-rails"    # Rails integration for Capistrano 3.x
   gem "capistrano-rbenv"    # Rbenv integration for Capistrano 3.x

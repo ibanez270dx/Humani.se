@@ -13,9 +13,9 @@
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <div id="freelancing">
       <div>
-        <%= link_to icon("close"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
+        <%= link_to icon("fas", "close"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
         <span class="message">
-          <%= icon "exclamation-triangle" %>
+          <%= icon "fas", "exclamation-triangle" %>
           &nbsp;Looking for my freelance work?
         </span>
         <span class="link">
