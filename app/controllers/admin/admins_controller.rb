@@ -16,7 +16,7 @@ class Admin::AdminsController < ApplicationController
       flash[:success] = "Admin created successfully."
       redirect_to admin_admins_path
     else
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -31,7 +31,7 @@ class Admin::AdminsController < ApplicationController
       flash[:success] = "Admin updated successfully."
       redirect_to admin_admins_path
     else
-      render action: 'edit'
+      render action: "edit"
     end
   end
 
@@ -66,10 +66,10 @@ class Admin::AdminsController < ApplicationController
     redirect_to admin_login_path
   end
 
-  private
+private
 
-    def admin_params
-      params.require(:admin).permit(:name, :username, :password, :password_confirmation)
-    end
+  def admin_params
+    params.require(:admin).permit(:name, :username, :password, :password_confirmation)
+  end
 
 end

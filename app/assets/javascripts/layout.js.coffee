@@ -1,10 +1,13 @@
 
 # Scale the background to the document width
 scaleBackground = ->
-  $('nav, article').each ->
+  # Conditionally calculate height offset from the banner
+  banner = if $("html").hasClass("push-down") then parseInt($("#freelancing").css("height")) else 0
+
+  $('header, article').each ->
     docWidth = $(document).width()
     offset = $(this).offset()
-    position = "-#{offset.left}px -#{offset.top}px"
+    position = "-#{offset.left}px -#{offset.top - banner}px"
     size = "#{docWidth}px"
     $(this).css
       backgroundPosition: position
@@ -39,13 +42,15 @@ wrapTitles = ->
 
 ready = ->
   scaleBackground()
-  wrapTitles()
   $('code[data-gist-id]').gist()
+  if $("html").hasClass("seansotherhand")
+    wrapTitles()
+  else
+    fontSpy 'Seans Other Hand',
+      success: -> wrapTitles()
 
 # Rescale the glass as the window size changes
 $(window).resize -> ready()
 
 # Run ready function on turbolinks:load
-$(document).on "turbolinks:load", ->
-  fontSpy 'Seans Other Hand',
-    success: -> ready()
+$(document).on "turbolinks:load", -> ready()

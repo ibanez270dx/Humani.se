@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
 
   def index
-    @posts = Post.enabled
+    @posts = Post.all
   end
 
   def show

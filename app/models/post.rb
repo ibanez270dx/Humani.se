@@ -1,15 +1,15 @@
 class Post < ActiveRecord::Base
-  default_scope { order published_at: :desc }
-  scope :enabled, -> { where enabled: true }
+  default_scope { where(enabled: true).order(published_at: :desc) }
 
-  belongs_to :author, class_name: 'Admin'
+  belongs_to :author, class_name: "Admin"
 
+  before_validation :update_slug
+
+  validates :author, presence: true
   validates :title, presence: true
   validates :slug, presence: true, uniqueness: true
   validates :body, presence: true
   validates :abstract, presence: true
-
-  before_validation :update_slug
 
   # Publish post when it's enabled
   def enabled=(check)

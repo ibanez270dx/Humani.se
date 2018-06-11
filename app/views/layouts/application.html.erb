@@ -11,12 +11,11 @@
     <%= yield :head %>
   </head>
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
-    <div id="freelancing">
+    <div id="freelancing" data-turbolinks="false">
       <div>
-        <%= link_to icon("fas", "close"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
+        <%= link_to icon("fas", "times"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
         <span class="message">
-          <%= icon "fas", "exclamation-triangle" %>
-          &nbsp;Looking for my freelance work?
+          <%= icon "fas", "exclamation-triangle" %> &nbsp;Looking for my freelance work?
         </span>
         <span class="link">
           Check out <%= link_to "OverWine.io", "https://overwine.io", target: :_blank %>

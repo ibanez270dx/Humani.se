@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
   before_filter :require_admin
-  layout 'admin'
+  layout "admin"
 
   def index
     @posts = Post.all
@@ -16,7 +16,7 @@ class Admin::PostsController < ApplicationController
       flash[:success] = "Post created successfully."
       redirect_to admin_posts_path
     else
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -30,7 +30,7 @@ class Admin::PostsController < ApplicationController
       flash[:success] = "Post updated successfully."
       redirect_to admin_posts_path
     else
-      render action: 'edit'
+      render action: "edit"
     end
   end
 
