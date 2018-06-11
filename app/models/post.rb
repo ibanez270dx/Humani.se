@@ -5,11 +5,11 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'Admin'
 
   validates :title, presence: true
-  validates :url_title, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
   validates :body, presence: true
   validates :abstract, presence: true
 
-  before_save :update_url_title
+  before_validation :update_slug
 
   # Publish post when it's enabled
   def enabled=(check)
@@ -19,9 +19,9 @@ class Post < ActiveRecord::Base
 
 private
 
-  # Autogenerate and/or parameterize url title
-  def update_url_title
-    self.url_title = (url_title.blank? ? title : url_title).gsub('\'','').parameterize
+  # Autogenerate and/or parameterize slug
+  def update_slug
+    self[:slug] = (slug&.presence || title&.presence)&.parameterize
   end
 
 end

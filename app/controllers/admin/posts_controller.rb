@@ -40,9 +40,10 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_posts_path
   end
 
-  private
+private
 
-    def post_params
-      params.require(:post).permit(:author_id, :title, :url_title, :body, :abstract, :meta_description, :meta_keywords, :enabled, :filepicker_url)
-    end
+  def post_params
+    params.require(:post).permit(:author_id, :title, :slug, :body, :abstract, :meta_description, :meta_keywords, :enabled, :filepicker_url)
+  end
+
 end

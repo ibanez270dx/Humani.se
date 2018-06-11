@@ -3,7 +3,7 @@
     <article id="<%= post.id %>" class="post">
 
       <!-- Figure + Date Info -->
-      <%= link_to blog_post_path(post.url_title), class: 'post-thumbnail', style: bg(post.filepicker_url) do %>
+      <%= link_to blog_post_path(post.slug), class: 'post-thumbnail', style: bg(post.filepicker_url) do %>
         <time datetime="<%= post.published_at.to_date.to_s %>">
           <small><%= post.published_at.strftime('%B') %></small>
           <big><%= post.published_at.day %></big>
@@ -13,11 +13,11 @@
 
       <!-- Content -->
       <div class="post-content">
-        <%= link_to blog_post_path(post.url_title) do %>
+        <%= link_to blog_post_path(post.slug) do %>
           <h2 wrap="bt-rl"><%= post.title %></h2>
         <% end %>
         <p><%= post.abstract.html_safe %></p>
-        <%= link_to icon('ellipsis-h'), blog_post_path(post.url_title) %>
+        <%= link_to icon("fas", "ellipsis-h"), blog_post_path(post.slug) %>
       </div>
 
     </article>

@@ -3,7 +3,7 @@ HumaniSe::Application.routes.draw do
   root to: 'site#about', as: :about
 
   get 'blog' => 'blog#index',  as: :blog
-  get 'blog/:url_title' => 'blog#show', as: :blog_post
+  get 'blog/:slug' => 'blog#show', as: :blog_post
 
   # Add channel for Facebook plugin performance
   # https://developers.facebook.com/blog/post/2011/08/02/how-to--optimize-social-plugin-performance/

@@ -47,7 +47,7 @@ class Admin::AdminsController < ApplicationController
 
   def login
     if request.post?
-      if @admin = Admin.find_by_login(params[:admin][:login])
+      if @admin = Admin.find_by_username(params[:admin][:username])
         if @admin.authenticate(params[:admin][:password])
           session[:admin_id] = @admin.id
           redirect_to session[:admin_requested_url] || admin_admins_path
@@ -56,7 +56,7 @@ class Admin::AdminsController < ApplicationController
           flash.now[:error] = "Your password is incorrect."
         end
       else
-        flash.now[:error] = "There is no admin with that login."
+        flash.now[:error] = "There is no admin with that username."
       end
     end
   end
@@ -69,7 +69,7 @@ class Admin::AdminsController < ApplicationController
   private
 
     def admin_params
-      params.require(:admin).permit(:name, :login, :password, :password_confirmation)
+      params.require(:admin).permit(:name, :username, :password, :password_confirmation)
     end
 
 end

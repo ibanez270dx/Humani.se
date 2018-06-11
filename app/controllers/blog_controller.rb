@@ -5,8 +5,8 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post  = Post.find_by_url_title params[:url_title]
-    @posts = Post.where.not url_title: params[:url_title]
+    @post  = Post.find_by_slug params[:slug]
+    @posts = Post.where.not slug: params[:slug]
   end
 
 end
