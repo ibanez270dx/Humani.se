@@ -3,15 +3,13 @@
 scaleBackground = ->
   # Conditionally calculate height offset from the banner
   banner = if $("html").hasClass("push-down") then parseInt($("#freelancing").css("height")) else 0
+  docWidth = $(document).width()
 
   $('header, article').each ->
-    docWidth = $(document).width()
     offset = $(this).offset()
-    position = "-#{offset.left}px -#{offset.top - banner}px"
-    size = "#{docWidth}px"
     $(this).css
-      backgroundPosition: position
-      backgroundSize: size
+      backgroundPosition: "-#{offset.left}px -#{offset.top - banner}px"
+      backgroundSize: "#{docWidth}px"
 
 wrapTitles = ->
   # Make text flow from bottom right corner of container. Text wraps upwards by
