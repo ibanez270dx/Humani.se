@@ -30,6 +30,8 @@ gem "turbolinks"            # Following links faster using AJAX
 
 gem "bcrypt"                # Ruby bindings for OpenBSD's password hashing algorithm
 gem "redcarpet"             # A fast, safe and extensible Markdown to (X)HTML parser
+gem "bootsnap",             # Optimize and cache expensive computations at boot
+  require: false
 
 ###########################################################
 # Environments

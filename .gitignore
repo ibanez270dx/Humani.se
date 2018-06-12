@@ -30,3 +30,4 @@
 # Linked files
 /config/database.yml
 /config/secrets.yml
+config/puma.rb

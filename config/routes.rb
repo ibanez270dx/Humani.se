@@ -1,5 +1,4 @@
-HumaniSe::Application.routes.draw do
-
+Rails.application.routes.draw do
   root to: "site#about", as: :about
 
   get "blog", to: "blog#index",  as: :blog
