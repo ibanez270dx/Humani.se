@@ -1,9 +1,7 @@
-class Admin::PostsController < ApplicationController
-  before_filter :require_admin
-  layout "admin"
+class Admin::PostsController < Admin::BaseController
 
   def index
-    @posts = Post.all
+    @posts = Post.unscoped
   end
 
   def new
@@ -21,11 +19,11 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find params[:id]
+    @post = Post.unscoped.find params[:id]
   end
 
   def update
-    @post = Post.find params[:id]
+    @post = Post.unscoped.find params[:id]
     if @post.update_attributes(post_params)
       flash[:success] = "Post updated successfully."
       redirect_to admin_posts_path
@@ -35,7 +33,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id]).destroy
+    @post = Post.unscoped.find(params[:id]).destroy
     flash[:success] = "Post destroyed successfully."
     redirect_to admin_posts_path
   end

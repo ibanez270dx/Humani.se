@@ -1,6 +1,4 @@
-class Admin::AdminsController < ApplicationController
-  before_filter :require_admin, except: [ :login ]
-  layout "admin"
+class Admin::AdminsController < Admin::BaseController
 
   def index
     @admins = Admin.all
@@ -26,7 +24,7 @@ class Admin::AdminsController < ApplicationController
 
   def update
     @admin = Admin.find params[:id]
-    logger.debug(admin_params)
+
     if @admin.update_attributes(admin_params)
       flash[:success] = "Admin updated successfully."
       redirect_to admin_admins_path
@@ -39,31 +37,6 @@ class Admin::AdminsController < ApplicationController
     @admin = Admin.find(params[:id]).destroy
     flash[:success] = "Admin destroyed successfully."
     redirect_to admin_admins_path
-  end
-
-  #############################
-  # Authentication
-  #############################
-
-  def login
-    if request.post?
-      if @admin = Admin.find_by_username(params[:admin][:username])
-        if @admin.authenticate(params[:admin][:password])
-          session[:admin_id] = @admin.id
-          redirect_to session[:admin_requested_url] || admin_admins_path
-          session[:admin_requested_url] = nil
-        else
-          flash.now[:error] = "Your password is incorrect."
-        end
-      else
-        flash.now[:error] = "There is no admin with that username."
-      end
-    end
-  end
-
-  def logout
-    session[:admin_id] = nil
-    redirect_to admin_login_path
   end
 
 private
