@@ -54,6 +54,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "listen"              # Listens to file modifications and notifies you about the changes
   gem "web-console"         # Debugging in views with <% console %>
   gem "capistrano"          # Remote multi-server automation tool
   gem "capistrano-rails"    # Rails integration for Capistrano 3.x
