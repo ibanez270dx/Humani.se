@@ -1,14 +1,11 @@
 
 # Scale the background to the document width
 scaleBackground = ->
-  # Conditionally calculate height offset from the banner
-  banner = if $("html").hasClass("push-down") then parseInt($("#freelancing").css("height")) else 0
   docWidth = $(document).width()
-
   $('header, article').each ->
     offset = $(this).offset()
     $(this).css
-      backgroundPosition: "-#{offset.left}px -#{offset.top - banner}px"
+      backgroundPosition: "-#{offset.left}px -#{offset.top}px"
       backgroundSize: "#{docWidth}px"
 
 wrapTitles = ->
@@ -52,3 +49,11 @@ $(window).resize -> ready()
 
 # Run ready function on turbolinks:load
 $(document).on "turbolinks:load", -> ready()
+
+# Close the freelancing banner
+$(document).on "click", "#freelancing .close", (event) ->
+  $("html").removeClass "push-down"
+  interval = setInterval(scaleBackground, 25)
+  setTimeout ->
+    clearInterval(interval)
+  , 1000

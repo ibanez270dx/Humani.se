@@ -13,7 +13,7 @@
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
     <div id="freelancing" data-turbolinks="false">
       <div>
-        <%= link_to icon("fas", "times"), "#", class: "close", onclick: "$('html').removeClass('push-down');" %>
+        <%= link_to icon("fas", "times"), "#", class: "close" %>
         <span class="message">
           <%= icon "fas", "exclamation-triangle" %> &nbsp;Looking for my freelance work?
         </span>

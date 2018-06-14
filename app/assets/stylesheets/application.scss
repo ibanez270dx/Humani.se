@@ -13,11 +13,12 @@
 @import 'views/about';
 @import 'views/blog';
 
-
-// hack for the freelancing banner
-html {
+// HACK: freelancing banner
+body {
+  position: relative;
   transition: margin-top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  &.push-down { margin-top: 56px; }
+} html.push-down body { // class is on html so it persists between pages
+  margin-top: 56px;
 }
 
 #freelancing {
@@ -41,9 +42,11 @@ html {
     vertical-align: middle;
     line-height: 14px;
   }
+
   .link a {
     font-weight: 600;
   }
+
   a.close {
     float: right;
     font-size: 16px;
@@ -51,9 +54,4 @@ html {
     transition: all 0.25s;
     &:hover { color: lighten($dark-grey, 35%); }
   }
-
-  &.active {
-    top: -56px;
-  }
-
 }
