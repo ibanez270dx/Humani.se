@@ -19,7 +19,7 @@ describe Admin::BaseController, type: :controller do
 
     it "can authenticate" do
       post :login, params: { admin: { username: admin.username, password: password } }
-      expect(response).to redirect_to admin_root_path
+      expect(response).to redirect_to admin_posts_path
     end
   end
 

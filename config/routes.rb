@@ -9,12 +9,10 @@ Rails.application.routes.draw do
   get "channel", to: "site#channel", as: :facebook_channel
 
   namespace :admin do
-    root to: "posts#index"
+    match "/", to: "base#login", as: :login, via: [:get, :post]
+    get "logout", to: "base#logout", as: :logout
 
     resources :admins
     resources :posts
-
-    match "/", to: "base#login", as: :login, via: [:get, :post]
-    get "logout", to: "base#logout", as: :logout
   end
 end

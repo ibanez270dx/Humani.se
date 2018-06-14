@@ -7,7 +7,7 @@ class Admin::BaseController < ApplicationController
       if @admin = Admin.find_by_username(params[:admin][:username])
         if @admin.authenticate(params[:admin][:password])
           session[:admin_id] = @admin.id
-          redirect_to session.delete(:admin_requested_url) || admin_root_path
+          redirect_to session.delete(:admin_requested_url) || admin_posts_path
         else
           flash.now[:error] = "Your password is incorrect."
         end
