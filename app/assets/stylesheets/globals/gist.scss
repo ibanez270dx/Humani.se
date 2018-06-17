@@ -47,14 +47,28 @@
       .pl-sr, .pl-s, .pl-pds {
         color: #b4c978;
       }
-      .pl-s1 {
+      .pl-ent, .pl-s1 {
         color: #63ab66;
       }
     }
   }
 }
 
-code:not([data-gist-id]) {
+code[data-gist-title] {
+  display: block;
+  padding: 2px 4px 4px;
+  background-color: #3f4549;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: 12pt;
+
+  & + code[data-gist-id] .gist .gist-file {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
+
+code:not([data-gist-id]):not([data-gist-title]) {
   background-color: #2b2b2b;
   border: 1px solid #3f4549;
   padding: 2px 4px 4px;
