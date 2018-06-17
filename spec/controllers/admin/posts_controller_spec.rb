@@ -65,14 +65,14 @@ describe Admin::PostsController, type: :controller do
     it "updates a post" do
       expect{
         process :update, method: :post, params: { id: post.id, post: params }
-        expect(response).to redirect_to admin_posts_path
+        expect(response).to redirect_to edit_admin_post_path(post.id)
       }.to change{ post.reload.body }
     end
 
     it "publishes a post" do
       expect{
         process :update, method: :post, params: { id: post.id, post: params.merge!("enabled": "1") }
-        expect(response).to redirect_to admin_posts_path
+        expect(response).to redirect_to edit_admin_post_path(post.id)
       }.to change{ post.reload.published_at? }
     end
   end

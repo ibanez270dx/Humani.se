@@ -26,7 +26,7 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.unscoped.find params[:id]
     if @post.update_attributes(post_params)
       flash[:success] = "Post updated successfully."
-      redirect_to admin_posts_path
+      redirect_to edit_admin_post_path(params[:id])
     else
       render action: "edit"
     end
