@@ -33,8 +33,15 @@ set :rbenv_type, :user
 set :rbenv_ruby, File.read(".ruby-version").strip
 
 # Puma
+set :puma_tag, "Humani.se"
+set :puma_workers, 1
+set :puma_worker_timeout, 60
+set :puma_threads, [8, 16]
+set :puma_preload_app, true
+set :puma_daemonize, true
 set :puma_init_active_record, true
 
 # Update config and bounce NGINX
+after "deploy:check", "puma:config"
 after "puma:restart", "puma:nginx_config"
 after "puma:nginx_config", "nginx:restart"
